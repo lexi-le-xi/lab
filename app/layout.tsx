@@ -14,13 +14,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Xi Liu Studio — Designing Everyday Life",
     description,
-    images: [{ url: "og.png", width: 1731, height: 909, alt: "Xi Liu Studio digital worktable" }],
+    images: [{ url: "studio-world.png", width: 1649, height: 954, alt: "Xi Liu Studio 3D project world" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Xi Liu Studio — Designing Everyday Life",
     description,
-    images: ["og.png"],
+    images: ["studio-world.png"],
   },
 };
 

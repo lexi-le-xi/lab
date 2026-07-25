@@ -1,87 +1,84 @@
 import Link from "next/link";
 import { projects } from "./projects";
 
-function DeskObject({ type }: { type: string }) {
-  if (type === "phone") {
-    return <span className="phone-object"><i /><b>07:12</b><em>begin gently</em></span>;
-  }
-  if (type === "shoe") {
-    return <span className="shoe-object"><i /><b /><em /></span>;
-  }
-  if (type === "cards") {
-    return <span className="cards-object"><i>?</i><b>✦</b><em>↗</em></span>;
-  }
-  if (type === "orb") {
-    return <span className="orb-object"><i /><b /></span>;
-  }
-  return <span className="notebook-object"><i>WHAT AM I<br />NOTICING?</i><b /><em /></span>;
-}
+const hotspotPositions: Record<string, { x: string; y: string; side?: string }> = {
+  "morning-os": { x: "18%", y: "63%", side: "right" },
+  "modular-shoes": { x: "31%", y: "19%", side: "below" },
+  "ai-companion": { x: "51%", y: "39%", side: "below" },
+  "design-for-play": { x: "78%", y: "23%", side: "left" },
+  notebook: { x: "74%", y: "72%", side: "left" },
+};
 
 export function StudioDesk() {
-  const time = new Intl.DateTimeFormat("en", {
-    hour: "2-digit",
-    minute: "2-digit",
-    timeZone: "America/Los_Angeles",
-  }).format(new Date());
+  const assetBase = process.env.GITHUB_ACTIONS === "true" ? "/lab" : "";
 
   return (
-    <main className="studio-shell">
-      <header className="studio-header">
-        <Link className="wordmark" href="/" aria-label="Xi Liu Studio home">
+    <main
+      className="world-home"
+      style={{ "--world-image": `url('${assetBase}/studio-world.png')` } as React.CSSProperties}
+    >
+      <header className="world-nav">
+        <Link className="world-mark" href="/" aria-label="Xi Liu Studio home">
           XI LIU <span>/</span> STUDIO
         </Link>
-        <p className="now">Currently exploring <i /> behavior, play &amp; companionship</p>
-        <a className="contact-link" href="mailto:hello@example.com">Say hello ↗</a>
+        <p><i /> A living design practice</p>
+        <a href="mailto:hello@example.com">Say hello ↗</a>
       </header>
 
-      <section className="intro">
-        <p className="eyebrow">A living design practice</p>
-        <h1>I’m redesigning<br /><em>everyday life.</em></h1>
-        <p className="intro-copy">This is my digital worktable—an evolving collection of objects, questions, and experiments. Pick something up.</p>
+      <section className="world-intro">
+        <p className="world-kicker">Welcome to my digital studio</p>
+        <h1>Ideas become<br /><em>places to explore.</em></h1>
+        <p className="world-summary">
+          Five ongoing experiments in behavior, objects, play, AI, and research.
+          Move through the space and choose an object.
+        </p>
       </section>
 
-      <section className="desk" aria-label="Interactive project desk">
-        <div className="desk-grain" />
-        <div className="ruler"><span>10</span><span>20</span><span>30</span><span>40</span></div>
-        <div className="coffee-ring" />
-        <div className="paper-scrap">systems<br />over screens</div>
-        <div className="pencil"><i /></div>
-        {projects.map((project) => (
-          <Link
-            key={project.slug}
-            href={`/projects/${project.slug}`}
-            className={`desk-project desk-${project.object}`}
-            style={{ "--accent": project.accent } as React.CSSProperties}
-            aria-label={`${project.title}: ${project.question}`}
-            data-testid={`project-${project.slug}`}
-          >
-            <DeskObject type={project.object} />
-            <span className="object-caption">
-              <small>{project.index} / {project.lens}</small>
-              <strong>{project.question}</strong>
-              <b>Open project ↗</b>
-            </span>
-          </Link>
-        ))}
-        <div className="desk-stamp">
-          <span>OPEN STUDIO</span>
-          <b>{time} · PT</b>
-        </div>
-      </section>
+      <div className="world-scroll" aria-label="Scrollable 3D project studio">
+        <section className="world-scene">
+          <div className="world-glow" />
+          {projects.map((project) => {
+            const position = hotspotPositions[project.slug];
+            return (
+              <Link
+                key={project.slug}
+                href={`/projects/${project.slug}`}
+                className={`world-hotspot label-${position.side}`}
+                style={{
+                  "--x": position.x,
+                  "--y": position.y,
+                  "--accent": project.accent,
+                } as React.CSSProperties}
+                aria-label={`${project.title}: ${project.question}`}
+                data-testid={`project-${project.slug}`}
+              >
+                <span className="hotspot-ring"><i /></span>
+                <span className="hotspot-label">
+                  <small>{project.index} · {project.lens}</small>
+                  <strong>{project.title}</strong>
+                  <em>{project.question}</em>
+                  <b>Enter ↗</b>
+                </span>
+              </Link>
+            );
+          })}
+          <p className="world-drag">Drag to explore <span>→</span></p>
+        </section>
+      </div>
 
-      <section className="mobile-index">
-        <p>On the table</p>
+      <section className="world-index">
+        <p>All experiments</p>
         {projects.map((project) => (
           <Link key={project.slug} href={`/projects/${project.slug}`}>
             <span>{project.index}</span>
             <strong>{project.title}</strong>
-            <em>{project.question}</em>
+            <em>{project.lens}</em>
             <b>↗</b>
           </Link>
         ))}
       </section>
 
-      <footer>
+      <footer className="world-footer">
         <p>Made as a place for unfinished things.</p>
         <p>Stanford, California · {new Date().getFullYear()}</p>
       </footer>

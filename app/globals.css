@@ -194,3 +194,311 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 @media (prefers-reduced-motion: reduce) {
   * { scroll-behavior:auto !important; animation:none !important; transition:none !important; }
 }
+
+/* 3D studio world */
+.world-home {
+  --world-ink: #4d3d59;
+  min-height: 100vh;
+  overflow: hidden;
+  color: var(--world-ink);
+  background: #fff9f6;
+}
+
+.world-nav {
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 76px;
+  padding: 0 3.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #523e5c;
+  font-size: 11px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.world-nav::after {
+  content: "";
+  position: absolute;
+  left: 3.5vw;
+  right: 3.5vw;
+  bottom: 0;
+  border-bottom: 1px solid rgba(89, 64, 102, .16);
+}
+
+.world-mark { font-size: 14px; font-weight: 800; letter-spacing: -.01em; }
+.world-mark span { margin: 0 5px; color: #ff6c4b; }
+.world-nav p { display: flex; align-items: center; gap: 8px; }
+.world-nav p i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #8dd4b4;
+  box-shadow: 0 0 0 5px rgba(141, 212, 180, .18);
+  animation: worldPulse 2.4s ease-in-out infinite;
+}
+.world-nav > a:last-child { padding-bottom: 4px; border-bottom: 1px solid currentColor; }
+
+.world-intro {
+  position: absolute;
+  z-index: 10;
+  top: 104px;
+  left: 4vw;
+  width: min(480px, 38vw);
+  pointer-events: none;
+  text-shadow: 0 1px 14px rgba(255, 255, 255, .35);
+}
+
+.world-kicker {
+  margin: 0 0 18px;
+  font-size: 10px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.world-intro h1 {
+  margin: 0;
+  font-size: clamp(42px, 5vw, 78px);
+  line-height: .91;
+  letter-spacing: -.06em;
+  font-weight: 500;
+}
+
+.world-intro h1 em {
+  font-family: Georgia, serif;
+  font-weight: 400;
+}
+
+.world-summary {
+  max-width: 390px;
+  margin: 24px 0 0;
+  font: 15px/1.5 Georgia, serif;
+  color: rgba(77, 61, 89, .76);
+}
+
+.world-scroll {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  min-height: 720px;
+  overflow: hidden;
+  background: linear-gradient(120deg, #ffd0bd, #f5cae1 52%, #c8dcfa);
+}
+
+.world-scene {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 720px;
+  background: var(--world-image) center / cover no-repeat;
+}
+
+.world-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(255, 250, 246, .7), transparent 29%),
+    linear-gradient(180deg, rgba(255,255,255,.2), transparent 20% 80%, rgba(255,255,255,.24));
+}
+
+.world-hotspot {
+  position: absolute;
+  z-index: 5;
+  left: var(--x);
+  top: var(--y);
+  width: 48px;
+  height: 48px;
+  transform: translate(-50%, -50%);
+  outline: none;
+}
+
+.hotspot-ring {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(255,255,255,.82);
+  border: 1px solid rgba(94,67,105,.28);
+  box-shadow: 0 8px 26px rgba(78, 54, 92, .18), inset 0 0 0 5px rgba(255,255,255,.38);
+  backdrop-filter: blur(8px);
+  transition: transform .35s cubic-bezier(.2,.8,.2,1), background .25s;
+  animation: hotspotFloat 3.2s ease-in-out infinite;
+}
+
+.hotspot-ring i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 7px color-mix(in srgb, var(--accent) 20%, transparent);
+}
+
+.hotspot-ring::after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border: 1px solid rgba(255,255,255,.55);
+  border-radius: 50%;
+  animation: hotspotEcho 2.5s ease-out infinite;
+}
+
+.hotspot-label {
+  position: absolute;
+  left: 64px;
+  top: 50%;
+  width: 225px;
+  padding: 15px 16px 14px;
+  transform: translateY(-50%) translateX(8px);
+  border: 1px solid rgba(103,75,114,.16);
+  border-radius: 17px;
+  background: rgba(255, 253, 250, .88);
+  box-shadow: 0 17px 38px rgba(91, 63, 106, .16);
+  backdrop-filter: blur(14px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s, transform .35s cubic-bezier(.2,.8,.2,1);
+}
+
+.label-left .hotspot-label {
+  left: auto;
+  right: 64px;
+  transform: translateY(-50%) translateX(-8px);
+}
+
+.label-below .hotspot-label {
+  left: 50%;
+  top: 64px;
+  transform: translateX(-50%) translateY(8px);
+}
+
+.hotspot-label small {
+  display: block;
+  font-size: 8px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(77,61,89,.56);
+}
+.hotspot-label strong {
+  display: block;
+  margin-top: 7px;
+  font-size: 17px;
+}
+.hotspot-label em {
+  display: block;
+  margin: 7px 0 11px;
+  font: 13px/1.35 Georgia, serif;
+  color: rgba(77,61,89,.72);
+}
+.hotspot-label b {
+  color: var(--accent);
+  font-size: 9px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.world-hotspot:hover .hotspot-ring,
+.world-hotspot:focus-visible .hotspot-ring { transform: scale(1.2); background: #fff; }
+.world-hotspot:hover .hotspot-label,
+.world-hotspot:focus-visible .hotspot-label { opacity: 1; transform: translateY(-50%) translateX(0); }
+.world-hotspot.label-left:hover .hotspot-label,
+.world-hotspot.label-left:focus-visible .hotspot-label { transform: translateY(-50%) translateX(0); }
+.world-hotspot.label-below:hover .hotspot-label,
+.world-hotspot.label-below:focus-visible .hotspot-label { transform: translateX(-50%) translateY(0); }
+
+.world-drag { display: none; }
+.world-index { display: none; }
+.world-footer {
+  min-height: 74px;
+  padding: 0 4vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(89,64,102,.13);
+  font-size: 11px;
+  color: rgba(77,61,89,.64);
+}
+
+@keyframes hotspotFloat {
+  50% { margin-top: -5px; }
+}
+@keyframes hotspotEcho {
+  from { transform: scale(.76); opacity: .8; }
+  to { transform: scale(1.35); opacity: 0; }
+}
+@keyframes worldPulse {
+  50% { opacity: .38; }
+}
+
+@media (max-width: 800px) {
+  .world-nav { position: fixed; height: 62px; padding: 0 18px; background: rgba(255,250,248,.72); backdrop-filter: blur(16px); }
+  .world-nav::after { left: 18px; right: 18px; }
+  .world-nav p { display: none; }
+  .world-intro {
+    position: relative;
+    z-index: 2;
+    top: auto;
+    left: auto;
+    width: auto;
+    padding: 104px 22px 50px;
+    background: linear-gradient(145deg, #fff8f4, #faedf7);
+  }
+  .world-intro h1 { font-size: 15vw; }
+  .world-summary { font-size: 16px; }
+  .world-scroll {
+    height: 77svh;
+    min-height: 610px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+  }
+  .world-scroll::-webkit-scrollbar { display: none; }
+  .world-scene {
+    width: 137vh;
+    min-width: 1050px;
+    height: 77svh;
+    min-height: 610px;
+    background-size: cover;
+    scroll-snap-align: start;
+  }
+  .world-glow { background: linear-gradient(180deg, rgba(255,255,255,.22), transparent 20% 83%, rgba(255,255,255,.28)); }
+  .hotspot-label { opacity: 1; width: auto; min-width: 112px; padding: 9px 12px; border-radius: 999px; }
+  .hotspot-label small, .hotspot-label em, .hotspot-label b { display: none; }
+  .hotspot-label strong { margin: 0; font-size: 12px; white-space: nowrap; }
+  .world-drag {
+    display: block;
+    position: sticky;
+    left: 20px;
+    top: calc(100% - 48px);
+    width: max-content;
+    margin: 0;
+    padding: 9px 13px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.82);
+    backdrop-filter: blur(8px);
+    font-size: 10px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+  .world-drag span { margin-left: 13px; }
+  .world-index { display: block; padding: 70px 22px; }
+  .world-index > p { margin: 0 0 24px; font-size: 10px; text-transform: uppercase; letter-spacing: .16em; }
+  .world-index a {
+    display: grid;
+    grid-template-columns: 28px 1fr auto auto;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 0;
+    border-top: 1px solid rgba(89,64,102,.16);
+  }
+  .world-index span, .world-index em { font-size: 10px; color: rgba(77,61,89,.54); }
+  .world-index strong { font-size: 18px; }
+  .world-index b { font-size: 18px; }
+  .world-footer { padding: 24px 22px; gap: 22px; }
+}
