@@ -102,6 +102,12 @@ export function StudioDesk() {
           />
 
           <div className="land-breeze" aria-hidden="true">
+            {[8, 24, 43, 61, 79, 94].map((top, index) => (
+              <b key={`tree-${top}`} style={{ top: `${top}%`, left: `${3 + (index % 2) * 26}%`, animationDelay: `${-index * 0.8}s` }} />
+            ))}
+            {[16, 32, 48, 67, 84].map((top, index) => (
+              <span key={`person-${top}`} style={{ top: `${top}%`, left: `${25 + (index % 3) * 7}%`, animationDelay: `${-index * 0.55}s` }} />
+            ))}
             {Array.from({ length: 12 }, (_, index) => (
               <i
                 key={index}
@@ -142,7 +148,9 @@ export function StudioDesk() {
           </nav>
 
           <div className={`rowing-boat ${rowing ? "is-rowing" : ""}`} aria-hidden="true">
-            <img src="./rowing-boat-v4.png" alt="" />
+            <img src="./rowing-boat-base-v5.png" alt="" />
+            <b className="boat-oar boat-oar-left" />
+            <b className="boat-oar boat-oar-right" />
             <i /><i />
           </div>
 
