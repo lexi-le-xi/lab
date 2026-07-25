@@ -19,7 +19,7 @@ const places = [
     title: "Making & Systems",
     connection: "Connection through making",
     insight: "Fewer processes can create more participation.",
-    top: "65%",
+    top: "66%",
     left: "9%",
   },
   {
@@ -28,7 +28,7 @@ const places = [
     title: "Materials & Time",
     connection: "Connection with consequence",
     insight: "What takes minutes to make may remain for centuries.",
-    top: "46%",
+    top: "49%",
     left: "8%",
   },
   {
@@ -37,7 +37,7 @@ const places = [
     title: "Mind, Body & Behavior",
     connection: "Connection with ourselves",
     insight: "Awareness begins by returning to the body.",
-    top: "29%",
+    top: "34%",
     left: "7%",
   },
   {
@@ -46,7 +46,7 @@ const places = [
     title: "Play, AI & Interaction",
     connection: "Connection through interaction",
     insight: "Technology can return attention instead of taking it.",
-    top: "12%",
+    top: "18%",
     left: "6%",
   },
 ] as const;
@@ -97,7 +97,7 @@ export function StudioDesk() {
         <div className="rowing-viewport">
           <div
             className="rowing-landscape"
-            style={{ backgroundImage: "url('./rowing-world-v3.png')" }}
+            style={{ backgroundImage: "url('./rowing-world-v4.png')" }}
             aria-hidden="true"
           />
 

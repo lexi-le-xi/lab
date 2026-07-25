@@ -587,9 +587,9 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 }
 .shore-place {
   position: absolute;
-  width: min(430px, 38vw);
-  min-height: 132px;
-  padding: 17px 18px 16px;
+  width: min(350px, 32vw);
+  min-height: 108px;
+  padding: 14px 16px 13px;
   display: grid;
   grid-template-columns: 28px 1fr auto;
   gap: 13px;
@@ -605,8 +605,8 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 .shore-place:hover, .shore-place:focus-visible { transform: translateX(8px); background: #fffbe6; outline: 2px solid #3476dd; outline-offset: 3px; }
 .shore-place > span { color: #3476dd; font-size: 10px; letter-spacing: .12em; }
 .shore-place small { display: block; margin-bottom: 7px; font-size: 9px; letter-spacing: .13em; text-transform: uppercase; color: #236f62; }
-.shore-place strong { display: block; font-size: clamp(18px, 1.8vw, 28px); line-height: 1; letter-spacing: -.035em; }
-.shore-place em { display: block; max-width: 290px; margin-top: 9px; font: 13px/1.35 Georgia, serif; color: rgba(16,47,61,.75); }
+.shore-place strong { display: block; font-size: clamp(17px, 1.55vw, 23px); line-height: 1; letter-spacing: -.035em; }
+.shore-place em { display: block; max-width: 260px; margin-top: 8px; font: 12px/1.35 Georgia, serif; color: rgba(16,47,61,.75); }
 .shore-place b { align-self: end; padding-bottom: 2px; border-bottom: 1px solid; font-size: 8px; letter-spacing: .12em; text-transform: uppercase; white-space: nowrap; }
 
 .rowing-boat {
@@ -614,7 +614,7 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   z-index: 20;
   top: 50%;
   left: 74%;
-  width: clamp(230px, 31vw, 470px);
+  width: clamp(180px, 22vw, 340px);
   transform: translate(-50%, -50%) rotate(calc((var(--journey-progress) - .5) * 2deg));
   filter: drop-shadow(0 18px 14px rgba(82,132,135,.24));
   pointer-events: none;
@@ -718,7 +718,7 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   .shore-place > b { display:none; }
   .shore-place strong { font-size:18px; }
   .shore-place em { font-size:12px; }
-  .rowing-boat { left:76%; width:58vw; }
+  .rowing-boat { left:76%; width:44vw; }
   .journey-progress { right:12px; }
   .current-place { display:block; }
   .rowing-afterword { padding:11vh 22px; grid-template-columns:1fr; }
