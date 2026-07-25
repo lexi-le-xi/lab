@@ -97,7 +97,7 @@ export function StudioDesk() {
         <div className="rowing-viewport">
           <div
             className="rowing-landscape"
-            style={{ backgroundImage: "url('./rowing-world-v2.png')" }}
+            style={{ backgroundImage: "url('./rowing-world-v3.png')" }}
             aria-hidden="true"
           />
 
@@ -127,7 +127,7 @@ export function StudioDesk() {
           </nav>
 
           <div className={`rowing-boat ${rowing ? "is-rowing" : ""}`} aria-hidden="true">
-            <img src="./rowing-boat-v2.png" alt="" />
+            <img src="./rowing-boat-v3.png" alt="" />
             <i /><i />
           </div>
 

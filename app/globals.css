@@ -505,10 +505,10 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 
 /* Rowing journey homepage */
 .rowing-home {
-  --lake: #c8e6e7;
+  --lake: #397be3;
   min-height: 100vh;
-  color: #294538;
-  background: #d7eeee;
+  color: #102f3d;
+  background: #397be3;
 }
 
 .rowing-nav {
@@ -522,16 +522,16 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  color: #294538;
-  border-bottom: 1px solid rgba(57,91,74,.2);
-  background: linear-gradient(180deg, rgba(250,249,238,.9), rgba(250,249,238,.15));
+  color: #102f3d;
+  border-bottom: 1px solid rgba(16,47,61,.22);
+  background: linear-gradient(180deg, rgba(255,250,224,.82), rgba(255,250,224,.08));
   text-transform: uppercase;
   letter-spacing: .12em;
   font-size: 10px;
   text-shadow: 0 1px 9px rgba(255,255,255,.7);
 }
 .rowing-mark { font-weight: 800; font-size: 13px; letter-spacing: .02em; }
-.rowing-mark span { color: #84aeb2; margin: 0 5px; }
+.rowing-mark span { color: #3476dd; margin: 0 5px; }
 .rowing-nav p { margin: 0; }
 .rowing-nav > a:last-child { justify-self: end; border-bottom: 1px solid; padding-bottom: 3px; }
 
@@ -572,7 +572,7 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 }
 .rowing-opening > p { margin: 0 0 18px; font-size: 10px; text-transform: uppercase; letter-spacing: .2em; }
 .rowing-opening h1 { margin: 0; font-size: clamp(52px, 7vw, 112px); line-height: .84; letter-spacing: -.065em; font-weight: 500; }
-.rowing-opening h1 em { color: #789a78; font-family: Georgia, serif; font-weight: 400; }
+.rowing-opening h1 em { color: #0e5f51; font-family: Georgia, serif; font-weight: 400; }
 .rowing-opening > span { display: block; margin-top: 28px; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; }
 
 .shore-places {
@@ -596,17 +596,17 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   align-items: start;
   border: 1px solid rgba(255,255,255,.86);
   border-radius: 3px;
-  background: rgba(252,249,233,.88);
-  color: #294538;
+  background: rgba(255,250,224,.9);
+  color: #102f3d;
   box-shadow: 0 16px 40px rgba(77,108,91,.14);
   backdrop-filter: blur(10px);
   transition: transform .25s ease, background .25s ease;
 }
-.shore-place:hover, .shore-place:focus-visible { transform: translateX(8px); background: rgba(255,253,243,.98); outline: 2px solid #85a9a5; outline-offset: 3px; }
-.shore-place > span { color: #76999b; font-size: 10px; letter-spacing: .12em; }
-.shore-place small { display: block; margin-bottom: 7px; font-size: 9px; letter-spacing: .13em; text-transform: uppercase; color: #6f9290; }
+.shore-place:hover, .shore-place:focus-visible { transform: translateX(8px); background: #fffbe6; outline: 2px solid #3476dd; outline-offset: 3px; }
+.shore-place > span { color: #3476dd; font-size: 10px; letter-spacing: .12em; }
+.shore-place small { display: block; margin-bottom: 7px; font-size: 9px; letter-spacing: .13em; text-transform: uppercase; color: #236f62; }
 .shore-place strong { display: block; font-size: clamp(18px, 1.8vw, 28px); line-height: 1; letter-spacing: -.035em; }
-.shore-place em { display: block; max-width: 290px; margin-top: 9px; font: 13px/1.35 Georgia, serif; color: rgba(41,69,56,.72); }
+.shore-place em { display: block; max-width: 290px; margin-top: 9px; font: 13px/1.35 Georgia, serif; color: rgba(16,47,61,.75); }
 .shore-place b { align-self: end; padding-bottom: 2px; border-bottom: 1px solid; font-size: 8px; letter-spacing: .12em; text-transform: uppercase; white-space: nowrap; }
 
 .rowing-boat {
@@ -672,10 +672,10 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   grid-template-columns: 1fr 4fr;
   align-content: center;
   gap: 4vw;
-  background: #edf2df;
-  color: #294538;
+  background: #fff8d8;
+  color: #102f3d;
 }
-.rowing-afterword > p { margin: 8px 0 0; color: #789a78; font-size: 10px; text-transform: uppercase; letter-spacing: .17em; }
+.rowing-afterword > p { margin: 8px 0 0; color: #3476dd; font-size: 10px; text-transform: uppercase; letter-spacing: .17em; }
 .rowing-afterword h2 { margin: 0; max-width: 1080px; font: clamp(35px, 5.4vw, 82px)/1.08 Georgia, serif; font-weight: 400; }
 .rowing-afterword a { grid-column: 2; justify-self: start; margin-top: 45px; padding-bottom: 7px; border-bottom: 1px solid; text-transform: uppercase; letter-spacing: .12em; font-size: 10px; }
 .rowing-afterword a span { margin-left: 28px; }
