@@ -1,87 +1,154 @@
-import Link from "next/link";
-import { projects } from "./projects";
+"use client";
 
-const hotspotPositions: Record<string, { x: string; y: string; side?: string }> = {
-  "morning-os": { x: "18%", y: "63%", side: "right" },
-  "modular-shoes": { x: "31%", y: "19%", side: "below" },
-  "ai-companion": { x: "51%", y: "39%", side: "below" },
-  "design-for-play": { x: "78%", y: "23%", side: "left" },
-  notebook: { x: "74%", y: "72%", side: "left" },
-};
+import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
+
+const places = [
+  {
+    slug: "care-access",
+    index: "01",
+    title: "Designing for Care",
+    connection: "Connection with people",
+    insight: "Care reveals what ordinary design overlooks.",
+    top: "87%",
+    left: "7%",
+  },
+  {
+    slug: "making-systems",
+    index: "02",
+    title: "Making & Systems",
+    connection: "Connection through making",
+    insight: "Fewer processes can create more participation.",
+    top: "65%",
+    left: "9%",
+  },
+  {
+    slug: "materials-time",
+    index: "03",
+    title: "Materials & Time",
+    connection: "Connection with consequence",
+    insight: "What takes minutes to make may remain for centuries.",
+    top: "46%",
+    left: "8%",
+  },
+  {
+    slug: "mind-body-behavior",
+    index: "04",
+    title: "Mind, Body & Behavior",
+    connection: "Connection with ourselves",
+    insight: "Awareness begins by returning to the body.",
+    top: "29%",
+    left: "7%",
+  },
+  {
+    slug: "play-ai-interaction",
+    index: "05",
+    title: "Play, AI & Interaction",
+    connection: "Connection through interaction",
+    insight: "Technology can return attention instead of taking it.",
+    top: "12%",
+    left: "6%",
+  },
+] as const;
 
 export function StudioDesk() {
-  const assetBase = process.env.GITHUB_ACTIONS === "true" ? "/lab" : "";
+  const journeyRef = useRef<HTMLElement>(null);
+  const strokeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [progress, setProgress] = useState(0);
+  const [rowing, setRowing] = useState(false);
+
+  useEffect(() => {
+    const update = () => {
+      const journey = journeyRef.current;
+      if (!journey) return;
+      const distance = journey.offsetHeight - window.innerHeight;
+      const next = Math.min(1, Math.max(0, -journey.getBoundingClientRect().top / distance));
+      setProgress(next);
+      setRowing(true);
+      if (strokeTimer.current) clearTimeout(strokeTimer.current);
+      strokeTimer.current = setTimeout(() => setRowing(false), 180);
+    };
+
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    return () => {
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+      if (strokeTimer.current) clearTimeout(strokeTimer.current);
+    };
+  }, []);
+
+  const current = Math.min(places.length - 1, Math.floor(progress * places.length));
 
   return (
-    <main
-      className="world-home"
-      style={{ "--world-image": `url('${assetBase}/studio-world.png')` } as React.CSSProperties}
-    >
-      <header className="world-nav">
-        <Link className="world-mark" href="/" aria-label="Xi Liu Studio home">
-          XI LIU <span>/</span> STUDIO
-        </Link>
-        <p><i /> A living design practice</p>
-        <a href="mailto:hello@example.com">Say hello ↗</a>
+    <main className="rowing-home">
+      <header className="rowing-nav">
+        <Link href="/" className="rowing-mark">XI LIU <span>/</span> STUDIO</Link>
+        <p>I design to build connection.</p>
+        <a href="mailto:liu.xi.0802@gmail.com">Say hello ↗</a>
       </header>
 
-      <section className="world-intro">
-        <p className="world-kicker">Welcome to my digital studio</p>
-        <h1>Ideas become<br /><em>places to explore.</em></h1>
-        <p className="world-summary">
-          Five ongoing experiments in behavior, objects, play, AI, and research.
-          Move through the space and choose an object.
-        </p>
-      </section>
+      <section
+        ref={journeyRef}
+        className="rowing-journey"
+        style={{ "--journey-progress": progress } as React.CSSProperties}
+      >
+        <div className="rowing-viewport">
+          <div
+            className="rowing-landscape"
+            style={{ backgroundImage: "url('./rowing-world.png')" }}
+            aria-hidden="true"
+          />
 
-      <div className="world-scroll" aria-label="Scrollable 3D project studio">
-        <section className="world-scene">
-          <div className="world-glow" />
-          {projects.map((project) => {
-            const position = hotspotPositions[project.slug];
-            return (
+          <div className="rowing-opening">
+            <p>Welcome to my living design practice</p>
+            <h1>I design to<br /><em>build connection.</em></h1>
+            <span>Scroll to row through the shoreline ↓</span>
+          </div>
+
+          <nav className="shore-places" aria-label="Design areas along the shoreline">
+            {places.map((place) => (
               <Link
-                key={project.slug}
-                href={`/projects/${project.slug}`}
-                className={`world-hotspot label-${position.side}`}
-                style={{
-                  "--x": position.x,
-                  "--y": position.y,
-                  "--accent": project.accent,
-                } as React.CSSProperties}
-                aria-label={`${project.title}: ${project.question}`}
-                data-testid={`project-${project.slug}`}
+                key={place.slug}
+                href={`/areas/${place.slug}`}
+                className="shore-place"
+                style={{ top: place.top, left: place.left } as React.CSSProperties}
               >
-                <span className="hotspot-ring"><i /></span>
-                <span className="hotspot-label">
-                  <small>{project.index} · {project.lens}</small>
-                  <strong>{project.title}</strong>
-                  <em>{project.question}</em>
-                  <b>Enter ↗</b>
-                </span>
+                <span>{place.index}</span>
+                <div>
+                  <small>{place.connection}</small>
+                  <strong>{place.title}</strong>
+                  <em>{place.insight}</em>
+                </div>
+                <b>Explore ↗</b>
               </Link>
-            );
-          })}
-          <p className="world-drag">Drag to explore <span>→</span></p>
-        </section>
-      </div>
+            ))}
+          </nav>
 
-      <section className="world-index">
-        <p>All experiments</p>
-        {projects.map((project) => (
-          <Link key={project.slug} href={`/projects/${project.slug}`}>
-            <span>{project.index}</span>
-            <strong>{project.title}</strong>
-            <em>{project.lens}</em>
-            <b>↗</b>
-          </Link>
-        ))}
+          <div className={`rowing-boat ${rowing ? "is-rowing" : ""}`} aria-hidden="true">
+            <img src="./rowing-boat.png" alt="" />
+            <i /><i />
+          </div>
+
+          <div className="journey-progress" aria-hidden="true">
+            <span>{String(current + 1).padStart(2, "0")}</span>
+            <i><b style={{ height: `${Math.max(5, progress * 100)}%` }} /></i>
+            <span>05</span>
+          </div>
+
+          <div className="current-place" aria-live="polite">
+            <small>{places[current].connection}</small>
+            <strong>{places[current].title}</strong>
+          </div>
+        </div>
       </section>
 
-      <footer className="world-footer">
-        <p>Made as a place for unfinished things.</p>
-        <p>Stanford, California · {new Date().getFullYear()}</p>
-      </footer>
+      <section className="rowing-afterword">
+        <p>Why I design</p>
+        <h2>To build connection—between people, body and mind, what we make and how we live, and ourselves and the world we belong to.</h2>
+        <Link href={`/areas/${places[0].slug}`}>Explore the practice <span>↗</span></Link>
+      </section>
     </main>
   );
 }
