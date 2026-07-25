@@ -101,6 +101,21 @@ export function StudioDesk() {
             aria-hidden="true"
           />
 
+          <div className="land-breeze" aria-hidden="true">
+            {Array.from({ length: 12 }, (_, index) => (
+              <i
+                key={index}
+                style={{
+                  "--leaf-x": `${10 + ((index * 17) % 36)}%`,
+                  "--leaf-y": `${5 + ((index * 29) % 90)}%`,
+                  "--leaf-delay": `${-(index * 0.7)}s`,
+                } as React.CSSProperties}
+              />
+            ))}
+          </div>
+
+          <div className="lake-motion" aria-hidden="true"><i /><i /><i /><i /></div>
+
           <div className="rowing-opening">
             <p>Welcome to my living design practice</p>
             <h1>I design to<br /><em>build connection.</em></h1>
@@ -127,7 +142,7 @@ export function StudioDesk() {
           </nav>
 
           <div className={`rowing-boat ${rowing ? "is-rowing" : ""}`} aria-hidden="true">
-            <img src="./rowing-boat-v3.png" alt="" />
+            <img src="./rowing-boat-v4.png" alt="" />
             <i /><i />
           </div>
 

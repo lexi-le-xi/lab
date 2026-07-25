@@ -555,8 +555,58 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(90deg, transparent 0 48%, rgba(102,151,153,.08) 54%, transparent 63%);
+  background:
+    radial-gradient(ellipse at 22% 16%, rgba(255,245,147,.13), transparent 18%),
+    radial-gradient(ellipse at 34% 61%, rgba(255,255,210,.12), transparent 20%),
+    linear-gradient(90deg, transparent 0 48%, rgba(102,151,153,.08) 54%, transparent 63%);
+  background-size: 120% 120%, 135% 135%, 100% 100%;
+  animation: sunlightDrift 12s ease-in-out infinite alternate;
 }
+
+.land-breeze {
+  position: absolute;
+  z-index: 3;
+  inset: 0 auto auto 0;
+  width: 52%;
+  height: 500%;
+  overflow: hidden;
+  transform: translate3d(0, calc(-80% + (var(--journey-progress) * 80%)), 0);
+  pointer-events: none;
+  will-change: transform;
+}
+.land-breeze i {
+  position: absolute;
+  left: var(--leaf-x);
+  top: var(--leaf-y);
+  width: 7px;
+  height: 3px;
+  border-radius: 100% 0 100% 0;
+  background: rgba(28,91,55,.48);
+  box-shadow: 11px 7px rgba(244,200,67,.3);
+  animation: leafDrift 5.2s ease-in-out var(--leaf-delay) infinite;
+}
+
+.lake-motion {
+  position: absolute;
+  z-index: 4;
+  inset: 0 0 0 49%;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: .45;
+}
+.lake-motion i {
+  position: absolute;
+  left: calc(9% + (var(--journey-progress) * 5%));
+  width: clamp(90px, 15vw, 240px);
+  height: 10px;
+  border-top: 2px solid rgba(190,237,244,.42);
+  border-radius: 50%;
+  animation: waterGlide 6.5s ease-in-out infinite;
+}
+.lake-motion i:nth-child(1) { top: 18%; animation-delay: -1.5s; }
+.lake-motion i:nth-child(2) { top: 38%; left: 55%; width: 18vw; animation-delay: -4s; }
+.lake-motion i:nth-child(3) { top: 68%; left: 22%; width: 12vw; animation-delay: -2.7s; }
+.lake-motion i:nth-child(4) { top: 84%; left: 63%; width: 10vw; animation-delay: -.4s; }
 
 .rowing-opening {
   position: absolute;
@@ -620,7 +670,8 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   pointer-events: none;
 }
 .rowing-boat img { display: block; width: 100%; height: auto; }
-.rowing-boat.is-rowing img { animation: boatStroke .7s ease-in-out infinite alternate; }
+.rowing-boat img { animation: boatFloat 3.4s ease-in-out infinite; }
+.rowing-boat.is-rowing img { animation: boatStroke .68s ease-in-out infinite alternate; }
 .rowing-boat > i {
   position: absolute;
   left: 42%;
@@ -682,6 +733,17 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 
 @keyframes boatStroke { to { transform: translateY(-4px) scale(.997); } }
 @keyframes wake { from { transform: scale(.55); opacity: .65; } to { transform: translateY(45px) scale(1.25); opacity: 0; } }
+@keyframes boatFloat { 50% { transform: translateY(-3px) rotate(.2deg); } }
+@keyframes sunlightDrift { to { background-position: 7% 2%, -6% 4%, 0 0; } }
+@keyframes leafDrift {
+  0%, 100% { transform: translate3d(-5px, -3px, 0) rotate(-20deg); opacity: .18; }
+  45% { opacity: .62; }
+  55% { transform: translate3d(22px, 13px, 0) rotate(160deg); opacity: .58; }
+}
+@keyframes waterGlide {
+  0%, 100% { transform: translateX(-10px) scaleX(.7); opacity: .12; }
+  50% { transform: translateX(32px) scaleX(1.15); opacity: .7; }
+}
 
 /* Design field pages */
 .area-page { min-height: 100vh; color: #092d54; background: #f8f0d7; }
@@ -718,7 +780,9 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   .shore-place > b { display:none; }
   .shore-place strong { font-size:18px; }
   .shore-place em { font-size:12px; }
-  .rowing-boat { left:76%; width:44vw; }
+  .rowing-boat { left:76%; width:40vw; }
+  .land-breeze { width:75%; }
+  .lake-motion { left:57%; }
   .journey-progress { right:12px; }
   .current-place { display:block; }
   .rowing-afterword { padding:11vh 22px; grid-template-columns:1fr; }
@@ -736,6 +800,6 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .rowing-landscape, .shore-places { will-change:auto; }
-  .rowing-boat img, .rowing-boat > i { animation:none !important; }
+  .rowing-landscape, .shore-places, .land-breeze { will-change:auto; }
+  .rowing-landscape::after, .land-breeze i, .lake-motion i, .rowing-boat img, .rowing-boat > i { animation:none !important; }
 }
