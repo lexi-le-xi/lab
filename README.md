@@ -2,10 +2,18 @@
 
 An original, responsive digital-studio portfolio. The homepage is an interactive designer’s desk; each object opens a project note.
 
+## Live site
+
+The site publishes automatically to:
+
+`https://lexi-le-xi.github.io/lab/`
+
+Every push to `main` triggers the GitHub Pages deployment workflow.
+
 ## Edit your content
 
 - Project titles, questions, descriptions, and notes live in `app/projects.ts`.
-- Replace `hello@example.com` in `app/studio-desk.tsx` with your email.
+- Replace `hello@example.com` in `app/studio-desk.tsx` with your real email.
 - Add project imagery or video inside the relevant project page when ready.
 
 ## Run locally
@@ -17,23 +25,18 @@ npm run dev
 
 Open `http://localhost:3000`.
 
-## Check the production build
+## Build the static site
 
 ```bash
 npm run build
 ```
 
-## Free deployment
+The complete static site is generated in `out/`.
 
-### GitHub Pages
+## GitHub Pages setup
 
-This project uses a Cloudflare-compatible Next.js runtime, so GitHub Pages needs a static-export adaptation. For the quickest path without modifying the project, use Cloudflare Pages below.
+1. Open the repository’s **Settings → Pages**.
+2. Under **Build and deployment**, set **Source** to **GitHub Actions**.
+3. Push to `main`, or run the workflow manually from the **Actions** tab.
 
-### Cloudflare Pages / Workers
-
-1. Push this folder to a GitHub repository.
-2. In Cloudflare, create a Pages/Workers project from the repository.
-3. Use `npm run build` as the build command.
-4. Deploy the generated Worker output.
-
-The included `.openai/hosting.json` also allows one-click publishing through OpenAI Sites.
+The workflow builds and deploys the site automatically. No Cloudflare account or server is required.
