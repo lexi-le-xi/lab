@@ -1067,9 +1067,8 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   .rowing-nav { height: 60px; padding: 0 16px; grid-template-columns:1fr auto; }
   .rowing-nav p { display:none; }
   .rowing-journey { height: 520vh; min-height: 3200px; }
-  .rowing-landscape, .shore-places { width: 145%; height: 500%; }
-  .rowing-landscape { background-position:center; }
-  .shore-places { width: 75%; }
+  .rowing-landscape { width:100%; height:500%; background-size:auto 100%; background-position:60% center; animation:none; }
+  .shore-places { width:72%; height:500%; }
   .rowing-opening { left:20px; bottom:5vh; width:85vw; }
   .rowing-opening h1 { font-size:15vw; }
   .rowing-opening > span { max-width:200px; line-height:1.5; }
@@ -1078,11 +1077,11 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   .shore-card > b { display:none; }
   .shore-card strong { font-size:18px; }
   .shore-card em { font-size:12px; }
-  .rowing-boat { left:76%; width:40vw; }
+  .rowing-boat { left:78%; width:34vw; }
   .boat-about-label { bottom:-2%; opacity:1; padding:7px 9px; font-size:7px; }
-  .land-breeze { width:75%; }
-  .lake-motion { left:57%; }
-  .lake-gulls { left:57%; }
+  .land-breeze { width:58%; }
+  .lake-motion { left:55%; }
+  .lake-gulls { left:55%; }
   .lake-gulls a { width:clamp(62px,16vw,95px); }
   .lake-gulls a:nth-child(2) { left:45%; }
   .lake-gulls a > span { opacity:1; top:88%; padding:6px 8px; }
