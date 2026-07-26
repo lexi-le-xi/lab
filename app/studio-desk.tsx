@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import rowingBoat from "../public/rowing-boat-base-v5.png";
 import rowingWorld from "../public/rowing-world-v7.png";
+import paintedGull from "../public/seagull-painted-v1.png";
 
 const places = [
   {
@@ -125,7 +126,9 @@ export function StudioDesk() {
           <div className="lake-motion" aria-hidden="true"><i /><i /><i /><i /></div>
 
           <div className="lake-gulls" aria-hidden="true">
-            <span /><span /><span /><span />
+            <img src={paintedGull.src} alt="" />
+            <img src={paintedGull.src} alt="" />
+            <img src={paintedGull.src} alt="" />
           </div>
 
           <div className="rowing-opening">
