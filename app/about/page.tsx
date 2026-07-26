@@ -63,8 +63,10 @@ export default function AboutPage() {
 
       <footer className="about-footer" id="about-contact">
         <p>Continue exploring</p>
-        <h2>Return to the<br />living design practice.</h2>
-        <Link href="/">Return to the shoreline <span>→</span></Link>
+        <Link className="about-footer-work" href="/">
+          <h2>Explore my work<br />along the shoreline.</h2>
+          <span aria-hidden="true">→</span>
+        </Link>
         <a href="mailto:liuxi@stanford.edu">liuxi@stanford.edu ↗</a>
       </footer>
     </main>
