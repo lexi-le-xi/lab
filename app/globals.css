@@ -1055,7 +1055,17 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 .about-nav > a:first-child { font-size:13px; font-weight:800; letter-spacing:.02em; }
 .about-nav > a:first-child span { margin:0 5px; color:#3476dd; }
 .about-nav p { margin:0; }
-.about-nav > a:last-child { justify-self:end; padding-bottom:3px; border-bottom:1px solid; }
+.about-menu { position:relative; z-index:50; justify-self:end; }
+.about-menu summary { display:flex; align-items:center; gap:12px; padding-bottom:3px; border-bottom:1px solid; cursor:pointer; list-style:none; }
+.about-menu summary::-webkit-details-marker { display:none; }
+.about-menu summary span { font-size:15px; line-height:.6; transition:transform .2s ease; }
+.about-menu[open] summary span { transform:rotate(45deg); }
+.about-menu > div { position:absolute; top:calc(100% + 19px); right:-1px; width:min(360px,88vw); padding:10px 20px; background:rgba(255,255,255,.96); border:1px solid rgba(0,0,0,.18); box-shadow:0 20px 55px rgba(0,0,0,.12); backdrop-filter:blur(14px); }
+.about-menu > div a { min-height:51px; display:grid; grid-template-columns:32px 1fr; align-items:center; border-bottom:1px solid rgba(0,0,0,.14); }
+.about-menu > div a:last-child { border-bottom:0; }
+.about-menu > div a span { color:#3476dd; font-size:8px; }
+.about-menu > div a strong { font-size:14px; letter-spacing:-.01em; text-transform:none; transition:transform .2s ease; }
+.about-menu > div a:hover strong,.about-menu > div a:focus-visible strong { transform:translateX(7px); }
 .about-cover {
   position:relative;
   min-height:390px;
@@ -1174,7 +1184,9 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 .about-footer .about-footer-work { display:flex; align-items:center; gap:clamp(28px,4vw,68px); max-width:100%; margin:0; padding:0; border:0; text-transform:none; }
 .about-footer-corner-arrow { position:relative; flex:none; width:82px; height:82px; transition:transform .25s ease; }
 .about-footer-work:hover .about-footer-corner-arrow, .about-footer-work:focus-visible .about-footer-corner-arrow { transform:translate(8px,8px); }
-.about-footer a:last-child { margin-top:0; color:#3476dd; }
+.about-footer .about-say-hello { width:min(100%,620px); margin-top:1vh; padding:22px 0 10px; display:flex; justify-content:space-between; align-items:baseline; color:#111; }
+.about-say-hello strong { font-size:clamp(25px,2.5vw,40px); letter-spacing:-.04em; text-transform:none; }
+.about-say-hello span { color:#3476dd; font-size:10px; letter-spacing:.13em; }
 @keyframes aboutWater { to { transform:translateY(18px) scale(1.04); } }
 
 /* Inspirations, principles, and philosophy */
@@ -1266,11 +1278,10 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   .area-page blockquote { padding:85px 25px; }
   .about-nav { height:60px; padding:0 18px; grid-template-columns:1fr auto; }
   .about-nav p { display:none; }
+  .about-menu > div { top:calc(100% + 16px); right:-1px; width:min(330px,88vw); }
   .about-cover { min-height:310px; padding:52px 18px 20px; }
   .about-cover h1 { font-size:21vw; line-height:.82; white-space:nowrap; }
   .about-cover a { left:48%; top:170px; width:58px; height:58px; }
-  .about-cover a::before { top:25px; width:51px; height:8px; }
-  .about-cover a::after { width:26px; height:26px; border-width:0 8px 8px 0; }
   .about-hero { min-height:auto; padding:10px 20px 85px; grid-template-columns:1fr; gap:65px; background:#fff; }
   .about-portrait { width:100%; min-height:0; margin:0; border-radius:8px; background:#eee; }
   .about-portrait img { width:100%; height:100%; object-position:center; }
@@ -1304,6 +1315,7 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   .about-footer h2 { margin:40px 0; }
   .about-footer .about-footer-work { align-items:flex-end; gap:18px; }
   .about-footer-corner-arrow { width:58px; height:58px; margin-bottom:36px; }
+  .about-footer .about-say-hello { margin-top:22px; padding-top:18px; align-items:flex-start; flex-direction:column; gap:12px; }
   .thought-nav { height:60px; padding:0 18px; grid-template-columns:1fr auto; }
   .thought-nav p { display:none; }
   .thought-hero { min-height:calc(100svh - 60px); padding:75px 22px 55px; grid-template-columns:1fr; }

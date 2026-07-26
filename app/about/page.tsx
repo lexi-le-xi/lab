@@ -22,7 +22,18 @@ export default function AboutPage() {
       <nav className="about-nav">
         <Link href="/">XI LIU <span>/</span> LAB</Link>
         <p>Meet the designer</p>
-        <a href="mailto:liuxi@stanford.edu">Say hello ↗</a>
+        <details className="about-menu">
+          <summary>Menu <span aria-hidden="true">+</span></summary>
+          <div>
+            <Link href="/"><span>00</span><strong>Shoreline home</strong></Link>
+            <Link href="/about"><span>01</span><strong>About me</strong></Link>
+            <Link href="/areas/care-access"><span>02</span><strong>Designing for Care</strong></Link>
+            <Link href="/areas/making-systems"><span>03</span><strong>Making &amp; Systems</strong></Link>
+            <Link href="/areas/materials-time"><span>04</span><strong>Materials &amp; Time</strong></Link>
+            <Link href="/areas/mind-body-behavior"><span>05</span><strong>Mind, Body &amp; Behavior</strong></Link>
+            <Link href="/areas/play-ai-interaction"><span>06</span><strong>Play, AI &amp; Interaction</strong></Link>
+          </div>
+        </details>
       </nav>
 
       <header className="about-cover">
@@ -83,7 +94,10 @@ export default function AboutPage() {
             <CornerArrow />
           </span>
         </Link>
-        <a href="mailto:liuxi@stanford.edu">liuxi@stanford.edu ↗</a>
+        <a className="about-say-hello" href="mailto:liuxi@stanford.edu">
+          <strong>Say hello</strong>
+          <span>liuxi@stanford.edu ↗</span>
+        </a>
       </footer>
     </main>
   );
