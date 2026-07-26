@@ -959,6 +959,16 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 .about-story > div, .about-stanford > div { display:grid; grid-template-columns:1.55fr 1fr; column-gap:6vw; }
 .about-story h2, .about-stanford h2 { grid-row:1 / span 3; margin:0; font:clamp(38px,4.8vw,72px)/1.1 Georgia,serif; font-weight:400; }
 .about-story div > p, .about-stanford div > p { margin:0 0 30px; max-width:520px; font:17px/1.65 Georgia,serif; color:rgba(16,47,61,.78); }
+.about-principles { padding:14vh 8vw; color:#fff8d8; background:#102f3d; }
+.about-principles-heading { display:grid; grid-template-columns:1fr 4fr; gap:4vw; align-items:start; }
+.about-principles-heading > p { margin:0; color:#f3c850; font-size:10px; letter-spacing:.17em; text-transform:uppercase; }
+.about-principles-heading h2 { max-width:1000px; margin:0; font:clamp(46px,6vw,92px)/.98 Georgia,serif; font-weight:400; }
+.about-principles ol { list-style:none; margin:12vh 0 0 20%; padding:0; }
+.about-principles li { min-height:190px; display:grid; grid-template-columns:70px 1fr 1.45fr; gap:3vw; align-items:center; border-top:1px solid rgba(255,248,216,.28); }
+.about-principles li:last-child { border-bottom:1px solid rgba(255,248,216,.28); }
+.about-principles li span { color:#f3c850; font-size:9px; letter-spacing:.12em; }
+.about-principles li h3 { margin:0; font-size:clamp(28px,3vw,46px); font-weight:500; letter-spacing:-.04em; }
+.about-principles li p { max-width:520px; margin:0; color:rgba(255,248,216,.72); font:16px/1.6 Georgia,serif; }
 .about-now { padding:13vh 8vw; display:grid; grid-template-columns:1fr 2fr; gap:8vw; background:#f2c94c; }
 .about-now-heading h2 { margin:5vh 0 0; font:clamp(44px,5.5vw,82px)/1 Georgia,serif; font-weight:400; }
 .about-interest-list article { min-height:155px; display:grid; grid-template-columns:50px 1fr 1.5fr; gap:2vw; align-items:center; border-top:1px solid rgba(16,47,61,.3); }
@@ -1036,10 +1046,15 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   .about-intro { padding:70px 22px; }
   .about-intro h1 { margin:40px 0 55px; font-size:17vw; }
   .about-lede { margin:0; grid-template-columns:1fr; gap:20px; }
-  .about-belief, .about-story, .about-stanford, .about-now, .about-footer { padding:85px 22px; grid-template-columns:1fr; }
+  .about-belief, .about-story, .about-stanford, .about-now, .about-footer, .about-principles { padding:85px 22px; grid-template-columns:1fr; }
   .about-belief blockquote { margin-top:40px; font-size:10vw; }
   .about-story > div, .about-stanford > div { grid-template-columns:1fr; }
   .about-story h2, .about-stanford h2 { grid-row:auto; margin:40px 0 55px; }
+  .about-principles-heading { grid-template-columns:1fr; }
+  .about-principles-heading h2 { margin-top:40px; font-size:12vw; }
+  .about-principles ol { margin:65px 0 0; }
+  .about-principles li { grid-template-columns:32px 1fr; padding:32px 0; }
+  .about-principles li p { grid-column:2; }
   .about-now-heading h2 { margin:35px 0 65px; }
   .about-interest-list article { grid-template-columns:30px 1fr; padding:28px 0; }
   .about-interest-list article p { grid-column:2; }

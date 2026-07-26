@@ -15,6 +15,12 @@ const interests = [
   ["Play & AI", "Creating interactions that return agency and attention instead of quietly taking them away."],
 ] as const;
 
+const principles = [
+  ["Get close", "Connection comes before insight. I begin by observing carefully enough to feel the reality behind a need."],
+  ["Make with", "I look for ways people can participate in forming, using, and caring for the things around them."],
+  ["Look beyond", "Every object carries relationships—to labor, materials, energy, time, and the lives it eventually touches."],
+] as const;
+
 export default function AboutPage() {
   return (
     <main className="about-page">
@@ -73,6 +79,22 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <section className="about-principles">
+        <div className="about-principles-heading">
+          <p>How I approach design</p>
+          <h2>Connection is<br />a way of working.</h2>
+        </div>
+        <ol>
+          {principles.map(([title, description], index) => (
+            <li key={title}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <h3>{title}</h3>
+              <p>{description}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
       <section className="about-now">
         <div className="about-now-heading">
           <p>What I&apos;m exploring now</p>
@@ -100,6 +122,10 @@ export default function AboutPage() {
             and play have widened both the scale and intimacy of my questions.
             I am still a maker, but I now see an object as one moment inside a
             much larger relationship.
+          </p>
+          <p>
+            The next chapter of my practice is not defined by one medium. It is
+            defined by the kind of connection each question asks me to build.
           </p>
         </div>
       </section>
