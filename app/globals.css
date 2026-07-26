@@ -1146,7 +1146,7 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 .about-lede p strong { color:#0e5f51; font-family:Arial,sans-serif; font-size:1.08em; font-weight:700; }
 .about-belief { position:relative; padding:13vh 8vw 18vh; display:grid; grid-template-columns:1fr 4fr; gap:4vw; border-bottom:1px solid rgba(0,0,0,.18); background:#fff; color:#111; }
 .about-belief > p { color:#3476dd; }
-.about-belief blockquote { max-width:1200px; margin:0; font:700 clamp(36px,4.8vw,74px)/1.08 Georgia,serif; letter-spacing:-.025em; }
+.about-belief blockquote { max-width:1200px; margin:0; font:400 clamp(36px,4.8vw,74px)/1.08 Georgia,serif; letter-spacing:-.025em; }
 .about-story, .about-stanford { padding:11vh 8vw; display:grid; grid-template-columns:1fr 4fr; gap:4vw; border-bottom:1px solid rgba(16,47,61,.2); }
 .about-story > div, .about-stanford > div { display:grid; grid-template-columns:1.55fr 1fr; column-gap:6vw; }
 .about-story h2, .about-stanford h2 { grid-row:1 / span 3; margin:0; font:clamp(38px,4.8vw,72px)/1.1 Georgia,serif; font-weight:400; }
