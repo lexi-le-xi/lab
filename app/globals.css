@@ -1080,27 +1080,8 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   height:68px;
   transition:transform .25s ease;
 }
-.about-cover a::before {
-  content:"";
-  position:absolute;
-  left:4px;
-  top:29px;
-  width:60px;
-  height:10px;
-  background:#000;
-  transform:rotate(45deg);
-  transform-origin:center;
-}
-.about-cover a::after {
-  content:"";
-  position:absolute;
-  right:1px;
-  bottom:1px;
-  width:30px;
-  height:30px;
-  border-right:10px solid #000;
-  border-bottom:10px solid #000;
-}
+.about-corner-arrow-svg { display:block; width:100%; height:100%; overflow:visible; }
+.about-corner-arrow-svg path { fill:none; stroke:#000; stroke-width:11; stroke-linecap:butt; stroke-linejoin:miter; }
 .about-cover a:hover,.about-cover a:focus-visible { transform:translate(8px,8px); outline:none; }
 #meet-xi,#about-belief,#about-thinking,#about-contact { scroll-margin-top:72px; }
 .about-flow-arrow {
@@ -1111,26 +1092,6 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   width:58px;
   height:58px;
   transition:transform .22s ease;
-}
-.about-flow-arrow::before {
-  content:"";
-  position:absolute;
-  left:4px;
-  top:25px;
-  width:51px;
-  height:8px;
-  background:#000;
-  transform:rotate(45deg);
-}
-.about-flow-arrow::after {
-  content:"";
-  position:absolute;
-  right:1px;
-  bottom:1px;
-  width:25px;
-  height:25px;
-  border-right:8px solid #000;
-  border-bottom:8px solid #000;
 }
 .about-flow-arrow:hover,.about-flow-arrow:focus-visible { transform:translate(7px,7px); outline:none; }
 .about-flow-arrow.is-left { right:auto; left:8vw; transform:scaleX(-1); }
@@ -1212,8 +1173,6 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 .about-footer a { grid-column:2; width:max-content; margin-top:25px; padding-bottom:6px; border-bottom:1px solid; font-size:10px; letter-spacing:.13em; text-transform:uppercase; }
 .about-footer .about-footer-work { display:flex; align-items:center; gap:clamp(28px,4vw,68px); max-width:100%; margin:0; padding:0; border:0; text-transform:none; }
 .about-footer-corner-arrow { position:relative; flex:none; width:82px; height:82px; transition:transform .25s ease; }
-.about-footer-corner-arrow svg { display:block; width:100%; height:100%; overflow:visible; }
-.about-footer-corner-arrow path { fill:none; stroke:#000; stroke-width:11; stroke-linecap:butt; stroke-linejoin:miter; }
 .about-footer-work:hover .about-footer-corner-arrow, .about-footer-work:focus-visible .about-footer-corner-arrow { transform:translate(8px,8px); }
 .about-footer a:last-child { margin-top:0; color:#3476dd; }
 @keyframes aboutWater { to { transform:translateY(18px) scale(1.04); } }
@@ -1325,8 +1284,6 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   .about-belief, .about-story, .about-stanford, .about-now, .about-footer, .about-principles, .about-beyond { padding:85px 22px; grid-template-columns:1fr; }
   .about-belief,.about-beyond { padding-bottom:140px; }
   .about-flow-arrow { right:22px; bottom:38px; width:52px; height:52px; }
-  .about-flow-arrow::before { top:22px; width:45px; height:7px; }
-  .about-flow-arrow::after { width:22px; height:22px; border-width:0 7px 7px 0; }
   .about-flow-arrow.is-left { left:22px; }
   .about-belief blockquote { margin-top:40px; font-size:10vw; }
   .about-story > div, .about-stanford > div { grid-template-columns:1fr; }

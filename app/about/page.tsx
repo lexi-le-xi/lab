@@ -8,6 +8,14 @@ export const metadata: Metadata = {
     "Meet Xi Liu, a designer exploring connection through care, making, materials, behavior, play, and technology.",
 };
 
+function CornerArrow() {
+  return (
+    <svg className="about-corner-arrow-svg" viewBox="0 0 100 100" focusable="false" aria-hidden="true">
+      <path d="M20 20L75 75M75 18V75H18" />
+    </svg>
+  );
+}
+
 export default function AboutPage() {
   return (
     <main className="about-page">
@@ -19,7 +27,7 @@ export default function AboutPage() {
 
       <header className="about-cover">
         <h1>About me</h1>
-        <a href="#meet-xi" aria-label="Continue to meet Xi" />
+        <a href="#meet-xi" aria-label="Continue to meet Xi"><CornerArrow /></a>
       </header>
 
       <section className="about-hero" id="meet-xi">
@@ -43,7 +51,7 @@ export default function AboutPage() {
             <span>Request a copy ↗</span>
           </a>
         </div>
-        <a className="about-flow-arrow" href="#about-belief" aria-label="Continue to why I design" />
+        <a className="about-flow-arrow" href="#about-belief" aria-label="Continue to why I design"><CornerArrow /></a>
       </section>
 
       <section className="about-belief" id="about-belief">
@@ -52,7 +60,7 @@ export default function AboutPage() {
           “I want to build connection—not only between you and other people,
           but also between you and yourself, you and life, and you and the universe.”
         </blockquote>
-        <a className="about-flow-arrow is-left" href="#about-thinking" aria-label="Continue to explore my thinking" />
+        <a className="about-flow-arrow is-left" href="#about-thinking" aria-label="Continue to explore my thinking"><CornerArrow /></a>
       </section>
 
       <section className="about-beyond" id="about-thinking">
@@ -64,7 +72,7 @@ export default function AboutPage() {
             <Link href="/philosophy"><span>03</span><strong>Philosophy</strong><em>Make less, create more</em><b>→</b></Link>
           </nav>
         </div>
-        <a className="about-flow-arrow" href="#about-contact" aria-label="Continue to contact and return links" />
+        <a className="about-flow-arrow" href="#about-contact" aria-label="Continue to contact and return links"><CornerArrow /></a>
       </section>
 
       <footer className="about-footer" id="about-contact">
@@ -72,9 +80,7 @@ export default function AboutPage() {
         <Link className="about-footer-work" href="/">
           <h2>Explore my work<br />along the shoreline.</h2>
           <span className="about-footer-corner-arrow" aria-hidden="true">
-            <svg viewBox="0 0 100 100" focusable="false">
-              <path d="M20 20L75 75M75 18V75H18" />
-            </svg>
+            <CornerArrow />
           </span>
         </Link>
         <a href="mailto:liuxi@stanford.edu">liuxi@stanford.edu ↗</a>
