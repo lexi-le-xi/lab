@@ -634,6 +634,40 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 .lake-motion i:nth-child(3) { top: 68%; left: 22%; width: 12vw; animation-delay: -2.7s; }
 .lake-motion i:nth-child(4) { top: 84%; left: 63%; width: 10vw; animation-delay: -.4s; }
 
+.lake-gulls {
+  position:absolute;
+  z-index:7;
+  inset:0 0 0 50%;
+  overflow:hidden;
+  pointer-events:none;
+}
+.lake-gulls span {
+  position:absolute;
+  width:22px;
+  height:9px;
+  filter:drop-shadow(0 5px 3px rgba(18,65,104,.18));
+  animation:gullFlight 8.5s ease-in-out infinite alternate;
+}
+.lake-gulls span::before, .lake-gulls span::after {
+  content:"";
+  position:absolute;
+  top:2px;
+  width:12px;
+  height:7px;
+  border-top:3px solid rgba(255,252,235,.94);
+  border-radius:50% 50% 0 0;
+  transform-origin:100% 50%;
+  animation:gullWing 1.4s ease-in-out infinite alternate;
+}
+.lake-gulls span::before { left:0; transform:rotate(14deg); }
+.lake-gulls span::after { right:0; transform:scaleX(-1) rotate(14deg); }
+.lake-gulls span:nth-child(1) { top:17%; left:18%; }
+.lake-gulls span:nth-child(2) { top:30%; left:70%; scale:.72; animation-delay:-3.4s; }
+.lake-gulls span:nth-child(3) { top:68%; left:15%; scale:.58; animation-delay:-6.1s; }
+.lake-gulls span:nth-child(4) { top:82%; left:76%; scale:.82; animation-delay:-1.8s; }
+.lake-gulls span:nth-child(2)::before, .lake-gulls span:nth-child(2)::after { animation-delay:-.6s; }
+.lake-gulls span:nth-child(4)::before, .lake-gulls span:nth-child(4)::after { animation-delay:-1s; }
+
 .rowing-opening {
   position: absolute;
   z-index: 8;
@@ -881,6 +915,11 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 @keyframes canopySway { to { transform:rotate(3.5deg) translateX(4px) scaleX(1.025); } }
 @keyframes personMove { to { transform:translate3d(11px,-3px,0) rotate(6deg); } }
 @keyframes infoPulse { 50% { opacity:.35; transform:scale(.68); box-shadow:0 0 0 9px rgba(255,255,255,.08),0 0 25px 10px rgba(255,255,255,.28); } }
+@keyframes gullFlight { to { translate:38px -15px; rotate:3deg; } }
+@keyframes gullWing {
+  from { border-radius:80% 20% 0 0; translate:0 2px; }
+  to { border-radius:25% 80% 0 0; translate:0 -2px; }
+}
 @keyframes oarLeft {
   0%,100% { transform:rotate(-14deg) scaleX(.97); }
   48% { transform:rotate(9deg) scaleX(1.03); }
@@ -991,6 +1030,7 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   .boat-about-label { bottom:-2%; opacity:1; padding:7px 9px; font-size:7px; }
   .land-breeze { width:75%; }
   .lake-motion { left:57%; }
+  .lake-gulls { left:57%; }
   .journey-progress { right:12px; }
   .current-place { display:block; }
   .rowing-afterword { padding:11vh 22px; grid-template-columns:1fr; }
@@ -1026,5 +1066,5 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 
 @media (prefers-reduced-motion: reduce) {
   .rowing-landscape, .shore-places, .land-breeze { will-change:auto; }
-  .rowing-landscape, .rowing-landscape::after, .land-breeze i, .land-breeze b, .land-breeze span, .lake-motion i, .shore-dot, .rowing-boat::before, .rowing-boat img, .rowing-boat b, .rowing-boat > i, .about-portrait::before, .about-portrait img { animation:none !important; }
+  .rowing-landscape, .rowing-landscape::after, .land-breeze i, .land-breeze b, .land-breeze span, .lake-motion i, .lake-gulls span, .lake-gulls span::before, .lake-gulls span::after, .shore-dot, .rowing-boat::before, .rowing-boat img, .rowing-boat b, .rowing-boat > i, .about-portrait::before, .about-portrait img { animation:none !important; }
 }

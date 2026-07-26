@@ -124,6 +124,10 @@ export function StudioDesk() {
 
           <div className="lake-motion" aria-hidden="true"><i /><i /><i /><i /></div>
 
+          <div className="lake-gulls" aria-hidden="true">
+            <span /><span /><span /><span />
+          </div>
+
           <div className="rowing-opening">
             <p>Welcome to my living design practice</p>
             <h1>I design to<br /><em>build connection.</em></h1>
