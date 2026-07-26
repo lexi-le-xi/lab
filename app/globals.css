@@ -834,10 +834,10 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 .shore-guide b::before {
   content:"";
   position:absolute;
-  top:1px;
+  top:0;
   left:10px;
   width:4px;
-  height:19px;
+  height:17px;
   border-radius:999px;
   background:#fff;
   box-shadow:0 0 7px rgba(68,184,255,.95);
@@ -845,14 +845,13 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 .shore-guide b::after {
   content:"";
   position:absolute;
-  left:5px;
+  left:9.5px;
   bottom:2px;
-  width:11px;
-  height:11px;
-  border-right:4px solid #fff;
-  border-bottom:4px solid #fff;
-  transform:rotate(45deg);
-  filter:drop-shadow(2px 2px 3px rgba(23,111,232,.8));
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:#fff;
+  box-shadow:0 0 7px rgba(68,184,255,.95);
 }
 .shore-place.is-current .shore-guide { opacity:1; visibility:visible; transform:translate(-50%,0); animation:shoreGuideFloat 1.7s ease-in-out infinite; }
 .shore-place:hover .shore-guide,.shore-place:focus-visible .shore-guide { opacity:0; visibility:hidden; }
