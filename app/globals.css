@@ -812,12 +812,9 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 .shore-guide b {
   position:relative;
   display:block;
-  width:22px;
-  height:25px;
-  clip-path:polygon(50% 0,88% 29%,76% 78%,50% 100%,24% 78%,12% 29%);
-  background:linear-gradient(135deg,#dff8ff 0 17%,#55c8ff 18% 48%,#176fe8 49% 73%,#82ddff 74% 100%);
-  box-shadow:0 0 0 5px rgba(75,190,255,.18),0 8px 18px rgba(4,55,132,.34);
-  filter:drop-shadow(0 0 9px rgba(70,196,255,.92));
+  width:24px;
+  height:28px;
+  filter:drop-shadow(0 3px 5px rgba(4,55,132,.42));
 }
 .shore-guide::before {
   content:"";
@@ -834,16 +831,28 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   transform:translate(-50%,-50%);
   animation:gemAura 1.65s ease-in-out infinite;
 }
+.shore-guide b::before {
+  content:"";
+  position:absolute;
+  top:1px;
+  left:10px;
+  width:4px;
+  height:19px;
+  border-radius:999px;
+  background:#fff;
+  box-shadow:0 0 7px rgba(68,184,255,.95);
+}
 .shore-guide b::after {
   content:"";
   position:absolute;
-  top:5px;
-  left:6px;
-  width:6px;
-  height:4px;
-  border-radius:50%;
-  background:rgba(255,255,255,.88);
-  rotate:-26deg;
+  left:5px;
+  bottom:2px;
+  width:11px;
+  height:11px;
+  border-right:4px solid #fff;
+  border-bottom:4px solid #fff;
+  transform:rotate(45deg);
+  filter:drop-shadow(2px 2px 3px rgba(23,111,232,.8));
 }
 .shore-place.is-current .shore-guide { opacity:1; visibility:visible; transform:translate(-50%,0); animation:shoreGuideFloat 1.7s ease-in-out infinite; }
 .shore-place:hover .shore-guide,.shore-place:focus-visible .shore-guide { opacity:0; visibility:hidden; }
