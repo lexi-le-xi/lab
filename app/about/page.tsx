@@ -65,7 +65,7 @@ export default function AboutPage() {
         <p>Continue exploring</p>
         <Link className="about-footer-work" href="/">
           <h2>Explore my work<br />along the shoreline.</h2>
-          <span aria-hidden="true">→</span>
+          <span className="about-footer-corner-arrow" aria-hidden="true" />
         </Link>
         <a href="mailto:liuxi@stanford.edu">liuxi@stanford.edu ↗</a>
       </footer>
