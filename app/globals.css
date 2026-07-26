@@ -729,7 +729,7 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   animation:gullFlight 8.5s ease-in-out infinite alternate;
 }
 .lake-gulls a:nth-child(1) { top:15%; left:12%; }
-.lake-gulls a:nth-child(2) { top:43%; left:68%; scale:.78; animation-delay:-3.4s; }
+.lake-gulls a:nth-child(2) { top:25%; left:50%; scale:.78; animation-delay:-3.4s; }
 .lake-gulls a:nth-child(3) { top:76%; left:20%; scale:.68; animation-delay:-6.1s; }
 .lake-gulls img { display:block; width:100%; height:auto; transition:transform .25s ease,filter .25s ease; }
 .gull-dot {
@@ -833,7 +833,7 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   z-index: 20;
   top: 50%;
   left: 74%;
-  width: clamp(180px, 22vw, 340px);
+  width: clamp(155px, 18vw, 285px);
   transform: translate(-50%, -50%) rotate(calc((var(--journey-progress) - .5) * 2deg));
   filter: drop-shadow(0 18px 14px rgba(82,132,135,.24));
   cursor: pointer;
@@ -856,7 +856,7 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 .boat-oar {
   position:absolute;
   z-index:3;
-  top:43.5%;
+  top:40.2%;
   width:58%;
   height:clamp(5px, .55vw, 8px);
   border-radius:999px;
@@ -1159,13 +1159,13 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   .shore-card > b { display:none; }
   .shore-card strong { font-size:18px; }
   .shore-card em { font-size:12px; }
-  .rowing-boat { left:78%; width:34vw; }
+  .rowing-boat { left:78%; width:28vw; }
   .boat-about-label { display:none; }
   .land-breeze { width:58%; height:200%; transform:translate3d(0,calc(-50% + (var(--journey-progress) * 50%)),0); }
   .lake-motion { left:55%; }
   .lake-gulls { left:55%; }
   .lake-gulls a { width:clamp(62px,16vw,95px); }
-  .lake-gulls a:nth-child(2) { top:34%; left:45%; }
+  .lake-gulls a:nth-child(2) { top:20%; left:42%; }
   .lake-gulls a > span { display:none; }
   .journey-progress { right:12px; }
   .current-place { display:block; opacity:clamp(0,calc(var(--journey-progress) * 12),1); }
