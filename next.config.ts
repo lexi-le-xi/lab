@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
   basePath: isGitHubPages ? "/lab" : "",
-  assetPrefix: isGitHubPages ? "/lab/" : "",
+  assetPrefix: isGitHubPages ? "/lab" : "",
 };
 
 export default nextConfig;

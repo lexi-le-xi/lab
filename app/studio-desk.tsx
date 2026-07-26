@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import rowingBoat from "../public/rowing-boat-base-v5.png";
+import rowingWorld from "../public/rowing-world-v4.png";
 
 const places = [
   {
@@ -97,7 +99,7 @@ export function StudioDesk() {
         <div className="rowing-viewport">
           <div
             className="rowing-landscape"
-            style={{ backgroundImage: "url('./rowing-world-v4.png')" }}
+            style={{ backgroundImage: `url('${rowingWorld.src}')` }}
             aria-hidden="true"
           />
 
@@ -156,7 +158,7 @@ export function StudioDesk() {
             className={`rowing-boat ${rowing ? "is-rowing" : ""}`}
             aria-label="Meet Xi Liu"
           >
-            <img src="./rowing-boat-base-v5.png" alt="" />
+            <img src={rowingBoat.src} alt="" />
             <b className="boat-oar boat-oar-left" />
             <b className="boat-oar boat-oar-right" />
             <i /><i />

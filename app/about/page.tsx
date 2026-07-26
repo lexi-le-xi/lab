@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import rowingBoat from "../../public/rowing-boat-base-v5.png";
 
 export const metadata: Metadata = {
   title: "About Xi",
@@ -25,7 +26,7 @@ export default function AboutPage() {
 
       <header className="about-hero">
         <div className="about-portrait" aria-hidden="true">
-          <img src="../rowing-boat-base-v5.png" alt="" />
+          <img src={rowingBoat.src} alt="" />
           <i />
         </div>
         <div className="about-intro">
