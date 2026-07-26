@@ -15,6 +15,7 @@ const places = [
     insight: "Care reveals what ordinary design overlooks.",
     top: "87%",
     left: "75%",
+    mobileLeft: "28%",
   },
   {
     slug: "making-systems",
@@ -24,6 +25,7 @@ const places = [
     insight: "Fewer processes can create more participation.",
     top: "66%",
     left: "71%",
+    mobileLeft: "20%",
   },
   {
     slug: "materials-time",
@@ -33,6 +35,7 @@ const places = [
     insight: "What takes minutes to make may remain for centuries.",
     top: "49%",
     left: "75%",
+    mobileLeft: "20%",
   },
   {
     slug: "mind-body-behavior",
@@ -42,6 +45,7 @@ const places = [
     insight: "Awareness begins by returning to the body.",
     top: "34%",
     left: "69%",
+    mobileLeft: "38%",
   },
   {
     slug: "play-ai-interaction",
@@ -51,6 +55,7 @@ const places = [
     insight: "Technology can return attention instead of taking it.",
     top: "18%",
     left: "73%",
+    mobileLeft: "42%",
   },
 ] as const;
 
@@ -153,7 +158,11 @@ export function StudioDesk() {
                 key={place.slug}
                 href={`/areas/${place.slug}`}
                 className="shore-place"
-                style={{ top: place.top, left: place.left } as React.CSSProperties}
+                style={{
+                  top: place.top,
+                  "--place-left": place.left,
+                  "--mobile-place-left": place.mobileLeft,
+                } as React.CSSProperties}
                 aria-label={`${place.title}: ${place.insight}`}
               >
                 <span className="shore-dot" />

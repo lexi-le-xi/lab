@@ -699,6 +699,7 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 }
 .shore-place {
   position: absolute;
+  left:var(--place-left);
   width: 28px;
   height: 28px;
   display: grid;
@@ -1069,24 +1070,20 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   .rowing-journey { height:260vh; min-height:0; }
   .rowing-landscape { width:100%; height:200%; background-size:auto 100%; background-position:60% center; transform:translate3d(0,calc(-50% + (var(--journey-progress) * 50%)),0); animation:none; }
   .shore-places { width:72%; height:200%; transform:translate3d(0,calc(-50% + (var(--journey-progress) * 50%)),0); }
-  .rowing-opening { left:20px; bottom:5vh; width:85vw; }
-  .rowing-opening h1 { font-size:15vw; }
-  .rowing-opening > span { max-width:200px; line-height:1.5; }
-  .shore-place { width:32px; height:32px; }
+  .rowing-opening { display:none; }
+  .shore-place { left:var(--mobile-place-left); width:32px; height:32px; }
   .shore-card { right:25px; left:auto; width:64vw; min-height:112px; padding:14px; grid-template-columns:22px 1fr; }
   .shore-card > b { display:none; }
   .shore-card strong { font-size:18px; }
   .shore-card em { font-size:12px; }
   .rowing-boat { left:78%; width:34vw; }
-  .boat-about-label { bottom:-2%; opacity:1; padding:7px 9px; font-size:7px; }
+  .boat-about-label { display:none; }
   .land-breeze { width:58%; height:200%; transform:translate3d(0,calc(-50% + (var(--journey-progress) * 50%)),0); }
   .lake-motion { left:55%; }
   .lake-gulls { left:55%; }
   .lake-gulls a { width:clamp(62px,16vw,95px); }
   .lake-gulls a:nth-child(2) { left:45%; }
-  .lake-gulls a > span { opacity:1; top:88%; padding:6px 8px; }
-  .lake-gulls a:nth-child(2) > span { top:-42%; }
-  .lake-gulls a small { display:none; }
+  .lake-gulls a > span { display:none; }
   .journey-progress { right:12px; }
   .current-place { display:block; opacity:clamp(0,calc(var(--journey-progress) * 12),1); }
   .rowing-afterword { padding:11vh 22px; grid-template-columns:1fr; }
