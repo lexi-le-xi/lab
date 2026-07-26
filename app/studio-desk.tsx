@@ -165,7 +165,7 @@ export function StudioDesk() {
                 } as React.CSSProperties}
                 aria-label={`${place.title}: ${place.insight}`}
               >
-                <span className="shore-guide" aria-hidden="true"><b>Explore</b><i>⌄</i></span>
+                <span className="shore-guide" aria-hidden="true"><b /></span>
                 <span className="shore-dot" />
                 <div className="shore-card">
                   <span>{place.index}</span>

@@ -803,8 +803,6 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   bottom:calc(100% + 9px);
   display:grid;
   justify-items:center;
-  gap:1px;
-  color:#102f3d;
   opacity:0;
   visibility:hidden;
   transform:translate(-50%,8px);
@@ -812,18 +810,26 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   transition:opacity .25s ease,transform .25s ease,visibility .25s;
 }
 .shore-guide b {
-  padding:7px 10px 6px;
-  border:1px solid rgba(255,255,255,.9);
-  border-radius:999px;
-  background:rgba(255,250,224,.94);
-  box-shadow:0 8px 22px rgba(16,47,61,.2);
-  font-size:8px;
-  font-weight:700;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  white-space:nowrap;
+  position:relative;
+  display:block;
+  width:22px;
+  height:25px;
+  clip-path:polygon(50% 0,88% 29%,76% 78%,50% 100%,24% 78%,12% 29%);
+  background:linear-gradient(135deg,#fff4a3 0 17%,#ffd72f 18% 48%,#f2a900 49% 73%,#ffe760 74% 100%);
+  box-shadow:0 0 0 5px rgba(255,220,52,.16),0 8px 18px rgba(126,83,0,.3);
+  filter:drop-shadow(0 0 8px rgba(255,224,66,.85));
 }
-.shore-guide i { color:#fff; font-size:18px; font-style:normal; line-height:.7; text-shadow:0 2px 8px rgba(16,47,61,.45); }
+.shore-guide b::after {
+  content:"";
+  position:absolute;
+  top:5px;
+  left:6px;
+  width:6px;
+  height:4px;
+  border-radius:50%;
+  background:rgba(255,255,255,.88);
+  rotate:-26deg;
+}
 .shore-place.is-current .shore-guide { opacity:1; visibility:visible; transform:translate(-50%,0); animation:shoreGuideFloat 1.7s ease-in-out infinite; }
 .shore-place:hover .shore-guide,.shore-place:focus-visible .shore-guide { opacity:0; visibility:hidden; }
 .shore-card {
@@ -1188,8 +1194,6 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   .shore-places { width:72%; height:200%; transform:translate3d(0,calc(-50% + (var(--journey-progress) * 50%)),0); }
   .rowing-opening { display:none; }
   .shore-place { left:var(--mobile-place-left); width:32px; height:32px; }
-  .shore-guide b { font-size:0; padding:7px 10px; }
-  .shore-guide b::after { content:"Tap"; font-size:8px; }
   .shore-card { right:25px; left:auto; width:64vw; min-height:112px; padding:14px; grid-template-columns:22px 1fr; }
   .shore-card > b { display:none; }
   .shore-card strong { font-size:18px; }
