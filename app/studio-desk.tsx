@@ -147,12 +147,17 @@ export function StudioDesk() {
             ))}
           </nav>
 
-          <div className={`rowing-boat ${rowing ? "is-rowing" : ""}`} aria-hidden="true">
+          <Link
+            href="/about"
+            className={`rowing-boat ${rowing ? "is-rowing" : ""}`}
+            aria-label="Meet Xi Liu"
+          >
             <img src="./rowing-boat-base-v5.png" alt="" />
             <b className="boat-oar boat-oar-left" />
             <b className="boat-oar boat-oar-right" />
             <i /><i />
-          </div>
+            <span className="boat-about-label">Meet the designer <em>→</em></span>
+          </Link>
 
           <div className="journey-progress" aria-hidden="true">
             <span>{String(current + 1).padStart(2, "0")}</span>
