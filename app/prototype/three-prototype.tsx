@@ -29,6 +29,44 @@ const fragmentShader = /* glsl */ `
   uniform float uAspect;
   varying vec2 vUv;
 
+  float ellipseMask(vec2 uv, vec2 center, vec2 radius) {
+    vec2 distanceFromCenter = (uv - center) / radius;
+    return 1.0 - smoothstep(0.62, 1.0, dot(distanceFromCenter, distanceFromCenter));
+  }
+
+  float treeMask(vec2 uv) {
+    float mask = 0.0;
+    mask = max(mask, ellipseMask(uv, vec2(0.10, 0.94), vec2(0.12, 0.075)));
+    mask = max(mask, ellipseMask(uv, vec2(0.29, 0.95), vec2(0.11, 0.07)));
+    mask = max(mask, ellipseMask(uv, vec2(0.48, 0.91), vec2(0.075, 0.065)));
+    mask = max(mask, ellipseMask(uv, vec2(0.08, 0.79), vec2(0.11, 0.09)));
+    mask = max(mask, ellipseMask(uv, vec2(0.25, 0.80), vec2(0.075, 0.06)));
+    mask = max(mask, ellipseMask(uv, vec2(0.49, 0.75), vec2(0.06, 0.055)));
+    mask = max(mask, ellipseMask(uv, vec2(0.10, 0.61), vec2(0.12, 0.09)));
+    mask = max(mask, ellipseMask(uv, vec2(0.23, 0.57), vec2(0.075, 0.06)));
+    mask = max(mask, ellipseMask(uv, vec2(0.49, 0.53), vec2(0.065, 0.055)));
+    mask = max(mask, ellipseMask(uv, vec2(0.09, 0.39), vec2(0.12, 0.10)));
+    mask = max(mask, ellipseMask(uv, vec2(0.27, 0.43), vec2(0.075, 0.06)));
+    mask = max(mask, ellipseMask(uv, vec2(0.50, 0.35), vec2(0.06, 0.055)));
+    mask = max(mask, ellipseMask(uv, vec2(0.09, 0.14), vec2(0.13, 0.11)));
+    mask = max(mask, ellipseMask(uv, vec2(0.28, 0.11), vec2(0.10, 0.07)));
+    mask = max(mask, ellipseMask(uv, vec2(0.47, 0.08), vec2(0.075, 0.06)));
+    return mask;
+  }
+
+  float peopleMask(vec2 uv) {
+    float mask = 0.0;
+    mask = max(mask, ellipseMask(uv, vec2(0.39, 0.815), vec2(0.052, 0.034)));
+    mask = max(mask, ellipseMask(uv, vec2(0.45, 0.795), vec2(0.038, 0.034)));
+    mask = max(mask, ellipseMask(uv, vec2(0.36, 0.645), vec2(0.075, 0.035)));
+    mask = max(mask, ellipseMask(uv, vec2(0.30, 0.555), vec2(0.052, 0.035)));
+    mask = max(mask, ellipseMask(uv, vec2(0.40, 0.425), vec2(0.065, 0.035)));
+    mask = max(mask, ellipseMask(uv, vec2(0.36, 0.335), vec2(0.075, 0.045)));
+    mask = max(mask, ellipseMask(uv, vec2(0.48, 0.315), vec2(0.043, 0.035)));
+    mask = max(mask, ellipseMask(uv, vec2(0.41, 0.115), vec2(0.072, 0.04)));
+    return mask;
+  }
+
   void main() {
     const float imageAspect = 0.6283186;
     float visibleY = clamp(imageAspect / uAspect, 0.34, 0.46);
@@ -47,9 +85,20 @@ const fragmentShader = /* glsl */ `
     float lakeMask = smoothstep(0.48, 0.64, vUv.x);
     float landMask = 1.0 - smoothstep(0.36, 0.55, vUv.x);
 
+    float trees = treeMask(sampleUv);
+    float people = peopleMask(sampleUv);
+    float treeSway = sin(uTime * 0.82 + sampleUv.y * 31.0) * 0.0048;
+    float branchFlutter = sin(uTime * 1.36 - sampleUv.y * 47.0) * 0.0017;
+    sampleUv.x += trees * (treeSway + branchFlutter);
+    sampleUv.y += trees * sin(uTime * 0.66 + sampleUv.x * 36.0) * 0.00135;
+
+    float personPhase = uTime * 1.18 + sampleUv.y * 24.0;
+    sampleUv.x += people * sin(personPhase) * 0.0028;
+    sampleUv.y += people * sin(personPhase * 0.72 + 1.2) * 0.0018;
+
     sampleUv.x += lakeMask * sin(sampleUv.y * 82.0 + uTime * 0.72) * 0.0018;
     sampleUv.y += lakeMask * sin(sampleUv.x * 61.0 - uTime * 0.48) * 0.00125;
-    sampleUv.x += landMask * sin(sampleUv.y * 33.0 + uTime * 0.34) * 0.0008;
+    sampleUv.x += landMask * (1.0 - trees) * sin(sampleUv.y * 33.0 + uTime * 0.34) * 0.00035;
 
     vec4 color = texture2D(uTexture, clamp(sampleUv, 0.001, 0.999));
     float light = lakeMask * sin(vUv.y * 110.0 + uTime) * 0.018;
@@ -122,20 +171,6 @@ export function ThreePrototype() {
     texture.magFilter = THREE.LinearFilter;
     uniforms.uTexture.value = texture;
 
-    const particleCount = 76;
-    const positions = new Float32Array(particleCount * 3);
-    for (let index = 0; index < particleCount; index += 1) {
-      positions[index * 3] = -0.98 + Math.random() * 0.95;
-      positions[index * 3 + 1] = -1 + Math.random() * 2;
-      positions[index * 3 + 2] = 0.25;
-    }
-    const basePositions = positions.slice();
-    const leafGeometry = new THREE.BufferGeometry();
-    leafGeometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
-    const leafMaterial = new THREE.PointsMaterial({ color: 0xf2ce52, size: 0.014, transparent: true, opacity: 0.58 });
-    const leaves = new THREE.Points(leafGeometry, leafMaterial);
-    scene.add(leaves);
-
     const resize = () => {
       const width = canvas.clientWidth;
       const height = canvas.clientHeight;
@@ -151,11 +186,6 @@ export function ThreePrototype() {
       const elapsed = (window.performance.now() - startedAt) / 1000;
       uniforms.uTime.value = elapsed;
       uniforms.uProgress.value += (progressRef.current - uniforms.uProgress.value) * 0.055;
-      for (let index = 0; index < particleCount; index += 1) {
-        positions[index * 3] = basePositions[index * 3] + Math.sin(elapsed * (0.22 + (index % 5) * 0.035) + index) * 0.018;
-        positions[index * 3 + 1] = basePositions[index * 3 + 1] + Math.cos(elapsed * (0.18 + (index % 7) * 0.028) + index * 0.7) * 0.026;
-      }
-      leafGeometry.attributes.position.needsUpdate = true;
       renderer.render(scene, camera);
       frame = window.requestAnimationFrame(animate);
     };
@@ -165,8 +195,6 @@ export function ThreePrototype() {
       window.cancelAnimationFrame(frame);
       window.removeEventListener("resize", resize);
       texture.dispose();
-      leafGeometry.dispose();
-      leafMaterial.dispose();
       plane.geometry.dispose();
       material.dispose();
       renderer.dispose();
