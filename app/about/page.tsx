@@ -10,15 +10,16 @@ export const metadata: Metadata = {
 
 const interests = [
   ["Care", "Designing with older adults, changing bodies, dignity, independence, family, and community in mind."],
-  ["Mind & body", "Exploring anatomy, human performance, meditation, brain waves, attention, and behavior."],
+  ["Mind, body & rhythm", "Rowing, tennis, hiking, handpan, and meditation keep my questions grounded in lived experience; anatomy, performance, brain waves, attention, and behavior let me investigate them."],
   ["Making", "Using materials, manufacturing, and participation to rethink how objects come into being."],
   ["Play & AI", "Creating interactions that return agency and attention instead of quietly taking them away."],
 ] as const;
 
 const principles = [
-  ["Get close", "Connection comes before insight. I begin by observing carefully enough to feel the reality behind a need."],
-  ["Make with", "I look for ways people can participate in forming, using, and caring for the things around them."],
-  ["Look beyond", "Every object carries relationships—to labor, materials, energy, time, and the lives it eventually touches."],
+  ["Connect before solving", "I begin by getting close enough to notice the lived reality behind a need. Connection is what makes meaningful needs finding possible."],
+  ["Find the real question", "A good answer matters, but a good question can reveal possibilities hidden inside what already exists. I try to spend more energy framing the problem than rushing toward a solution."],
+  ["Make less, create more", "Use fewer resources, remove unnecessary processes, and create more value, participation, meaning, and ways for a thing to live."],
+  ["Return to the core", "In a world of noise, speed, and distraction, I return to first principles, protect curiosity, and ask whether I am creating or merely consuming."],
 ] as const;
 
 export default function AboutPage() {
@@ -41,10 +42,11 @@ export default function AboutPage() {
           <div className="about-lede">
             <span>Designer · Maker · Researcher</span>
             <p>
-              I move between objects, systems, behavior, and emerging technology.
-              What connects the work is a belief that design begins by getting
-              close enough to notice what a person, a body, an object, or a
-              larger system is asking for.
+              I connect creativity with rationality. I am both a problem solver
+              and a questioner, moving between objects, systems, behavior, and
+              emerging technology. What connects the work is a belief that
+              design begins by getting close enough to notice what a person, a
+              body, an object, or a larger system is asking for.
             </p>
           </div>
         </div>
@@ -62,6 +64,12 @@ export default function AboutPage() {
         <p>How this became my practice</p>
         <div>
           <h2>Connection is not only the outcome. It is how I find the work.</h2>
+          <p>
+            Years spent working around manufacturing showed me the consequences
+            of production without reflection: wasted resources, unnecessary
+            complexity, and consumption designed to continue without end. It
+            gave me an enduring question—how might we make less, yet create more?
+          </p>
           <p>
             I understood this most clearly while designing a spoon for my
             grandfather. Diabetes had left his fingers numb, making an ordinary
