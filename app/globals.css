@@ -963,13 +963,14 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 .about-portrait img { position:relative; z-index:2; width:min(58%,310px); filter:drop-shadow(0 20px 20px rgba(13,56,99,.25)); animation:boatFloat 3.4s ease-in-out infinite; }
 .about-portrait i { position:absolute; bottom:5%; width:1px; height:25%; background:rgba(255,255,255,.45); }
 .about-intro { padding:12vh 6vw 8vh; display:flex; flex-direction:column; justify-content:space-between; }
-.about-intro > p, .about-belief > p, .about-story > p, .about-now-heading > p, .about-stanford > p, .about-footer > p {
+.about-intro > p { margin:0; color:#3476dd; font-size:14px; letter-spacing:.15em; text-transform:uppercase; }
+.about-belief > p, .about-story > p, .about-now-heading > p, .about-stanford > p, .about-footer > p {
   margin:0; color:#3476dd; font-size:10px; letter-spacing:.17em; text-transform:uppercase;
 }
 .about-intro h1 { margin:5vh 0; font-size:clamp(60px,8.2vw,132px); line-height:.82; letter-spacing:-.07em; font-weight:500; }
 .about-intro h1 em { color:#0e5f51; font-family:Georgia,serif; font-weight:400; }
 .about-lede { margin-left:29%; display:grid; grid-template-columns:150px 1fr; gap:2vw; align-items:start; }
-.about-lede span { font-size:9px; letter-spacing:.12em; line-height:1.5; text-transform:uppercase; }
+.about-lede span { font-size:13px; letter-spacing:.1em; line-height:1.5; text-transform:uppercase; }
 .about-lede p { max-width:560px; margin:0; font:18px/1.55 Georgia,serif; }
 .about-belief { padding:16vh 8vw; display:grid; grid-template-columns:1fr 4fr; gap:4vw; background:#0e5f51; color:#fff8d8; }
 .about-belief > p { color:#f3c850; }
@@ -1104,8 +1105,10 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   .about-portrait { min-height:48vh; background:#3476dd; }
   .about-portrait img { width:42%; }
   .about-intro { padding:70px 22px; }
+  .about-intro > p { font-size:13px; }
   .about-intro h1 { margin:40px 0 55px; font-size:17vw; }
   .about-lede { margin:0; grid-template-columns:1fr; gap:20px; }
+  .about-lede span { font-size:12px; }
   .about-belief, .about-story, .about-stanford, .about-now, .about-footer, .about-principles, .about-beyond { padding:85px 22px; grid-template-columns:1fr; }
   .about-belief blockquote { margin-top:40px; font-size:10vw; }
   .about-story > div, .about-stanford > div { grid-template-columns:1fr; }
