@@ -100,7 +100,7 @@ export function StudioDesk() {
       <header className="rowing-nav">
         <Link href="/" className="rowing-mark">XI LIU <span>/</span> LAB</Link>
         <p>I design to build connection.</p>
-        <a href="mailto:liu.xi.0802@gmail.com">Say hello ↗</a>
+        <a href="mailto:liuxi@stanford.edu">Say hello ↗</a>
       </header>
 
       <section

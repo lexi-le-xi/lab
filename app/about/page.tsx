@@ -14,7 +14,7 @@ export default function AboutPage() {
       <nav className="about-nav">
         <Link href="/">XI LIU <span>/</span> LAB</Link>
         <p>About me</p>
-        <a href="mailto:liu.xi.0802@gmail.com">Say hello ↗</a>
+        <a href="mailto:liuxi@stanford.edu">Say hello ↗</a>
       </nav>
 
       <header className="about-cover">
@@ -62,7 +62,7 @@ export default function AboutPage() {
         <p>Continue exploring</p>
         <h2>Return to the<br />living design practice.</h2>
         <Link href="/">Return to the shoreline <span>→</span></Link>
-        <a href="mailto:liu.xi.0802@gmail.com">liu.xi.0802@gmail.com ↗</a>
+        <a href="mailto:liuxi@stanford.edu">liuxi@stanford.edu ↗</a>
       </footer>
     </main>
   );
