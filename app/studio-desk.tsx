@@ -135,14 +135,18 @@ export function StudioDesk() {
                 href={`/areas/${place.slug}`}
                 className="shore-place"
                 style={{ top: place.top, left: place.left } as React.CSSProperties}
+                aria-label={`${place.title}: ${place.insight}`}
               >
-                <span>{place.index}</span>
-                <div>
-                  <small>{place.connection}</small>
-                  <strong>{place.title}</strong>
-                  <em>{place.insight}</em>
+                <span className="shore-dot" />
+                <div className="shore-card">
+                  <span>{place.index}</span>
+                  <div>
+                    <small>{place.connection}</small>
+                    <strong>{place.title}</strong>
+                    <em>{place.insight}</em>
+                  </div>
+                  <b>Explore ↗</b>
                 </div>
-                <b>Explore ↗</b>
               </Link>
             ))}
           </nav>

@@ -545,10 +545,11 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   width: 100%;
   height: 500%;
   background-position: center;
-  background-size: 100% 100%;
+  background-size: calc(100% + 10px) calc(100% + 6px);
   background-repeat: no-repeat;
   transform: translate3d(0, calc(-80% + (var(--journey-progress) * 80%)), 0);
   will-change: transform;
+  animation: sceneAlive 7s ease-in-out infinite alternate;
 }
 .rowing-landscape::after {
   content: "";
@@ -596,19 +597,19 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
     radial-gradient(circle at 62% 30%, rgba(73,126,61,.78) 0 30%, transparent 31%),
     radial-gradient(circle at 36% 65%, rgba(30,91,58,.72) 0 42%, transparent 43%);
   mix-blend-mode: multiply;
-  opacity: .38;
+  opacity: .62;
   filter: saturate(.85);
   animation: canopySway 4.8s ease-in-out infinite alternate;
 }
 .land-breeze > span {
   position: absolute;
-  width: 5px;
-  height: 13px;
+  width: 7px;
+  height: 17px;
   border-radius: 50% 50% 35% 35%;
   background: #245fab;
   box-shadow: 0 -4px 0 -1px #efc09a, 4px 3px 0 -1px #f0c748;
   opacity: .82;
-  animation: personMove 2.4s ease-in-out infinite alternate;
+  animation: personMove 1.9s ease-in-out infinite alternate;
 }
 
 .lake-motion {
@@ -662,27 +663,51 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 }
 .shore-place {
   position: absolute;
-  width: min(350px, 32vw);
-  min-height: 108px;
-  padding: 14px 16px 13px;
+  width: 28px;
+  height: 28px;
   display: grid;
-  grid-template-columns: 28px 1fr auto;
-  gap: 13px;
-  align-items: start;
-  border: 1px solid rgba(255,255,255,.86);
-  border-radius: 3px;
-  background: rgba(255,250,224,.9);
-  color: #102f3d;
-  box-shadow: 0 16px 40px rgba(77,108,91,.14);
-  backdrop-filter: blur(10px);
-  transition: transform .25s ease, background .25s ease;
+  place-items: center;
+  border-radius: 50%;
+  color:#102f3d;
+  outline:none;
 }
-.shore-place:hover, .shore-place:focus-visible { transform: translateX(8px); background: #fffbe6; outline: 2px solid #3476dd; outline-offset: 3px; }
-.shore-place > span { color: #3476dd; font-size: 10px; letter-spacing: .12em; }
-.shore-place small { display: block; margin-bottom: 7px; font-size: 9px; letter-spacing: .13em; text-transform: uppercase; color: #236f62; }
-.shore-place strong { display: block; font-size: clamp(17px, 1.55vw, 23px); line-height: 1; letter-spacing: -.035em; }
-.shore-place em { display: block; max-width: 260px; margin-top: 8px; font: 12px/1.35 Georgia, serif; color: rgba(16,47,61,.75); }
-.shore-place b { align-self: end; padding-bottom: 2px; border-bottom: 1px solid; font-size: 8px; letter-spacing: .12em; text-transform: uppercase; white-space: nowrap; }
+.shore-dot {
+  width:11px;
+  height:11px;
+  border-radius:50%;
+  background:#fff;
+  box-shadow:0 0 0 5px rgba(255,255,255,.27), 0 0 18px 7px rgba(255,255,255,.5);
+  animation:infoPulse 1.8s ease-in-out infinite;
+}
+.shore-card {
+  position:absolute;
+  left:24px;
+  top:50%;
+  width:min(350px,32vw);
+  min-height:108px;
+  padding:14px 16px 13px;
+  display:grid;
+  grid-template-columns:28px 1fr auto;
+  gap:13px;
+  align-items:start;
+  border:1px solid rgba(255,255,255,.86);
+  border-radius:3px;
+  background:rgba(255,250,224,.94);
+  box-shadow:0 16px 40px rgba(77,108,91,.18);
+  backdrop-filter:blur(10px);
+  transform:translate(8px,-50%) scale(.96);
+  transform-origin:left center;
+  opacity:0;
+  visibility:hidden;
+  transition:opacity .22s ease, transform .22s ease, visibility .22s;
+}
+.shore-place:hover .shore-card, .shore-place:focus-visible .shore-card { opacity:1; visibility:visible; transform:translate(0,-50%) scale(1); }
+.shore-place:focus-visible .shore-dot { outline:2px solid #102f3d; outline-offset:5px; }
+.shore-card > span { color:#3476dd; font-size:10px; letter-spacing:.12em; }
+.shore-card small { display:block; margin-bottom:7px; font-size:9px; letter-spacing:.13em; text-transform:uppercase; color:#236f62; }
+.shore-card strong { display:block; font-size:clamp(17px,1.55vw,23px); line-height:1; letter-spacing:-.035em; }
+.shore-card em { display:block; max-width:260px; margin-top:8px; font:12px/1.35 Georgia,serif; color:rgba(16,47,61,.75); }
+.shore-card b { align-self:end; padding-bottom:2px; border-bottom:1px solid; font-size:8px; letter-spacing:.12em; text-transform:uppercase; white-space:nowrap; }
 
 .rowing-boat {
   position: absolute;
@@ -707,7 +732,7 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   border:2px solid #fff8d8;
   border-radius:50%;
 }
-.rowing-boat img { position:relative; z-index:2; display: block; width: 100%; height: auto; animation: boatFloat 3.4s ease-in-out infinite; }
+.rowing-boat img { position:relative; z-index:2; display:block; width:100%; height:auto; }
 .rowing-boat.is-rowing img { animation: boatStroke .68s ease-in-out infinite alternate; }
 .boat-oar {
   position:absolute;
@@ -730,12 +755,12 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   border:1px solid rgba(25,57,80,.15);
   transform:translateY(-50%);
 }
-.boat-oar-left { right:49%; transform-origin:100% 50%; animation:oarLeft 1.7s ease-in-out infinite; }
+.boat-oar-left { right:49%; transform-origin:100% 50%; transform:rotate(-4deg); }
 .boat-oar-left::after { left:-4%; }
-.boat-oar-right { left:49%; transform-origin:0 50%; animation:oarRight 1.7s ease-in-out infinite; }
+.boat-oar-right { left:49%; transform-origin:0 50%; transform:rotate(4deg); }
 .boat-oar-right::after { right:-4%; transform:translateY(-50%) scaleX(-1); }
-.rowing-boat.is-rowing .boat-oar-left { animation-duration:.72s; }
-.rowing-boat.is-rowing .boat-oar-right { animation-duration:.72s; }
+.rowing-boat.is-rowing .boat-oar-left { animation:oarLeft .72s ease-in-out infinite; }
+.rowing-boat.is-rowing .boat-oar-right { animation:oarRight .72s ease-in-out infinite; }
 .rowing-boat > i {
   position: absolute;
   left: 42%;
@@ -747,8 +772,24 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   border-radius: 0 0 50% 50%;
   opacity: .48;
   animation: wake 1.7s ease-out infinite;
+  animation-play-state:paused;
+  opacity:0;
 }
 .rowing-boat > i:last-child { animation-delay: .85s; }
+.rowing-boat.is-rowing > i { animation-play-state:running; opacity:.48; }
+.rowing-boat::before {
+  content:"";
+  position:absolute;
+  z-index:9;
+  top:39%;
+  right:22%;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:#fff;
+  box-shadow:0 0 0 5px rgba(255,255,255,.25),0 0 20px 7px rgba(255,255,255,.65);
+  animation:infoPulse 1.6s ease-in-out infinite;
+}
 .boat-about-label {
   position:absolute;
   z-index:8;
@@ -832,8 +873,13 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   0%, 100% { transform: translateX(-10px) scaleX(.7); opacity: .12; }
   50% { transform: translateX(32px) scaleX(1.15); opacity: .7; }
 }
+@keyframes sceneAlive {
+  0% { background-position:50% 50%; filter:saturate(1); }
+  100% { background-position:calc(50% + 4px) calc(50% + 2px); filter:saturate(1.025); }
+}
 @keyframes canopySway { to { transform:rotate(3.5deg) translateX(4px) scaleX(1.025); } }
-@keyframes personMove { to { transform:translate3d(7px,-2px,0) rotate(4deg); } }
+@keyframes personMove { to { transform:translate3d(11px,-3px,0) rotate(6deg); } }
+@keyframes infoPulse { 50% { opacity:.35; transform:scale(.68); box-shadow:0 0 0 9px rgba(255,255,255,.08),0 0 25px 10px rgba(255,255,255,.28); } }
 @keyframes oarLeft {
   0%,100% { transform:rotate(-14deg) scaleX(.97); }
   48% { transform:rotate(9deg) scaleX(1.03); }
@@ -935,10 +981,11 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   .rowing-opening { left:20px; bottom:5vh; width:85vw; }
   .rowing-opening h1 { font-size:15vw; }
   .rowing-opening > span { max-width:200px; line-height:1.5; }
-  .shore-place { width:64vw; min-height:112px; padding:14px; grid-template-columns:22px 1fr; }
-  .shore-place > b { display:none; }
-  .shore-place strong { font-size:18px; }
-  .shore-place em { font-size:12px; }
+  .shore-place { width:32px; height:32px; }
+  .shore-card { left:25px; width:64vw; min-height:112px; padding:14px; grid-template-columns:22px 1fr; }
+  .shore-card > b { display:none; }
+  .shore-card strong { font-size:18px; }
+  .shore-card em { font-size:12px; }
   .rowing-boat { left:76%; width:40vw; }
   .boat-about-label { bottom:-2%; opacity:1; padding:7px 9px; font-size:7px; }
   .land-breeze { width:75%; }
@@ -978,5 +1025,5 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 
 @media (prefers-reduced-motion: reduce) {
   .rowing-landscape, .shore-places, .land-breeze { will-change:auto; }
-  .rowing-landscape::after, .land-breeze i, .land-breeze b, .land-breeze span, .lake-motion i, .rowing-boat img, .rowing-boat b, .rowing-boat > i, .about-portrait::before, .about-portrait img { animation:none !important; }
+  .rowing-landscape, .rowing-landscape::after, .land-breeze i, .land-breeze b, .land-breeze span, .lake-motion i, .shore-dot, .rowing-boat::before, .rowing-boat img, .rowing-boat b, .rowing-boat > i, .about-portrait::before, .about-portrait img { animation:none !important; }
 }
