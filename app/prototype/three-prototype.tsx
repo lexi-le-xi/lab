@@ -6,6 +6,14 @@ import * as THREE from "three";
 import rowingWorld from "../../public/rowing-world-v7.png";
 import rowingBoat from "../../public/rowing-boat-base-v5.png";
 
+const prototypeScenes = [
+  { href: "/areas/care-access", title: "Designing for Care", connection: "Connection with people", left: "28%", top: "67%" },
+  { href: "/areas/making-systems", title: "Making & Systems", connection: "Connection through making", left: "35%", top: "34%" },
+  { href: "/areas/materials-time", title: "Materials & Time", connection: "Connection with consequence", left: "28%", top: "57%" },
+  { href: "/areas/mind-body-behavior", title: "Mind, Body & Behavior", connection: "Connection with ourselves", left: "33%", top: "42%" },
+  { href: "/areas/play-ai-interaction", title: "Play, AI & Interaction", connection: "Connection through interaction", left: "30%", top: "58%" },
+] as const;
+
 const vertexShader = /* glsl */ `
   varying vec2 vUv;
   void main() {
@@ -46,6 +54,9 @@ const fragmentShader = /* glsl */ `
     vec4 color = texture2D(uTexture, clamp(sampleUv, 0.001, 0.999));
     float light = lakeMask * sin(vUv.y * 110.0 + uTime) * 0.018;
     color.rgb += vec3(0.12, 0.25, 0.28) * light;
+    color.rgb = pow(color.rgb, vec3(0.86));
+    color.rgb *= vec3(1.10, 1.105, 1.06);
+    color.rgb += vec3(1.0, 0.91, 0.62) * (0.035 + landMask * 0.025);
     gl_FragColor = color;
   }
 `;
@@ -111,16 +122,17 @@ export function ThreePrototype() {
     texture.magFilter = THREE.LinearFilter;
     uniforms.uTexture.value = texture;
 
-    const particleCount = 46;
+    const particleCount = 76;
     const positions = new Float32Array(particleCount * 3);
     for (let index = 0; index < particleCount; index += 1) {
       positions[index * 3] = -0.98 + Math.random() * 0.95;
       positions[index * 3 + 1] = -1 + Math.random() * 2;
       positions[index * 3 + 2] = 0.25;
     }
+    const basePositions = positions.slice();
     const leafGeometry = new THREE.BufferGeometry();
     leafGeometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
-    const leafMaterial = new THREE.PointsMaterial({ color: 0xe2bd3a, size: 0.012, transparent: true, opacity: 0.42 });
+    const leafMaterial = new THREE.PointsMaterial({ color: 0xf2ce52, size: 0.014, transparent: true, opacity: 0.58 });
     const leaves = new THREE.Points(leafGeometry, leafMaterial);
     scene.add(leaves);
 
@@ -139,8 +151,11 @@ export function ThreePrototype() {
       const elapsed = (window.performance.now() - startedAt) / 1000;
       uniforms.uTime.value = elapsed;
       uniforms.uProgress.value += (progressRef.current - uniforms.uProgress.value) * 0.055;
-      leaves.position.y = Math.sin(elapsed * 0.34) * 0.025;
-      leaves.rotation.z = Math.sin(elapsed * 0.22) * 0.012;
+      for (let index = 0; index < particleCount; index += 1) {
+        positions[index * 3] = basePositions[index * 3] + Math.sin(elapsed * (0.22 + (index % 5) * 0.035) + index) * 0.018;
+        positions[index * 3 + 1] = basePositions[index * 3 + 1] + Math.cos(elapsed * (0.18 + (index % 7) * 0.028) + index * 0.7) * 0.026;
+      }
+      leafGeometry.attributes.position.needsUpdate = true;
       renderer.render(scene, camera);
       frame = window.requestAnimationFrame(animate);
     };
@@ -158,6 +173,9 @@ export function ThreePrototype() {
     };
   }, []);
 
+  const currentSceneIndex = Math.min(prototypeScenes.length - 1, Math.floor(Math.min(progress, 0.9999) * prototypeScenes.length));
+  const currentScene = prototypeScenes[currentSceneIndex];
+
   return (
     <main className="three-prototype">
       <header className="prototype-nav">
@@ -171,16 +189,31 @@ export function ThreePrototype() {
           <canvas ref={canvasRef} className="prototype-canvas" aria-hidden="true" />
           <div className="prototype-wash" aria-hidden="true" />
 
-          <div className="prototype-copy">
+          <div className="prototype-copy" style={{ opacity: Math.max(0, 1 - progress * 9) }}>
             <p>Motion prototype · Scene 01</p>
             <h1>A painted world<br />that <em>breathes.</em></h1>
             <span>Scroll to row north ↑</span>
           </div>
 
-          <Link href="/areas/care-access" className="prototype-hotspot" aria-label="Explore Designing for Care">
+          <Link
+            key={currentScene.href}
+            href={currentScene.href}
+            className="prototype-hotspot"
+            style={{ left: currentScene.left, top: currentScene.top }}
+            aria-label={`Explore ${currentScene.title}`}
+          >
             <i />
-            <span><small>Connection with people</small><strong>Designing for Care</strong></span>
+            <span><small>{currentScene.connection}</small><strong>{currentScene.title}</strong></span>
           </Link>
+
+          <div
+            className="prototype-stage"
+            style={{ opacity: Math.min(1, Math.max(0, (progress - 0.08) * 8)) }}
+            aria-live="polite"
+          >
+            <small>{String(currentSceneIndex + 1).padStart(2, "0")} · {currentScene.connection}</small>
+            <strong>{currentScene.title}</strong>
+          </div>
 
           <Link href="/about" className={`prototype-boat ${rowing ? "is-rowing" : ""}`} aria-label="Meet Xi Liu">
             <img src={rowingBoat.src} alt="" />
