@@ -815,7 +815,7 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   width:28px;
   height:40px;
   clip-path:polygon(0 0,100% 0,50% 100%);
-  background:#fff;
+  background:rgb(255,250,224);
   filter:drop-shadow(0 4px 4px rgba(4,55,132,.42));
 }
 .shore-place.is-current .shore-guide { opacity:1; visibility:visible; transform:translate(-50%,0); animation:shoreGuideFloat 1.7s ease-in-out infinite; }
@@ -834,7 +834,7 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   align-items:start;
   border:1px solid rgba(255,255,255,.86);
   border-radius:3px;
-  background:rgba(255,250,224,.94);
+  background:rgba(255,250,224,.76);
   box-shadow:0 16px 40px rgba(77,108,91,.18);
   backdrop-filter:blur(10px);
   transform:translate(-8px,-50%) scale(.96);
