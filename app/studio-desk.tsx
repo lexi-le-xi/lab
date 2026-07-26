@@ -54,6 +54,12 @@ const places = [
   },
 ] as const;
 
+const flyingIdeas = [
+  { href: "/inspirations", title: "Inspirations", note: "What keeps me alive to the world" },
+  { href: "/principles", title: "Principles", note: "What helps me return to the core" },
+  { href: "/philosophy", title: "Philosophy", note: "Make less, create more" },
+] as const;
+
 export function StudioDesk() {
   const journeyRef = useRef<HTMLElement>(null);
   const strokeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -125,11 +131,14 @@ export function StudioDesk() {
 
           <div className="lake-motion" aria-hidden="true"><i /><i /><i /><i /></div>
 
-          <div className="lake-gulls" aria-hidden="true">
-            <img src={paintedGull.src} alt="" />
-            <img src={paintedGull.src} alt="" />
-            <img src={paintedGull.src} alt="" />
-          </div>
+          <nav className="lake-gulls" aria-label="Explore Xi's inspirations, principles, and philosophy">
+            {flyingIdeas.map((idea) => (
+              <Link key={idea.href} href={idea.href} aria-label={`${idea.title}: ${idea.note}`}>
+                <img src={paintedGull.src} alt="" />
+                <span><strong>{idea.title}</strong><small>{idea.note}</small></span>
+              </Link>
+            ))}
+          </nav>
 
           <div className="rowing-opening">
             <p>Welcome to my living design practice</p>
