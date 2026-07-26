@@ -8,20 +8,6 @@ export const metadata: Metadata = {
     "Meet Xi Liu, a designer exploring connection through care, making, materials, behavior, play, and technology.",
 };
 
-const interests = [
-  ["Care", "Designing with older adults, changing bodies, dignity, independence, family, and community in mind."],
-  ["Mind, body & rhythm", "Rowing, tennis, hiking, handpan, and meditation keep my questions grounded in lived experience; anatomy, performance, brain waves, attention, and behavior let me investigate them."],
-  ["Making", "Using materials, manufacturing, and participation to rethink how objects come into being."],
-  ["Play & AI", "Creating interactions that return agency and attention instead of quietly taking them away."],
-] as const;
-
-const principles = [
-  ["Connect before solving", "I begin by getting close enough to notice the lived reality behind a need. Connection is what makes meaningful needs finding possible."],
-  ["Find the real question", "A good answer matters, but a good question can reveal possibilities hidden inside what already exists. I try to spend more energy framing the problem than rushing toward a solution."],
-  ["Make less, create more", "Use fewer resources, remove unnecessary processes, and create more value, participation, meaning, and ways for a thing to live."],
-  ["Return to the core", "In a world of noise, speed, and distraction, I return to first principles, protect curiosity, and ask whether I am creating or merely consuming."],
-] as const;
-
 export default function AboutPage() {
   return (
     <main className="about-page">
@@ -60,79 +46,21 @@ export default function AboutPage() {
       </section>
 
       <section className="about-story">
-        <p>How this became my practice</p>
+        <p>Why I design</p>
         <div>
           <h2>Connection is not only the outcome. It is how I find the work.</h2>
           <p>
-            Years spent working around manufacturing showed me the consequences
-            of production without reflection: wasted resources, unnecessary
-            complexity, and consumption designed to continue without end. It
-            gave me an enduring question—how might we make less, yet create more?
+            I understood this while designing a spoon for my grandfather. Diabetes
+            had left his fingers numb, making an ordinary spoon difficult to hold.
+            Love made me pay attention to the small realities of his day—and that
+            connection made meaningful needs finding possible.
           </p>
           <p>
-            I understood this most clearly while designing a spoon for my
-            grandfather. Diabetes had left his fingers numb, making an ordinary
-            spoon difficult to hold. Because I loved him, I paid attention to
-            the small realities of his day. That emotional connection made
-            needs finding possible—and turned manufacturing into a way of caring.
-          </p>
-          <p>
-            Since then, my questions have expanded: how can making invite
-            participation? How do materials connect a purchase today to a
-            consequence centuries from now? Can design help us return to our
-            bodies and attention? Can AI and play deepen agency instead of
-            replacing it?
-          </p>
-        </div>
-      </section>
-
-      <section className="about-principles">
-        <div className="about-principles-heading">
-          <p>How I approach design</p>
-          <h2>Connection is<br />a way of working.</h2>
-        </div>
-        <ol>
-          {principles.map(([title, description], index) => (
-            <li key={title}>
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              <h3>{title}</h3>
-              <p>{description}</p>
-            </li>
-          ))}
-        </ol>
-      </section>
-
-      <section className="about-now">
-        <div className="about-now-heading">
-          <p>What I&apos;m exploring now</p>
-          <h2>One practice,<br />many ways in.</h2>
-        </div>
-        <div className="about-interest-list">
-          {interests.map(([title, description], index) => (
-            <article key={title}>
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              <h3>{title}</h3>
-              <p>{description}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="about-stanford">
-        <p>Before / now / next</p>
-        <div>
-          <h2>My work is becoming less about designing a thing—and more about designing a relationship.</h2>
-          <p>
-            Before Stanford, much of my practice centered on products, footwear,
-            materials, and making. At Stanford, courses in mechanical
-            manufacturing, anatomy, human performance, meditation, behavior,
-            and play have widened both the scale and intimacy of my questions.
-            I am still a maker, but I now see an object as one moment inside a
-            much larger relationship.
-          </p>
-          <p>
-            The next chapter of my practice is not defined by one medium. It is
-            defined by the kind of connection each question asks me to build.
+            My practice now moves between objects, systems, behavior, play, and AI.
+            Whether I am designing for older adults, rethinking manufacturing, or
+            exploring attention, I return to one question: how might design help
+            people build a more intentional relationship with themselves, with
+            others, and with the world around them?
           </p>
         </div>
       </section>
@@ -140,7 +68,7 @@ export default function AboutPage() {
       <section className="about-beyond">
         <p>Beyond the work</p>
         <div>
-          <h2>The things that keep me moving, oriented, and curious.</h2>
+          <h2>Three ways to know the thinking behind my work.</h2>
           <nav aria-label="Explore Xi's inner practice">
             <Link href="/inspirations"><span>01</span><strong>Inspirations</strong><em>Sports, music, meditation, and lived experience</em><b>→</b></Link>
             <Link href="/principles"><span>02</span><strong>Principles</strong><em>Notes that help me return to the core</em><b>→</b></Link>
