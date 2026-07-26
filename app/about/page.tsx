@@ -54,13 +54,6 @@ export default function AboutPage() {
             between people, objects, systems, behavior, and emerging technology.
           </p>
           <span>Designer · Maker · Researcher</span>
-          <a
-            className="about-cv-link"
-            href="mailto:liuxi@stanford.edu?subject=CV%20request"
-          >
-            <strong>CV</strong>
-            <span>Request a copy ↗</span>
-          </a>
         </div>
         <a className="about-flow-arrow" href="#about-belief" aria-label="Continue to why I design"><CornerArrow /></a>
       </section>
@@ -94,6 +87,13 @@ export default function AboutPage() {
             <CornerArrow />
           </span>
         </Link>
+        <a
+          className="about-cv-link"
+          href="mailto:liuxi@stanford.edu?subject=CV%20request"
+        >
+          <strong>CV</strong>
+          <span>Request a copy ↗</span>
+        </a>
         <a className="about-say-hello" href="mailto:liuxi@stanford.edu">
           <strong>Say hello</strong>
           <span>liuxi@stanford.edu ↗</span>
