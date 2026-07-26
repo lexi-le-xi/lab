@@ -13,7 +13,7 @@ export default function AboutPage() {
     <main className="about-page">
       <nav className="about-nav">
         <Link href="/">XI LIU <span>/</span> LAB</Link>
-        <p>About me</p>
+        <p>Meet the designer</p>
         <a href="mailto:liuxi@stanford.edu">Say hello ↗</a>
       </nav>
 
