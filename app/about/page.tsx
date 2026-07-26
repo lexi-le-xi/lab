@@ -27,11 +27,9 @@ export default function AboutPage() {
           <div className="about-lede">
             <span>Designer · Maker · Researcher</span>
             <p>
-              I connect creativity with rationality. I am both a problem solver
-              and a questioner, moving between objects, systems, behavior, and
-              emerging technology. What connects the work is a belief that
-              design begins by getting close enough to notice what a person, a
-              body, an object, or a larger system is asking for.
+              <strong>A questioner.</strong> I look beneath the obvious, ask why,
+              and find the core of a problem. <strong>A problem solver.</strong> I
+              turn that understanding into thoughtful, practical solutions.
             </p>
           </div>
         </div>
