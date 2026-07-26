@@ -16,7 +16,7 @@ export function ThoughtPage({ data }: { data: ThoughtPageData }) {
   return (
     <main className="thought-page" style={{ "--thought-color": data.color } as React.CSSProperties}>
       <nav className="thought-nav">
-        <Link href="/">XI LIU <span>/</span> STUDIO</Link>
+        <Link href="/">XI LIU <span>/</span> LAB</Link>
         <p>{data.index} · Inner practice</p>
         <Link href="/about">About Xi →</Link>
       </nav>

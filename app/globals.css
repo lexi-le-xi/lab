@@ -651,6 +651,13 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 .lake-gulls a:nth-child(2) { top:43%; left:68%; scale:.78; animation-delay:-3.4s; }
 .lake-gulls a:nth-child(3) { top:76%; left:20%; scale:.68; animation-delay:-6.1s; }
 .lake-gulls img { display:block; width:100%; height:auto; transition:transform .25s ease,filter .25s ease; }
+.gull-dot {
+  position:absolute; z-index:3; top:46%; right:-8px; width:10px; height:10px;
+  border-radius:50%; background:#fff; box-shadow:0 0 0 8px rgba(255,255,255,.13),0 0 24px 9px rgba(255,255,255,.65);
+  animation:infoPulse 1.65s ease-in-out infinite;
+}
+.lake-gulls a:nth-child(2) .gull-dot { animation-delay:-.55s; }
+.lake-gulls a:nth-child(3) .gull-dot { animation-delay:-1.1s; }
 .lake-gulls a > span {
   position:absolute; left:50%; top:82%; width:max-content; max-width:190px; padding:10px 13px;
   display:grid; gap:3px; opacity:0; pointer-events:none; transform:translate(-50%,8px);
@@ -1077,10 +1084,12 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   .lake-motion { left:57%; }
   .lake-gulls { left:57%; }
   .lake-gulls a { width:clamp(62px,16vw,95px); }
+  .lake-gulls a:nth-child(2) { left:45%; }
   .lake-gulls a > span { opacity:1; top:88%; padding:6px 8px; }
+  .lake-gulls a:nth-child(2) > span { top:-42%; }
   .lake-gulls a small { display:none; }
   .journey-progress { right:12px; }
-  .current-place { display:block; }
+  .current-place { display:block; opacity:clamp(0,calc(var(--journey-progress) * 12),1); }
   .rowing-afterword { padding:11vh 22px; grid-template-columns:1fr; }
   .rowing-afterword h2, .rowing-afterword a { grid-column:1; }
   .rowing-afterword a { margin-top:25px; }
@@ -1133,7 +1142,7 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   .thought-principles li { min-height:145px; grid-template-columns:32px 1fr; }
   .thought-footer { padding:85px 22px; grid-template-columns:1fr; }
   .thought-footer a { grid-column:1; }
-  .thought-footer a:nth-of-type(1) { margin-top:35px; }
+  .thought-footer a:nth-of-type(1) { width:100%; margin-top:35px; font-size:9vw; }
 }
 
 @media (prefers-reduced-motion: reduce) {

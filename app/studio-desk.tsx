@@ -93,7 +93,7 @@ export function StudioDesk() {
   return (
     <main className="rowing-home">
       <header className="rowing-nav">
-        <Link href="/" className="rowing-mark">XI LIU <span>/</span> STUDIO</Link>
+        <Link href="/" className="rowing-mark">XI LIU <span>/</span> LAB</Link>
         <p>I design to build connection.</p>
         <a href="mailto:liu.xi.0802@gmail.com">Say hello ↗</a>
       </header>
@@ -135,6 +135,7 @@ export function StudioDesk() {
             {flyingIdeas.map((idea) => (
               <Link key={idea.href} href={idea.href} aria-label={`${idea.title}: ${idea.note}`}>
                 <img src={paintedGull.src} alt="" />
+                <i className="gull-dot" aria-hidden="true" />
                 <span><strong>{idea.title}</strong><small>{idea.note}</small></span>
               </Link>
             ))}

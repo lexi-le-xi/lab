@@ -26,7 +26,7 @@ export default function AboutPage() {
   return (
     <main className="about-page">
       <nav className="about-nav">
-        <Link href="/">XI LIU <span>/</span> STUDIO</Link>
+        <Link href="/">XI LIU <span>/</span> LAB</Link>
         <p>About the designer</p>
         <a href="mailto:liu.xi.0802@gmail.com">Say hello ↗</a>
       </nav>
