@@ -14,13 +14,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Xi Liu Studio — I Design to Build Connection",
     description,
-    images: [{ url: "rowing-world-v6.png", width: 994, height: 1582, alt: "A painted lakeside journey through Xi Liu's design practice" }],
+    images: [{ url: "rowing-world-v7.png", width: 994, height: 1582, alt: "A painted lakeside journey through Xi Liu's design practice" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Xi Liu Studio — I Design to Build Connection",
     description,
-    images: ["rowing-world-v6.png"],
+    images: ["rowing-world-v7.png"],
   },
 };
 

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import rowingBoat from "../public/rowing-boat-base-v5.png";
-import rowingWorld from "../public/rowing-world-v6.png";
+import rowingWorld from "../public/rowing-world-v7.png";
 
 const places = [
   {
