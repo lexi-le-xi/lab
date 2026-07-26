@@ -65,7 +65,11 @@ export default function AboutPage() {
         <p>Continue exploring</p>
         <Link className="about-footer-work" href="/">
           <h2>Explore my work<br />along the shoreline.</h2>
-          <span className="about-footer-corner-arrow" aria-hidden="true" />
+          <span className="about-footer-corner-arrow" aria-hidden="true">
+            <svg viewBox="0 0 100 100" focusable="false">
+              <path d="M20 20L75 75M75 18V75H18" />
+            </svg>
+          </span>
         </Link>
         <a href="mailto:liuxi@stanford.edu">liuxi@stanford.edu ↗</a>
       </footer>
