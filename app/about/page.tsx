@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import rowingBoat from "../../public/rowing-boat-base-v5.png";
+import xiPortrait from "../../public/xi-portrait.avif";
 
 export const metadata: Metadata = {
   title: "About Xi",
@@ -32,9 +32,8 @@ export default function AboutPage() {
       </nav>
 
       <header className="about-hero">
-        <div className="about-portrait" aria-hidden="true">
-          <img src={rowingBoat.src} alt="" />
-          <i />
+        <div className="about-portrait">
+          <img src={xiPortrait.src} alt="Xi Liu" />
         </div>
         <div className="about-intro">
           <p>Hi, I&apos;m Xi.</p>
