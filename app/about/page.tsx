@@ -36,17 +36,19 @@ export default function AboutPage() {
           </p>
           <span>Designer · Maker · Researcher</span>
         </div>
+        <a className="about-flow-arrow" href="#about-belief" aria-label="Continue to why I design" />
       </section>
 
-      <section className="about-belief">
+      <section className="about-belief" id="about-belief">
         <p>What I hope to carry forward</p>
         <blockquote>
           “I want to build connection—not only between you and other people,
           but also between you and yourself, you and life, and you and the universe.”
         </blockquote>
+        <a className="about-flow-arrow is-left" href="#about-thinking" aria-label="Continue to explore my thinking" />
       </section>
 
-      <section className="about-beyond">
+      <section className="about-beyond" id="about-thinking">
         <p>Beyond the work</p>
         <div>
           <h2>Three ways to know the thinking behind my work.</h2>
@@ -56,9 +58,10 @@ export default function AboutPage() {
             <Link href="/philosophy"><span>03</span><strong>Philosophy</strong><em>Make less, create more</em><b>→</b></Link>
           </nav>
         </div>
+        <a className="about-flow-arrow" href="#about-contact" aria-label="Continue to contact and return links" />
       </section>
 
-      <footer className="about-footer">
+      <footer className="about-footer" id="about-contact">
         <p>Continue exploring</p>
         <h2>Return to the<br />living design practice.</h2>
         <Link href="/">Return to the shoreline <span>→</span></Link>
