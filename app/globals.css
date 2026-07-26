@@ -1082,7 +1082,7 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   .lake-motion { left:55%; }
   .lake-gulls { left:55%; }
   .lake-gulls a { width:clamp(62px,16vw,95px); }
-  .lake-gulls a:nth-child(2) { left:45%; }
+  .lake-gulls a:nth-child(2) { top:34%; left:45%; }
   .lake-gulls a > span { display:none; }
   .journey-progress { right:12px; }
   .current-place { display:block; opacity:clamp(0,calc(var(--journey-progress) * 12),1); }
