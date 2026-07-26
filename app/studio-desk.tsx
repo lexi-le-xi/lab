@@ -33,9 +33,9 @@ const places = [
     title: "Materials & Time",
     connection: "Connection with consequence",
     insight: "What takes minutes to make may remain for centuries.",
-    top: "49%",
-    left: "75%",
-    mobileLeft: "20%",
+    top: "53.5%",
+    left: "88%",
+    mobileLeft: "48%",
   },
   {
     slug: "mind-body-behavior",
@@ -157,7 +157,7 @@ export function StudioDesk() {
               <Link
                 key={place.slug}
                 href={`/areas/${place.slug}`}
-                className="shore-place"
+                className={`shore-place ${current === Number(place.index) - 1 ? "is-current" : ""}`}
                 style={{
                   top: place.top,
                   "--place-left": place.left,
@@ -165,6 +165,7 @@ export function StudioDesk() {
                 } as React.CSSProperties}
                 aria-label={`${place.title}: ${place.insight}`}
               >
+                <span className="shore-guide" aria-hidden="true"><b>Explore</b><i>⌄</i></span>
                 <span className="shore-dot" />
                 <div className="shore-card">
                   <span>{place.index}</span>
