@@ -3,8 +3,10 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
-import rowingWorld from "../../public/rowing-world-v7.png";
+import rowingWorld from "../../public/rowing-world-tennis-v1.png";
 import rowingBoat from "../../public/rowing-boat-base-v5.png";
+import tennisPlayer from "../../public/prototype-characters/tennis-player-v1.png";
+import walkingPerson from "../../public/prototype-characters/walker-v1.png";
 
 const prototypeScenes = [
   { href: "/areas/care-access", title: "Designing for Care", connection: "Connection with people", left: "28%", top: "67%" },
@@ -122,6 +124,19 @@ export function ThreePrototype() {
     texture.magFilter = THREE.LinearFilter;
     uniforms.uTexture.value = texture;
 
+    const characterLoader = new THREE.TextureLoader();
+    const walkerTexture = characterLoader.load(walkingPerson.src);
+    const playerTexture = characterLoader.load(tennisPlayer.src);
+    walkerTexture.colorSpace = THREE.SRGBColorSpace;
+    playerTexture.colorSpace = THREE.SRGBColorSpace;
+    const walkerMaterial = new THREE.SpriteMaterial({ map: walkerTexture, transparent: true, alphaTest: 0.04, depthTest: false });
+    const playerMaterial = new THREE.SpriteMaterial({ map: playerTexture, transparent: true, alphaTest: 0.04, depthTest: false });
+    const walker = new THREE.Sprite(walkerMaterial);
+    const player = new THREE.Sprite(playerMaterial);
+    walker.renderOrder = 3;
+    player.renderOrder = 3;
+    scene.add(walker, player);
+
     const particleCount = 76;
     const positions = new Float32Array(particleCount * 3);
     for (let index = 0; index < particleCount; index += 1) {
@@ -156,6 +171,32 @@ export function ThreePrototype() {
         positions[index * 3 + 1] = basePositions[index * 3 + 1] + Math.cos(elapsed * (0.18 + (index % 7) * 0.028) + index * 0.7) * 0.026;
       }
       leafGeometry.attributes.position.needsUpdate = true;
+
+      const imageAspect = 0.6283186;
+      const aspect = uniforms.uAspect.value;
+      let visibleY = Math.min(0.46, Math.max(0.34, imageAspect / aspect));
+      let visibleX = 1;
+      if (aspect < imageAspect) {
+        visibleX = Math.min(1, Math.max(0.72, aspect / imageAspect));
+        visibleY = 0.46;
+      }
+      const centerY = THREE.MathUtils.lerp(visibleY * 0.5, 1 - visibleY * 0.5, uniforms.uProgress.value);
+      const placeCharacter = (sprite: THREE.Sprite, worldX: number, worldY: number) => {
+        const screenX = ((worldX - 0.5) / visibleX + 0.5) * 2 - 1;
+        const screenY = ((worldY - centerY) / visibleY + 0.5) * 2 - 1;
+        sprite.position.set(screenX, screenY, 0.45);
+        sprite.visible = screenX > -1.15 && screenX < 1.15 && screenY > -1.15 && screenY < 1.15;
+      };
+
+      const walkCycle = (Math.sin(elapsed * 0.48) + 1) * 0.5;
+      const walkDirection = Math.cos(elapsed * 0.48) >= 0 ? 1 : -1;
+      placeCharacter(walker, THREE.MathUtils.lerp(0.29, 0.47, walkCycle), 0.765 + Math.sin(elapsed * 0.96) * 0.006);
+      walker.scale.set(0.042 * walkDirection, 0.082 + Math.sin(elapsed * 3.8) * 0.0025, 1);
+      walkerMaterial.rotation = Math.sin(elapsed * 3.8) * 0.035;
+
+      placeCharacter(player, 0.375 + Math.sin(elapsed * 0.72) * 0.006, 0.815);
+      player.scale.set(0.061, 0.061, 1);
+      playerMaterial.rotation = -0.13 + Math.sin(elapsed * 1.42) * 0.19;
       renderer.render(scene, camera);
       frame = window.requestAnimationFrame(animate);
     };
@@ -165,6 +206,10 @@ export function ThreePrototype() {
       window.cancelAnimationFrame(frame);
       window.removeEventListener("resize", resize);
       texture.dispose();
+      walkerTexture.dispose();
+      playerTexture.dispose();
+      walkerMaterial.dispose();
+      playerMaterial.dispose();
       leafGeometry.dispose();
       leafMaterial.dispose();
       plane.geometry.dispose();
@@ -230,7 +275,7 @@ export function ThreePrototype() {
 
       <section className="prototype-note">
         <p>Prototype boundary</p>
-        <h2>This test keeps the current painting, then adds real-time water distortion, drifting particles, scroll depth, and responsive rowing.</h2>
+        <h2>This test keeps the painted world, then separates selected characters into independent layers with their own paths and gestures.</h2>
         <Link href="/">Return to the current homepage <span>→</span></Link>
       </section>
     </main>
