@@ -19,7 +19,7 @@ export default function AboutPage() {
 
       <header className="about-cover">
         <h1>About me</h1>
-        <a href="#meet-xi" aria-label="Continue to meet Xi">↘</a>
+        <a href="#meet-xi" aria-label="Continue to meet Xi" />
       </header>
 
       <section className="about-hero" id="meet-xi">

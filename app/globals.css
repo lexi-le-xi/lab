@@ -1057,41 +1057,57 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 .about-nav p { margin:0; }
 .about-nav > a:last-child { justify-self:end; padding-bottom:3px; border-bottom:1px solid; }
 .about-cover {
-  min-height:calc(100svh - 72px);
-  padding:4vh 3vw 5vh;
-  display:grid;
-  grid-template-columns:1fr auto;
-  grid-template-rows:1fr auto;
-  align-items:start;
-  border-bottom:1px solid rgba(0,0,0,.18);
+  position:relative;
+  min-height:390px;
+  padding:70px 2vw 20px;
   background:#fff;
 }
 .about-cover h1 {
-  grid-column:1 / -1;
   margin:0;
-  font-size:clamp(105px,19vw,360px);
-  line-height:.76;
-  letter-spacing:-.085em;
+  font-size:clamp(92px,9.5vw,152px);
+  line-height:.82;
+  letter-spacing:-.055em;
   font-weight:800;
   text-transform:uppercase;
   white-space:nowrap;
 }
 .about-cover a {
-  grid-column:2;
-  align-self:end;
-  margin:0 5vw 2vh 0;
-  font-size:clamp(70px,9vw,145px);
-  line-height:1;
+  position:absolute;
+  left:48%;
+  top:224px;
+  width:58px;
+  height:58px;
   transition:transform .25s ease;
+}
+.about-cover a::before {
+  content:"";
+  position:absolute;
+  left:5px;
+  top:24px;
+  width:50px;
+  height:8px;
+  background:#000;
+  transform:rotate(45deg);
+  transform-origin:center;
+}
+.about-cover a::after {
+  content:"";
+  position:absolute;
+  right:1px;
+  bottom:1px;
+  width:25px;
+  height:25px;
+  border-right:8px solid #000;
+  border-bottom:8px solid #000;
 }
 .about-cover a:hover,.about-cover a:focus-visible { transform:translate(8px,8px); outline:none; }
 .about-hero {
-  min-height:100svh;
-  padding:12vh 6vw;
+  min-height:0;
+  padding:10px 2vw 12vh;
   display:grid;
-  grid-template-columns:minmax(320px,42%) 1fr;
-  gap:8vw;
-  align-items:center;
+  grid-template-columns:minmax(320px,34%) 1fr;
+  gap:7.5vw;
+  align-items:start;
   border-bottom:1px solid rgba(0,0,0,.18);
   background:#fff;
 }
@@ -1104,7 +1120,7 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   background:#eee;
 }
 .about-portrait img { display:block; width:100%; height:100%; object-fit:cover; object-position:center; }
-.about-intro { padding:2vh 0; display:flex; flex-direction:column; align-items:flex-start; }
+.about-intro { padding:6px 0 2vh; display:flex; flex-direction:column; align-items:flex-start; }
 .about-intro > p:first-child { margin:0; font-size:clamp(19px,2vw,30px); letter-spacing:0; text-transform:none; }
 .about-belief > p, .about-story > p, .about-now-heading > p, .about-stanford > p, .about-footer > p {
   margin:0; color:#3476dd; font-size:10px; letter-spacing:.17em; text-transform:uppercase;
@@ -1247,10 +1263,12 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   .area-page blockquote { padding:85px 25px; }
   .about-nav { height:60px; padding:0 18px; grid-template-columns:1fr auto; }
   .about-nav p { display:none; }
-  .about-cover { min-height:calc(100svh - 60px); padding:32px 18px 28px; grid-template-rows:auto 1fr; }
-  .about-cover h1 { font-size:25vw; line-height:.82; white-space:normal; }
-  .about-cover a { margin:0 5vw 3vh 0; font-size:25vw; }
-  .about-hero { min-height:auto; padding:70px 20px 85px; grid-template-columns:1fr; gap:65px; background:#fff; }
+  .about-cover { min-height:310px; padding:52px 18px 20px; }
+  .about-cover h1 { font-size:21vw; line-height:.82; white-space:nowrap; }
+  .about-cover a { left:48%; top:170px; width:52px; height:52px; }
+  .about-cover a::before { width:44px; height:7px; }
+  .about-cover a::after { width:22px; height:22px; border-width:0 7px 7px 0; }
+  .about-hero { min-height:auto; padding:10px 20px 85px; grid-template-columns:1fr; gap:65px; background:#fff; }
   .about-portrait { width:100%; min-height:0; margin:0; border-radius:8px; background:#eee; }
   .about-portrait img { width:100%; height:100%; object-position:center; }
   .about-intro { padding:0; }
