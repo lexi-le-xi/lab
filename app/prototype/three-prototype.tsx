@@ -3,9 +3,10 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
-import rowingWorld from "../../public/rowing-world-tennis-v1.png";
+import rowingWorld from "../../public/rowing-world-tennis-tree-v1.png";
 import rowingBoat from "../../public/rowing-boat-base-v5.png";
 import tennisPlayer from "../../public/prototype-characters/tennis-player-v1.png";
+import paintedTree from "../../public/prototype-characters/tree-v1.png";
 import walkingPerson from "../../public/prototype-characters/walker-v1.png";
 
 const prototypeScenes = [
@@ -127,15 +128,23 @@ export function ThreePrototype() {
     const characterLoader = new THREE.TextureLoader();
     const walkerTexture = characterLoader.load(walkingPerson.src);
     const playerTexture = characterLoader.load(tennisPlayer.src);
+    const treeTexture = characterLoader.load(paintedTree.src);
     walkerTexture.colorSpace = THREE.SRGBColorSpace;
     playerTexture.colorSpace = THREE.SRGBColorSpace;
+    treeTexture.colorSpace = THREE.SRGBColorSpace;
     const walkerMaterial = new THREE.SpriteMaterial({ map: walkerTexture, transparent: true, alphaTest: 0.04, depthTest: false });
     const playerMaterial = new THREE.SpriteMaterial({ map: playerTexture, transparent: true, alphaTest: 0.04, depthTest: false });
+    const treeMaterial = new THREE.SpriteMaterial({ map: treeTexture, transparent: true, alphaTest: 0.04, depthTest: false });
     const walker = new THREE.Sprite(walkerMaterial);
     const player = new THREE.Sprite(playerMaterial);
+    const tree = new THREE.Sprite(treeMaterial);
+    const treePivot = new THREE.Group();
     walker.renderOrder = 3;
     player.renderOrder = 3;
-    scene.add(walker, player);
+    tree.renderOrder = 2;
+    tree.position.y = 0.09;
+    treePivot.add(tree);
+    scene.add(treePivot, walker, player);
 
     const particleCount = 76;
     const positions = new Float32Array(particleCount * 3);
@@ -181,22 +190,26 @@ export function ThreePrototype() {
         visibleY = 0.46;
       }
       const centerY = THREE.MathUtils.lerp(visibleY * 0.5, 1 - visibleY * 0.5, uniforms.uProgress.value);
-      const placeCharacter = (sprite: THREE.Sprite, worldX: number, worldY: number) => {
+      const placeWorldObject = (object: THREE.Object3D, worldX: number, worldY: number) => {
         const screenX = ((worldX - 0.5) / visibleX + 0.5) * 2 - 1;
         const screenY = ((worldY - centerY) / visibleY + 0.5) * 2 - 1;
-        sprite.position.set(screenX, screenY, 0.45);
-        sprite.visible = screenX > -1.15 && screenX < 1.15 && screenY > -1.15 && screenY < 1.15;
+        object.position.set(screenX, screenY, 0.45);
+        object.visible = screenX > -1.15 && screenX < 1.15 && screenY > -1.15 && screenY < 1.15;
       };
 
-      const walkCycle = (Math.sin(elapsed * 0.48) + 1) * 0.5;
-      const walkDirection = Math.cos(elapsed * 0.48) >= 0 ? 1 : -1;
-      placeCharacter(walker, THREE.MathUtils.lerp(0.29, 0.47, walkCycle), 0.765 + Math.sin(elapsed * 0.96) * 0.006);
-      walker.scale.set(0.042 * walkDirection, 0.082 + Math.sin(elapsed * 3.8) * 0.0025, 1);
-      walkerMaterial.rotation = Math.sin(elapsed * 3.8) * 0.035;
+      const walkCycle = (Math.sin(elapsed * 0.21) + 1) * 0.5;
+      const walkDirection = Math.cos(elapsed * 0.21) >= 0 ? 1 : -1;
+      placeWorldObject(walker, THREE.MathUtils.lerp(0.29, 0.47, walkCycle), 0.765 + Math.sin(elapsed * 0.42) * 0.003);
+      walker.scale.set(0.042 * walkDirection, 0.082 + Math.sin(elapsed * 2.0) * 0.0018, 1);
+      walkerMaterial.rotation = Math.sin(elapsed * 2.0) * 0.022;
 
-      placeCharacter(player, 0.375 + Math.sin(elapsed * 0.72) * 0.006, 0.815);
+      placeWorldObject(player, 0.375 + Math.sin(elapsed * 0.32) * 0.004, 0.815);
       player.scale.set(0.061, 0.061, 1);
-      playerMaterial.rotation = -0.13 + Math.sin(elapsed * 1.42) * 0.19;
+      playerMaterial.rotation = -0.13 + Math.sin(elapsed * 0.62) * 0.16;
+
+      placeWorldObject(treePivot, 0.245, 0.755);
+      tree.scale.set(0.14, 0.18, 1);
+      treePivot.rotation.z = Math.sin(elapsed * 0.34) * 0.018 + Math.sin(elapsed * 0.73) * 0.006;
       renderer.render(scene, camera);
       frame = window.requestAnimationFrame(animate);
     };
@@ -208,8 +221,10 @@ export function ThreePrototype() {
       texture.dispose();
       walkerTexture.dispose();
       playerTexture.dispose();
+      treeTexture.dispose();
       walkerMaterial.dispose();
       playerMaterial.dispose();
+      treeMaterial.dispose();
       leafGeometry.dispose();
       leafMaterial.dispose();
       plane.geometry.dispose();
