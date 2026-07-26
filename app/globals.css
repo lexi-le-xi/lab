@@ -672,8 +672,8 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   outline:none;
 }
 .shore-dot {
-  width:11px;
-  height:11px;
+  width:13px;
+  height:13px;
   border-radius:50%;
   background:#fff;
   box-shadow:0 0 0 5px rgba(255,255,255,.27), 0 0 18px 7px rgba(255,255,255,.5);
@@ -681,7 +681,8 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 }
 .shore-card {
   position:absolute;
-  left:24px;
+  right:24px;
+  left:auto;
   top:50%;
   width:min(350px,32vw);
   min-height:108px;
@@ -695,8 +696,8 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   background:rgba(255,250,224,.94);
   box-shadow:0 16px 40px rgba(77,108,91,.18);
   backdrop-filter:blur(10px);
-  transform:translate(8px,-50%) scale(.96);
-  transform-origin:left center;
+  transform:translate(-8px,-50%) scale(.96);
+  transform-origin:right center;
   opacity:0;
   visibility:hidden;
   transition:opacity .22s ease, transform .22s ease, visibility .22s;
@@ -982,7 +983,7 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   .rowing-opening h1 { font-size:15vw; }
   .rowing-opening > span { max-width:200px; line-height:1.5; }
   .shore-place { width:32px; height:32px; }
-  .shore-card { left:25px; width:64vw; min-height:112px; padding:14px; grid-template-columns:22px 1fr; }
+  .shore-card { right:25px; left:auto; width:64vw; min-height:112px; padding:14px; grid-template-columns:22px 1fr; }
   .shore-card > b { display:none; }
   .shore-card strong { font-size:18px; }
   .shore-card em { font-size:12px; }

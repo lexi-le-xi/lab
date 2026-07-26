@@ -11,7 +11,7 @@ const places = [
     connection: "Connection with people",
     insight: "Care reveals what ordinary design overlooks.",
     top: "87%",
-    left: "7%",
+    left: "70%",
   },
   {
     slug: "making-systems",
@@ -20,7 +20,7 @@ const places = [
     connection: "Connection through making",
     insight: "Fewer processes can create more participation.",
     top: "66%",
-    left: "9%",
+    left: "67%",
   },
   {
     slug: "materials-time",
@@ -29,7 +29,7 @@ const places = [
     connection: "Connection with consequence",
     insight: "What takes minutes to make may remain for centuries.",
     top: "49%",
-    left: "8%",
+    left: "76%",
   },
   {
     slug: "mind-body-behavior",
@@ -38,7 +38,7 @@ const places = [
     connection: "Connection with ourselves",
     insight: "Awareness begins by returning to the body.",
     top: "34%",
-    left: "7%",
+    left: "65%",
   },
   {
     slug: "play-ai-interaction",
@@ -47,7 +47,7 @@ const places = [
     connection: "Connection through interaction",
     insight: "Technology can return attention instead of taking it.",
     top: "18%",
-    left: "6%",
+    left: "69%",
   },
 ] as const;
 
