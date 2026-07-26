@@ -819,6 +819,21 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   box-shadow:0 0 0 5px rgba(75,190,255,.18),0 8px 18px rgba(4,55,132,.34);
   filter:drop-shadow(0 0 9px rgba(70,196,255,.92));
 }
+.shore-guide::before {
+  content:"";
+  position:absolute;
+  z-index:-1;
+  left:50%;
+  top:50%;
+  width:44px;
+  height:44px;
+  border:1px solid rgba(218,247,255,.72);
+  border-radius:50%;
+  background:radial-gradient(circle,rgba(255,255,255,.36) 0 28%,rgba(91,204,255,.24) 45%,rgba(54,153,255,.08) 68%,transparent 72%);
+  box-shadow:0 0 0 7px rgba(87,194,255,.1),0 0 24px 10px rgba(94,207,255,.46);
+  transform:translate(-50%,-50%);
+  animation:gemAura 1.65s ease-in-out infinite;
+}
 .shore-guide b::after {
   content:"";
   position:absolute;
@@ -1041,6 +1056,10 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 @keyframes shoreGuideFloat {
   0%,100% { translate:0 0; }
   50% { translate:0 -6px; }
+}
+@keyframes gemAura {
+  0%,100% { scale:.9; opacity:.68; }
+  50% { scale:1.12; opacity:1; }
 }
 @keyframes oarLeft {
   0%,100% { transform:rotate(-14deg) scaleX(.97); }
