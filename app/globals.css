@@ -812,11 +812,11 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 .shore-guide b {
   position:relative;
   display:block;
-  width:21px;
-  height:31px;
+  width:28px;
+  height:40px;
   clip-path:polygon(0 0,100% 0,50% 100%);
-  background:linear-gradient(135deg,#fff 0 42%,#91dcff 43% 68%,#2c8bea 69% 100%);
-  filter:drop-shadow(0 4px 4px rgba(4,55,132,.42)) drop-shadow(0 0 4px rgba(80,194,255,.72));
+  background:#fff;
+  filter:drop-shadow(0 4px 4px rgba(4,55,132,.42));
 }
 .shore-place.is-current .shore-guide { opacity:1; visibility:visible; transform:translate(-50%,0); animation:shoreGuideFloat 1.7s ease-in-out infinite; }
 .shore-place:hover .shore-guide,.shore-place:focus-visible .shore-guide { opacity:0; visibility:hidden; }
