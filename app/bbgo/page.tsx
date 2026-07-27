@@ -57,6 +57,24 @@ export default function BbgoPage() {
       <section className="bbgo-system">
         <header><span>04</span><p>System</p><h2>Three mechanisms support one continuous relationship.</h2></header>
         <Image src={systemOverview.src} alt="BBgo system overview combining AI following, reclining seat, and stair-climbing wheels" />
+        <div className="bbgo-system-videos">
+          <article>
+            <figure>
+              <video autoPlay muted loop playsInline preload="metadata" aria-label="DJI Neo smart-following behavior reference">
+                <source src={publicPath("/bbgo/following-reference.mp4")} type="video/mp4" />
+              </video>
+            </figure>
+            <p><span>Behavior reference</span>DJI NEO · Smart following</p>
+          </article>
+          <article>
+            <figure>
+              <video autoPlay muted loop playsInline preload="metadata" aria-label="BBgo scenario demonstration">
+                <source src={publicPath("/bbgo/scenario-demo.mp4")} type="video/mp4" />
+              </video>
+            </figure>
+            <p><span>Concept visualization</span>BBgo · Scenario demonstration</p>
+          </article>
+        </div>
         <ol>
           <li><span>01</span><div><h3>Smart following</h3><p>Omnidirectional sensors and cameras conceptually allow the stroller to recognize and follow its caregiver while monitoring its surroundings.</p></div></li>
           <li><span>02</span><div><h3>Adaptive seating</h3><p>An electrically adjustable seat shifts between sitting and lying positions as the child&apos;s needs change.</p></div></li>
@@ -66,7 +84,6 @@ export default function BbgoPage() {
 
       <section className="bbgo-section bbgo-method">
         <div className="bbgo-copy"><span>05</span><p>Design method</p><h2>A proposal developed by moving between hand sketching and generative AI.</h2><div><p>Traditional sketches established the product logic and form. AI image generation then made it possible to test multiple visual directions quickly and communicate the scenario with greater immediacy.</p><p>This is a design proposal rather than a validated physical product. The next step would be a functional prototype, followed by safety, tracking, stair, and caregiver testing.</p></div></div>
-        <figure className="bbgo-video"><video autoPlay muted loop playsInline preload="metadata" aria-label="BBgo scenario demonstration"><source src={publicPath("/bbgo/scenario-demo.mov")} /></video></figure>
       </section>
 
       <section className="bbgo-reflection">
