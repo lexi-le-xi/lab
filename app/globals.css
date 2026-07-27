@@ -2038,7 +2038,7 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 .bbgo-system header h2 { margin:0; font-size:clamp(47px,6.4vw,116px); line-height:.94; letter-spacing:-.055em; font-weight:500; }
 .bbgo-system > figure { height:min(66vw,920px); background:#fff; }
 .bbgo-system > figure img { object-fit:contain; }
-.bbgo-system-videos { display:grid; grid-template-columns:1.6fr 1fr; gap:1.5vw; margin-top:1.5vw; }
+.bbgo-system-videos { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.5vw; margin-top:1.5vw; }
 .bbgo-system-videos article { min-width:0; }
 .bbgo-system-videos figure { aspect-ratio:16/10; overflow:hidden; background:#071b28; }
 .bbgo-system-videos video { width:100%; height:100%; object-fit:cover; display:block; }
