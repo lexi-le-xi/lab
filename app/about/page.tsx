@@ -64,7 +64,6 @@ export default function AboutPage() {
           “I want to build connection—not only between you and other people,
           but also between you and yourself, you and life, and you and the universe.”
         </blockquote>
-        <a className="about-flow-arrow is-left" href="#about-thinking" aria-label="Continue to explore my thinking"><CornerArrow /></a>
       </section>
 
       <section className="about-beyond" id="about-thinking">
