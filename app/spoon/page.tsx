@@ -9,6 +9,7 @@ import cutting from "../../public/spoon/cutting.jpg";
 import finishing from "../../public/spoon/finishing.jpg";
 import supportClosed from "../../public/spoon/support-closed.jpg";
 import supportOpen from "../../public/spoon/support-open.jpg";
+import result from "../../public/spoon/result.jpg";
 
 export const metadata: Metadata = {
   title: "A Spoon for My Grandfather · Xi Liu",
@@ -101,7 +102,7 @@ export default function SpoonPage() {
 
       <section className="spoon-result">
         <p>04 · Result</p>
-        <Image src={hero.src} alt="Finished one-piece spoon designed for Xi's grandfather" />
+        <Image src={result.src} alt="Finished one-piece spoon displayed beside the modular organizer" />
         <blockquote>Inclusive design does not begin with an abstract user group. Sometimes it begins by noticing how someone you love moves through an ordinary day.</blockquote>
       </section>
 
