@@ -2619,7 +2619,7 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 }
 .awa-ip-notice strong { font-size:clamp(15px,1.35vw,22px); line-height:1.2; }
 .awa-ip-notice span { font:clamp(14px,1.1vw,18px)/1.45 Georgia,serif; letter-spacing:0; text-transform:none; }
-.organizer-lead { width:100%; margin:0; overflow:hidden; background:#101416; aspect-ratio:16/10; }
+.organizer-lead { width:100%; margin:0; overflow:hidden; background:#101416; aspect-ratio:2400/1127; }
 .organizer-lead img { display:block; width:100%; height:100%; object-fit:cover; object-position:center; }
 
 /* Unmaking Time */
@@ -2694,7 +2694,7 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   .awa-ip-notice { padding:24px 22px; grid-template-columns:1fr; gap:14px; }
   .awa-ip-notice strong { font-size:14px; }
   .awa-ip-notice span { font-size:13px; }
-  .organizer-lead { aspect-ratio:1; }
+  .organizer-lead { aspect-ratio:2400/1127; }
   .unmaking-hero > h1 { font-size:17vw; }
   .unmaking-lead { aspect-ratio:3/4; }
   .unmaking-lead img { object-position:53% center; }

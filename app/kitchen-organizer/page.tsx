@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { AutoVideo } from "../mat-bag/auto-video";
 import { SiteFooter, SiteNavigation } from "../site-chrome";
 import hero from "../../public/kitchen-organizer/hero.png";
+import heroMain from "../../public/kitchen-organizer/hero-main.jpg";
 import flatPattern from "../../public/kitchen-organizer/flat-pattern.png";
 import bending from "../../public/kitchen-organizer/bending.jpg";
 
@@ -25,7 +26,7 @@ export default function KitchenOrganizerPage() {
           <p>A precise sheet-metal structure that reduces factory assembly and turns putting an object together into the beginning of ownership.</p>
         </div>
       </header>
-      <figure className="organizer-lead"><img src={hero.src} alt="The assembled modular kitchen organizer holding eggs and grapes" /></figure>
+      <figure className="organizer-lead"><img src={heroMain.src} alt="The modular kitchen organizer holding eggs and grapes on a dining table" /></figure>
 
       <section className="organizer-question">
         <span>01 · Design question</span>
