@@ -25,8 +25,8 @@ const Image = ({ src, alt, className = "" }: { src: string; alt: string; classNa
 
 const publicPath = (path: string) => `${process.env.GITHUB_ACTIONS === "true" ? "/lab" : ""}${path}`;
 
-const MovingImage = ({ src, label }: { src: string; label: string }) => (
-  <figure className="awa-video">
+const MovingImage = ({ src, label, className = "" }: { src: string; label: string; className?: string }) => (
+  <figure className={`awa-video ${className}`.trim()}>
     <AutoVideo src={src} label={label} />
   </figure>
 );
@@ -62,7 +62,7 @@ export default function AllWeArePage() {
           <p>Conventional footwear divides a shoe into many independently produced components, then bonds them together with adhesive. The process creates coordination overhead, worker-health concerns, environmental impact, and inventory risk.</p>
           <p>For wearers, the same sealed construction makes cleaning difficult and can deform or delaminate in a washing machine.</p>
         </div></div>
-        <MovingImage src={publicPath("/all-we-are/form-development.mp4")} label="Form development for the modular shoe" />
+        <MovingImage src={publicPath("/all-we-are/form-development.mp4")} label="Form development for the modular shoe" className="awa-form-video" />
         <Image src={industrySubtraction.src} alt="Comparison between a conventional shoe and the simplified ALL WE ARE system" className="awa-wide-image" />
       </section>
 

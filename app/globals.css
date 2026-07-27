@@ -374,6 +374,8 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 .awa-duo figure:first-child img { object-fit:contain; padding:2vw; }
 .awa-video { margin-top:1.5vw !important; height:min(57vw,800px); background:#111; }
 .awa-video video { object-fit:cover; }
+.awa-form-video { width:min(72%,1100px); height:auto; aspect-ratio:16/9; margin:1.5vw auto 0 !important; }
+.awa-form-video video { object-fit:contain; }
 .awa-objectives { padding:10vw 4vw; background:#e85f45; color:#fff5e6; }
 .awa-objectives > p { margin:0 0 5vw; font-size:11px; letter-spacing:.17em; text-transform:uppercase; }
 .awa-objectives ol { list-style:none; margin:0; padding:0; }
@@ -418,6 +420,7 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   .awa-wide-image { height:92vw; }
   .awa-duo,.awa-video-pair,.awa-campaign-grid { grid-template-columns:1fr; }
   .awa-duo figure,.awa-video,.awa-video-pair .awa-video,.awa-assembly .is-assembly figure { height:100vw; }
+  .awa-form-video { width:92%; height:auto; aspect-ratio:16/9; margin-right:auto !important; margin-left:auto !important; }
   .awa-objectives { padding:90px 22px; }
   .awa-objectives > p { margin-bottom:50px; }
   .awa-objectives li { min-height:130px; grid-template-columns:38px 1fr; }
