@@ -13,14 +13,16 @@ export const metadata: Metadata = {
 
 const publicPath = (path: string) => `${process.env.GITHUB_ACTIONS === "true" ? "/lab" : ""}${path}`;
 
-const processSteps = [
-  ["01", "Choose the surface", "Select a smooth sheet of wood that can give the concrete slab a clean working face."],
-  ["02", "Build the mold", "Define the slab, its edges, and the opening for the induction cooker before anything is poured."],
-  ["03", "Pour the concrete", "Fill the mold and let a simple material take on the precise surface required by the shared kitchen."],
-  ["04", "Build the base", "Use brickwork to create a stable support in the space where the stove will live."],
-  ["05", "Lift the slab", "After a week of curing, move the heavy concrete top into place with help from others."],
-  ["06", "Finish the surface", "Refine the edges and surface so the object can withstand everyday preparation and cleaning."],
-  ["07", "Put it into use", "Install the induction cooker and return the finished object to the community that needed it."],
+const processMedia = [
+  { index: "01", title: "Choose the surface", description: "Choose a piece of wood with a smooth surface.", type: "image", src: final02.src },
+  { index: "02", title: "Build the mold", description: "Make a mold for the concrete slab and define the opening for the induction cooker.", type: "image", src: final03.src },
+  { index: "03", title: "Fill with concrete", description: "Mix and fill the mold with concrete.", type: "video", src: "/concrete-stove/process-04.mp4" },
+  { index: "04", title: "Fill with concrete", description: "Continue the pour and distribute the material through the mold.", type: "video", src: "/concrete-stove/process-07.mp4" },
+  { index: "05", title: "Build the base", description: "Use bricks to build the supporting wall in the shared space.", type: "video", src: "/concrete-stove/process-05.mp4" },
+  { index: "06", title: "Build the base", description: "Complete the brick support before the slab is moved into place.", type: "video", src: "/concrete-stove/process-03.mp4" },
+  { index: "07", title: "Lift the slab", description: "After a week of curing, get help to lift the fully dried—and very heavy—concrete slab.", type: "video", src: "/concrete-stove/process-06.mp4" },
+  { index: "08", title: "Finish the surface", description: "Refine the slab after it has been set onto the base.", type: "video", src: "/concrete-stove/process-01.mp4" },
+  { index: "09", title: "Put it into use", description: "Place the induction cooker into the opening: done.", type: "video", src: "/concrete-stove/process-02.mp4" },
 ] as const;
 
 export default function ConcreteStovePage() {
@@ -57,9 +59,13 @@ export default function ConcreteStovePage() {
       <section className="concrete-process">
         <header><span>02</span><p>Making process</p><h2>Seven steps from a sheet of wood to a place for gathering.</h2></header>
         <div className="concrete-process-grid">
-          {processSteps.map(([index, title, description], i) => (
+          {processMedia.map(({ index, title, description, type, src }) => (
             <article key={index}>
-              <figure><AutoVideo src={publicPath(`/concrete-stove/process-${String(i + 1).padStart(2, "0")}.mp4`)} label={`${title}: ${description}`} /></figure>
+              <figure>
+                {type === "image"
+                  ? <img src={src} alt={`${title}: ${description}`} />
+                  : <AutoVideo src={publicPath(src)} label={`${title}: ${description}`} />}
+              </figure>
               <div><span>{index}</span><h3>{title}</h3><p>{description}</p></div>
             </article>
           ))}
@@ -70,8 +76,6 @@ export default function ConcreteStovePage() {
         <header><span>03</span><p>Result</p><h2>A quiet piece of infrastructure for everyday community life.</h2></header>
         <div className="concrete-gallery">
           <figure><img src={final01.src} alt="Concrete stove seen from the front corner" /></figure>
-          <figure><img src={final02.src} alt="Finished cooking surface reflecting the studio windows" /></figure>
-          <figure><img src={final03.src} alt="Detail of the wooden mold used to form the concrete slab" /></figure>
         </div>
       </section>
 
