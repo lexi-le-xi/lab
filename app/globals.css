@@ -844,17 +844,17 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   z-index: 8;
   left: 4vw;
   bottom: 7vh;
-  width: min(650px, 47vw);
+  width: 92vw;
   opacity: clamp(0, calc(1 - var(--journey-progress) * 12), 1);
   transform: translateY(calc(var(--journey-progress) * 90px));
   transition: opacity .12s linear;
   text-shadow: 0 2px 18px rgba(255,255,255,.9);
   pointer-events: none;
 }
-.rowing-opening > p { margin: 0 0 18px; font-size: 10px; text-transform: uppercase; letter-spacing: .2em; }
-.rowing-opening h1 { margin: 0; font-size: clamp(52px, 7vw, 112px); line-height: .84; letter-spacing: -.065em; font-weight: 500; }
+.rowing-opening > p { width:min(650px,47vw); margin: 0 0 18px; font-size: 10px; text-transform: uppercase; letter-spacing: .2em; }
+.rowing-opening h1 { width:min(650px,47vw); margin: 0; font-size: clamp(52px, 7vw, 112px); line-height: .84; letter-spacing: -.065em; font-weight: 500; }
 .rowing-opening h1 em { color: #0e5f51; font-family: Georgia, serif; font-weight: 400; }
-.rowing-opening > span { display: block; margin-top: 28px; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; }
+.rowing-opening > span { position:absolute; right:0; bottom:0; display:block; padding:16px 20px; background:rgba(255,255,255,.92); box-shadow:0 9px 28px rgba(18,65,104,.14); text-shadow:none; font-size:11px; letter-spacing:.14em; text-transform:uppercase; }
 
 .shore-places {
   position: absolute;
