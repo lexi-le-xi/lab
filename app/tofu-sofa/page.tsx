@@ -13,10 +13,10 @@ const publicPath = (path: string) => `${process.env.GITHUB_ACTIONS === "true" ? 
 
 const steps = [
   ["01", "Quick model test & display", "/tofu-sofa/process-01-model.mp4", "Test the low, modular arrangement before committing material and labor."],
-  ["02", "Fixing the pallets with hardware", "/tofu-sofa/process-02-pallets.mp4", "Turn discarded shipping pallets into a stable structural base."],
-  ["03", "Covering the pallets with foam pads", "/tofu-sofa/process-03-foam.mp4", "Add softness without hiding the directness of the construction."],
-  ["04", "Sewing the sofa covers", "/tofu-sofa/process-04-covers.mp4", "Make removable white covers that unify the reused structure."],
-  ["05", "Fixing the cushions—done", "/tofu-sofa/process-05-finish.mp4", "Complete the shared seating with simple cushions and flexible arrangements."],
+  ["02", "Fixing the pallets with hardware", "/tofu-sofa/process-05-finish.mp4", "Turn discarded shipping pallets into a stable structural base."],
+  ["03", "Covering the pallets with foam pads", "/tofu-sofa/process-04-covers.mp4", "Add softness without hiding the directness of the construction."],
+  ["04", "Sewing the sofa covers", "/tofu-sofa/process-03-foam.mp4", "Make removable white covers that unify the reused structure."],
+  ["05", "Fixing the cushions—done", "/tofu-sofa/process-02-pallets.mp4", "Complete the shared seating with simple cushions and flexible arrangements."],
 ] as const;
 
 export default function TofuSofaPage() {
