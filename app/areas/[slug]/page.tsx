@@ -28,7 +28,11 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
         <p>Projects & studies</p>
         <ol>
           {area.projects.map((project, index) => (
-            <li key={project}><span>{String(index + 1).padStart(2, "0")}</span><strong>{project}</strong><em>In development</em></li>
+            <li key={project}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <strong>{project === "ESTEAST" ? <Link href="/esteast">{project}</Link> : project}</strong>
+              <em>{project === "ESTEAST" ? "View project ↗" : "In development"}</em>
+            </li>
           ))}
         </ol>
       </section>
