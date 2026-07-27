@@ -57,6 +57,7 @@ export default function AllWeArePage() {
           <p>Conventional footwear divides a shoe into many independently produced components, then bonds them together with adhesive. The process creates coordination overhead, worker-health concerns, environmental impact, and inventory risk.</p>
           <p>For wearers, the same sealed construction makes cleaning difficult and can deform or delaminate in a washing machine.</p>
         </div></div>
+        <MovingImage src={publicPath("/all-we-are/form-development.mp4")} label="Form development for the modular shoe" />
         <Image src={industrySubtraction.src} alt="Comparison between a conventional shoe and the simplified ALL WE ARE system" className="awa-wide-image" />
       </section>
 
@@ -69,7 +70,6 @@ export default function AllWeArePage() {
           <Image src={technicalDrawing.src} alt="Technical drawing for the modular shoe frame" />
           <Image src={prototype.src} alt="Early physical prototype of the integrated shoe frame" />
         </div>
-        <MovingImage src={publicPath("/all-we-are/form-development.mp4")} label="Form development for the modular shoe" />
       </section>
 
       <section className="awa-objectives">

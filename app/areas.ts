@@ -18,7 +18,7 @@ export const areas = [
     question: "How might we make things with fewer processes and more possibilities?",
     description: "Reorganizing structure, manufacturing, assembly, and use so that people can participate in how objects come to life.",
     insight: "When people help complete an object, ownership becomes a relationship rather than a transaction.",
-    projects: ["ESTEAST", "Modular Kitchen Organizer", "ALL WE ARE / Modular Shoes", "HOVER", "3D Printed Shoes", "Mat Bag"],
+    projects: ["ESTEAST", "Modular Kitchen Organizer", "ALL WE ARE / Modular Shoes", "HOVER", "3D Printed Shoes", "Mat Bag", "Concrete Cooking Stove"],
     color: "#dd714d",
   },
   {
@@ -29,7 +29,7 @@ export const areas = [
     question: "What does an object cost beyond its price?",
     description: "Making the hidden timelines of extraction, production, consumption, waste, and degradation possible to experience.",
     insight: "What takes minutes to produce may remain with the planet for centuries.",
-    projects: ["Unmaking Time", "Make Less, Create More", "Zero-waste Material Experiments"],
+    projects: ["Unmaking Time", "Tofu Sofa"],
     color: "#d88933",
   },
   {

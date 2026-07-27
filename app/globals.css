@@ -1914,3 +1914,77 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   .rowing-landscape, .shore-places, .land-breeze { will-change:auto; }
   .rowing-landscape, .rowing-landscape::after, .land-breeze i, .land-breeze b, .land-breeze span, .lake-motion i, .lake-gulls a, .shore-dot, .rowing-boat::before, .rowing-boat img, .rowing-boat b, .rowing-boat > i, .about-portrait::before, .about-portrait img { animation:none !important; }
 }
+
+/* CONCRETE COOKING STOVE */
+.concrete-page { background:#eee9df; color:#151515; }
+.concrete-page figure { margin:0; overflow:hidden; }
+.concrete-page img,.concrete-page video { display:block; width:100%; height:100%; object-fit:cover; }
+.concrete-hero { min-height:calc(100svh - 78px); padding:5vw 4vw 4vw; display:grid; grid-template-columns:1fr 1fr; grid-template-rows:auto 1fr; gap:3vw; background:#e1dfd8; }
+.concrete-hero > p { grid-column:1/3; margin:0; font-size:10px; letter-spacing:.18em; text-transform:uppercase; }
+.concrete-hero h1 { align-self:end; margin:0; font-size:clamp(72px,10.5vw,196px); line-height:.78; letter-spacing:-.075em; font-weight:600; }
+.concrete-hero > div { align-self:end; max-width:650px; padding-bottom:.5vw; }
+.concrete-hero h2 { margin:0 0 2.5vw; font-size:clamp(30px,3.5vw,66px); line-height:.98; letter-spacing:-.045em; font-weight:500; }
+.concrete-hero > div p { max-width:560px; margin:0; font:19px/1.5 Georgia,serif; }
+.concrete-lead { height:min(66vw,980px); background:#d9d4c9; }
+.concrete-lead img { object-position:center; }
+.concrete-statement { min-height:80svh; padding:10vw 7vw; display:grid; grid-template-columns:1fr 3fr; align-items:start; background:#4b5149; color:#f7f0df; }
+.concrete-statement > p { margin:0; font-size:10px; letter-spacing:.18em; text-transform:uppercase; }
+.concrete-statement blockquote { margin:0; font:clamp(48px,7.2vw,126px)/.98 Georgia,serif; letter-spacing:-.045em; }
+.concrete-intro { padding:11vw 5vw; display:grid; grid-template-columns:4vw 2fr 5fr; gap:1.5vw; background:#f7f5f0; }
+.concrete-intro > span,.concrete-process header > span,.concrete-result header > span { color:#765b3f; font-size:10px; }
+.concrete-intro > p,.concrete-process header > p,.concrete-result header > p { margin:0; font-size:11px; letter-spacing:.16em; text-transform:uppercase; }
+.concrete-intro h2 { grid-column:3; margin:0; font-size:clamp(48px,7vw,126px); line-height:.94; letter-spacing:-.055em; font-weight:500; }
+.concrete-intro > div { grid-column:3; margin-top:3vw; display:grid; grid-template-columns:1fr 1fr; gap:3vw; }
+.concrete-intro > div p { margin:0; font:18px/1.55 Georgia,serif; }
+.concrete-process { padding:10vw 4vw; background:#b7a486; }
+.concrete-process header,.concrete-result header { display:grid; grid-template-columns:4vw 2fr 5fr; gap:1.5vw; margin-bottom:7vw; }
+.concrete-process header h2,.concrete-result header h2 { margin:0; font-size:clamp(45px,6.2vw,112px); line-height:.94; letter-spacing:-.055em; font-weight:500; }
+.concrete-process-grid { display:grid; grid-template-columns:1fr 1fr; gap:5vw 1.5vw; }
+.concrete-process-grid article:nth-child(3n) { grid-column:1/3; width:70%; margin-left:auto; }
+.concrete-process-grid figure { height:36vw; max-height:560px; background:#252525; }
+.concrete-process-grid article:nth-child(3n) figure { height:44vw; max-height:680px; }
+.concrete-process-grid article > div { padding-top:18px; display:grid; grid-template-columns:38px 1fr; }
+.concrete-process-grid article span { font-size:10px; color:#fff8e8; }
+.concrete-process-grid article h3 { margin:0; font-size:clamp(26px,3vw,52px); line-height:1; letter-spacing:-.04em; font-weight:500; }
+.concrete-process-grid article p { grid-column:2; max-width:480px; margin:15px 0 0; font:17px/1.45 Georgia,serif; }
+.concrete-result { padding:10vw 4vw; background:#f4f0e7; }
+.concrete-gallery { display:grid; grid-template-columns:1.5fr 1fr; gap:1.5vw; }
+.concrete-gallery figure { height:35vw; max-height:570px; }
+.concrete-gallery figure:first-child { grid-row:1/3; height:auto; max-height:none; }
+.concrete-reflection { padding:11vw 7vw; display:grid; grid-template-columns:1fr 3fr; gap:3vw; background:#6b4932; color:#fff4df; }
+.concrete-reflection > p { margin:0; font-size:10px; letter-spacing:.18em; text-transform:uppercase; }
+.concrete-reflection blockquote { margin:0; font:clamp(45px,6.4vw,112px)/.98 Georgia,serif; letter-spacing:-.045em; }
+.concrete-reflection > div { grid-column:2; margin-top:5vw; display:grid; grid-template-columns:1fr 2fr; gap:2vw; font-size:12px; letter-spacing:.12em; text-transform:uppercase; }
+.concrete-reflection > div p { margin:0; }
+
+@media (max-width:720px) {
+  .concrete-hero { min-height:auto; padding:80px 22px 70px; display:block; }
+  .concrete-hero > p { margin-bottom:70px; }
+  .concrete-hero h1 { font-size:22vw; line-height:.82; }
+  .concrete-hero > div { margin-top:70px; }
+  .concrete-hero h2 { margin-bottom:28px; font-size:11vw; }
+  .concrete-hero > div p { font-size:17px; }
+  .concrete-lead { height:100vw; }
+  .concrete-lead img { object-position:46% center; }
+  .concrete-statement { min-height:auto; padding:90px 22px; grid-template-columns:1fr; gap:45px; }
+  .concrete-statement blockquote { font-size:11vw; }
+  .concrete-intro { padding:90px 22px; grid-template-columns:32px 1fr; gap:0; }
+  .concrete-intro > p { grid-column:2; }
+  .concrete-intro h2,.concrete-intro > div { grid-column:1/3; }
+  .concrete-intro h2 { margin-top:36px; font-size:12vw; }
+  .concrete-intro > div { margin-top:45px; display:block; }
+  .concrete-intro > div p + p { margin-top:24px; }
+  .concrete-process,.concrete-result { padding:90px 22px; }
+  .concrete-process header,.concrete-result header { grid-template-columns:32px 1fr; gap:0; margin-bottom:60px; }
+  .concrete-process header > p,.concrete-result header > p { grid-column:2; }
+  .concrete-process header h2,.concrete-result header h2 { grid-column:1/3; margin-top:35px; font-size:12vw; }
+  .concrete-process-grid { grid-template-columns:1fr; gap:60px; }
+  .concrete-process-grid article:nth-child(3n) { grid-column:auto; width:100%; margin:0; }
+  .concrete-process-grid figure,.concrete-process-grid article:nth-child(3n) figure { height:108vw; }
+  .concrete-process-grid article h3 { font-size:9vw; }
+  .concrete-gallery { grid-template-columns:1fr; }
+  .concrete-gallery figure,.concrete-gallery figure:first-child { grid-row:auto; height:76vw; }
+  .concrete-reflection { padding:90px 22px; grid-template-columns:1fr; }
+  .concrete-reflection blockquote { margin-top:35px; font-size:11vw; }
+  .concrete-reflection > div { grid-column:1; margin-top:55px; grid-template-columns:1fr; gap:15px; }
+}
