@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 
-export function AutoVideo({ src, label }: { src: string; label: string }) {
+export function AutoVideo({ src, label, type = "video/mp4" }: { src: string; label: string; type?: string }) {
   const ref = useRef<HTMLVideoElement>(null);
   useEffect(() => {
     const video = ref.current;
@@ -15,5 +15,5 @@ export function AutoVideo({ src, label }: { src: string; label: string }) {
     observer.observe(video);
     return () => observer.disconnect();
   }, []);
-  return <video ref={ref} autoPlay muted loop playsInline preload="metadata" aria-label={label}><source src={src} type="video/mp4" /></video>;
+  return <video ref={ref} autoPlay muted loop playsInline preload="metadata" aria-label={label}><source src={src} type={type} /></video>;
 }
