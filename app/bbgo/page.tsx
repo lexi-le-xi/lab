@@ -3,7 +3,6 @@ import { SiteFooter, SiteNavigation } from "../site-chrome";
 import hero from "../../public/bbgo/hero.png";
 import careChallenges from "../../public/bbgo/care-challenges.png";
 import conceptSketch from "../../public/bbgo/concept-sketch.png";
-import followingReference from "../../public/bbgo/following-reference.png";
 import systemOverview from "../../public/bbgo/system-overview.png";
 import closingScene from "../../public/bbgo/closing-scene.png";
 
@@ -52,7 +51,7 @@ export default function BbgoPage() {
 
       <section className="bbgo-section bbgo-concept">
         <div className="bbgo-copy"><span>03</span><p>Concept</p><h2>Begin with first principles, then borrow useful behaviors from other objects.</h2><div><p>The project asks what a stroller must do rather than what a stroller must look like: keep the infant safe and nearby, follow the caregiver independently, adapt to rest and activity, and negotiate difficult ground.</p><p>I drew from autonomous camera tracking, adjustable aircraft seating, and stair-climbing wheel clusters to form one integrated proposal.</p></div></div>
-        <div className="bbgo-concept-grid"><Image src={conceptSketch.src} alt="Early BBgo spherical stroller sketch" /><Image src={followingReference.src} alt="DJI Neo autonomous following technology used as a behavior reference" /></div>
+        <div className="bbgo-concept-grid"><Image src={conceptSketch.src} alt="Early BBgo spherical stroller sketch" /></div>
       </section>
 
       <section className="bbgo-system">
