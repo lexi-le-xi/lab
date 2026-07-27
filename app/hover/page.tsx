@@ -43,6 +43,11 @@ export default function HoverPage() {
 
       <Image src={hero.src} alt="HOVER camping shoe photographed from above" className="hover-lead-image" />
 
+      <section className="hover-impact">
+        <p>Connection through systems</p>
+        <blockquote>A signature product is never only a shape. It connects an unmet need, a recognizable identity, a production system, and the people who bring it to market.</blockquote>
+      </section>
+
       <section className="hover-motion-feature" aria-label="HOVER product film">
         <div>
           <p>HOVER in motion</p>
@@ -54,11 +59,6 @@ export default function HoverPage() {
             label="HOVER product film showing the footwear in motion"
           />
         </figure>
-      </section>
-
-      <section className="hover-impact">
-        <p>Connection through systems</p>
-        <blockquote>A signature product is never only a shape. It connects an unmet need, a recognizable identity, a production system, and the people who bring it to market.</blockquote>
       </section>
 
       <section className="hover-section hover-background">
