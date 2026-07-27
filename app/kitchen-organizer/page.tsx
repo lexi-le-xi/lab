@@ -66,11 +66,21 @@ export default function KitchenOrganizerPage() {
       <section className="organizer-process">
         <header><span>03</span><p>Making process</p><h2>From calculated lines to a useful object.</h2></header>
         <article>
-          <figure><img src={flatPattern.src} alt="CAD flat patterns before fabrication" /></figure>
+          <figure>
+            <AutoVideo
+              src={publicPath("/kitchen-organizer/flat-pattern-process.mp4")}
+              label="Calculating and preparing the organizer flat pattern"
+            />
+          </figure>
           <div><span>01</span><h3>Calculate the flat pattern</h3><p>I translated the three-dimensional form into a minimal family of two-dimensional parts, locating every fold, opening, and joint before cutting.</p></div>
         </article>
         <article>
-          <figure><AutoVideo src={publicPath("/kitchen-organizer/process.mp4")} label="Fabricating the sheet-metal organizer" /></figure>
+          <figure>
+            <AutoVideo
+              src={publicPath("/kitchen-organizer/precision-cutting.mp4")}
+              label="Precision cutting the sheet-metal organizer parts"
+            />
+          </figure>
           <div><span>02</span><h3>Cut with precision</h3><p>The geometry depends on accuracy. Waterjet cutting turns the drawing into parts that can meet cleanly and carry the load without extra hardware.</p></div>
         </article>
         <article>
