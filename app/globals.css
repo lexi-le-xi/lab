@@ -1596,6 +1596,8 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 .esteast-duo { margin-top:10vh; display:grid; grid-template-columns:.75fr 1fr; gap:1.5vw; align-items:end; }
 .esteast-duo figure:first-child { height:52vw; max-height:760px; }
 .esteast-duo figure:last-child { height:43vw; max-height:650px; }
+.esteast-background .esteast-duo { width:min(100%,1000px); margin:10vh auto 0; grid-template-columns:repeat(2,minmax(0,1fr)); align-items:stretch; }
+.esteast-background .esteast-duo figure:first-child,.esteast-background .esteast-duo figure:last-child { height:auto; max-height:none; aspect-ratio:1; }
 .esteast-wide-image { width:76%; height:min(680px,50vw); margin:10vh 0 0 auto !important; }
 .esteast-process-image { width:100%; height:auto; margin-top:10vh !important; }
 .esteast-process-image img { height:auto; object-fit:contain; }
@@ -1790,6 +1792,8 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   .esteast-copy > div { grid-column:1 / -1; grid-template-columns:1fr; gap:25px; }
   .esteast-duo { margin-top:65px; grid-template-columns:1fr; gap:14px; }
   .esteast-duo figure:first-child,.esteast-duo figure:last-child { height:115vw; }
+  .esteast-background .esteast-duo { width:100%; margin-top:65px; grid-template-columns:1fr; }
+  .esteast-background .esteast-duo figure:first-child,.esteast-background .esteast-duo figure:last-child { height:auto; aspect-ratio:1; }
   .esteast-wide-image { width:100%; height:70vw; margin-top:65px !important; }
   .esteast-process-image { margin-top:65px !important; }
   .esteast-objectives ol { margin-top:45px; }
