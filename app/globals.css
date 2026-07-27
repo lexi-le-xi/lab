@@ -236,6 +236,12 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 .hover-challenge > div { grid-column:2; margin-top:5vh; display:grid; grid-template-columns:1fr 1fr; gap:5vw; font:18px/1.55 Georgia,serif; }
 .hover-challenge > div p { margin:0; }
 .hover-results { background:#fff; }
+.hover-video-feature { width:78%; margin:11vh 0 0 auto; }
+.hover-video-feature > div:first-child { margin-bottom:22px; display:flex; justify-content:space-between; gap:25px; color:#47705f; font-size:10px; letter-spacing:.14em; text-transform:uppercase; }
+.hover-video-feature > div:first-child p { margin:0; }
+.hover-video-frame { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; background:var(--hover-ink); }
+.hover-video-frame iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
+.hover-video-feature > a { display:inline-block; margin-top:18px; padding-bottom:5px; border-bottom:1px solid currentColor; font-size:11px; letter-spacing:.12em; text-transform:uppercase; }
 .hover-results-image { width:78%; height:auto; margin:11vh 0 0 auto !important; }
 .hover-results-image img { height:auto !important; object-fit:contain !important; }
 .hover-product-triptych { margin-top:12px; display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
@@ -271,6 +277,8 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   .hover-product-triptych { grid-template-columns:1fr; }
   .hover-product-triptych figure { height:125vw; }
   .hover-results-image { width:100%; margin-top:65px !important; }
+  .hover-video-feature { width:100%; margin-top:65px; }
+  .hover-video-feature > div:first-child { align-items:flex-start; flex-direction:column; gap:9px; }
   .hover-reflection blockquote { margin-top:45px; }
   .hover-reflection > div { grid-template-columns:1fr; gap:15px; }
 }

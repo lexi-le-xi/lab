@@ -116,6 +116,21 @@ export default function HoverPage() {
             <p>Consumer feedback revealed uses beyond camping: post-competition recovery, commuting, and office wear.</p>
           </div>
         </div>
+        <div className="hover-video-feature">
+          <div>
+            <p>Featured conversation</p>
+            <span>HOVER appears at 58:45</span>
+          </div>
+          <div className="hover-video-frame">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/5mbBgheyHpc?start=3525"
+              title="HOVER feature beginning at 58 minutes 45 seconds"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          </div>
+          <a href="https://youtu.be/5mbBgheyHpc?t=3525" target="_blank" rel="noreferrer">Watch on YouTube from 58:45 ↗</a>
+        </div>
         <Image src={results.src} alt="HOVER launch results, social response, and product exhibitions" className="hover-results-image" />
         <div className="hover-product-triptych">
           <Image src={product01.src} alt="HOVER product variation" />
