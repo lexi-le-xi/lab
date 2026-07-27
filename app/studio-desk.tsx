@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from "react";
 import rowingBoat from "../public/rowing-boat-base-v5.png";
 import rowingWorld from "../public/rowing-world-v7.png";
 import paintedGull from "../public/seagull-painted-v1.png";
+import { NavigationMenu } from "./site-chrome";
 
 const places = [
   {
@@ -100,7 +101,7 @@ export function StudioDesk() {
       <header className="rowing-nav">
         <Link href="/" className="rowing-mark">XI LIU <span>/</span> LAB</Link>
         <p>I design to build connection.</p>
-        <a href="mailto:liuxi@stanford.edu">Say hello ↗</a>
+        <NavigationMenu />
       </header>
 
       <section

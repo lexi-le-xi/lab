@@ -11,19 +11,25 @@ const menuItems = [
   ["07", "/cv", "CV"],
 ] as const;
 
+export function NavigationMenu() {
+  return (
+    <details className="about-menu">
+      <summary>Menu <span aria-hidden="true">+</span></summary>
+      <div>
+        {menuItems.map(([index, href, title]) => (
+          <Link key={href} href={href}><span>{index}</span><strong>{title}</strong></Link>
+        ))}
+      </div>
+    </details>
+  );
+}
+
 export function SiteNavigation({ label }: { label: string }) {
   return (
     <nav className="subpage-nav">
       <Link href="/">XI LIU <span>/</span> LAB</Link>
       <p>{label}</p>
-      <details className="about-menu">
-        <summary>Menu <span aria-hidden="true">+</span></summary>
-        <div>
-          {menuItems.map(([index, href, title]) => (
-            <Link key={href} href={href}><span>{index}</span><strong>{title}</strong></Link>
-          ))}
-        </div>
-      </details>
+      <NavigationMenu />
     </nav>
   );
 }

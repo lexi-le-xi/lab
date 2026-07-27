@@ -702,7 +702,8 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 .rowing-mark { font-weight: 800; font-size: 13px; letter-spacing: .02em; }
 .rowing-mark span { color: #3476dd; margin: 0 5px; }
 .rowing-nav p { margin: 0; }
-.rowing-nav > a:last-child { justify-self: end; border-bottom: 1px solid; padding-bottom: 3px; }
+.rowing-nav > .about-menu { justify-self:end; text-shadow:none; }
+.rowing-nav > .about-menu summary { color:#102f3d; }
 
 .rowing-journey { position: relative; height: 560vh; min-height: 3600px; }
 .rowing-viewport { position: sticky; top: 0; height: 100svh; overflow: hidden; background: var(--lake); }
