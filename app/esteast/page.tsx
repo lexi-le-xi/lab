@@ -48,7 +48,6 @@ export default function EsteastPage() {
             <span />
             <span />
             <span />
-            <p>liuxi0802.wixsite.com/esteast-studio</p>
           </div>
           <iframe
             src="https://liuxi0802.wixsite.com/esteast-studio"
