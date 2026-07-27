@@ -1952,9 +1952,9 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   .rowing-opening h1 {
     position:absolute;
     left:4vw;
-    bottom:8vh;
-    width:43vw;
-    font-size:8.2vw;
+    bottom:7vh;
+    width:41vw;
+    font-size:7vw;
     line-height:.9;
   }
   .rowing-opening > span {
