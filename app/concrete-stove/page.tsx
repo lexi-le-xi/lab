@@ -4,7 +4,6 @@ import { SiteFooter, SiteNavigation } from "../site-chrome";
 import hero from "../../public/concrete-stove/hero.png";
 import final01 from "../../public/concrete-stove/final-01.jpg";
 import final02 from "../../public/concrete-stove/final-02.jpg";
-import final03 from "../../public/concrete-stove/final-03.jpg";
 
 export const metadata: Metadata = {
   title: "Concrete Cooking Stove · Xi Liu",
@@ -15,14 +14,12 @@ const publicPath = (path: string) => `${process.env.GITHUB_ACTIONS === "true" ? 
 
 const processMedia = [
   { index: "01", title: "Choose the surface", description: "Choose a piece of wood with a smooth surface.", type: "image", src: final02.src },
-  { index: "02", title: "Build the mold", description: "Make a mold for the concrete slab and define the opening for the induction cooker.", type: "image", src: final03.src },
-  { index: "03", title: "Fill with concrete", description: "Mix and fill the mold with concrete.", type: "video", src: "/concrete-stove/process-04.mp4" },
-  { index: "04", title: "Fill with concrete", description: "Continue the pour and distribute the material through the mold.", type: "video", src: "/concrete-stove/process-07.mp4" },
-  { index: "05", title: "Build the base", description: "Use bricks to build the supporting wall in the shared space.", type: "video", src: "/concrete-stove/process-05.mp4" },
-  { index: "06", title: "Build the base", description: "Complete the brick support before the slab is moved into place.", type: "video", src: "/concrete-stove/process-03.mp4" },
-  { index: "07", title: "Lift the slab", description: "After a week of curing, get help to lift the fully dried—and very heavy—concrete slab.", type: "video", src: "/concrete-stove/process-06.mp4" },
-  { index: "08", title: "Finish the surface", description: "Refine the slab after it has been set onto the base.", type: "video", src: "/concrete-stove/process-01.mp4" },
-  { index: "09", title: "Put it into use", description: "Place the induction cooker into the opening: done.", type: "video", src: "/concrete-stove/process-02.mp4" },
+  { index: "02", title: "Build the mold", description: "Make a mold for the concrete slab and define the opening for the induction cooker.", type: "video", src: "/concrete-stove/process-07.mp4" },
+  { index: "03", title: "Fill with concrete", description: "Mix and fill the mold with concrete, then continue the pour and distribute the material evenly through the form.", type: "video", src: "/concrete-stove/process-05.mp4" },
+  { index: "04", title: "Build the base", description: "Use bricks to build and complete the supporting wall before the slab is moved into place.", type: "video", src: "/concrete-stove/process-03.mp4" },
+  { index: "05", title: "Lift the slab", description: "After a week of curing, get help to lift the fully dried—and very heavy—concrete slab.", type: "video", src: "/concrete-stove/process-06.mp4" },
+  { index: "06", title: "Finish the surface", description: "Refine the slab after it has been set onto the base.", type: "video", src: "/concrete-stove/process-01.mp4" },
+  { index: "07", title: "Put it into use", description: "Place the induction cooker into the opening: done.", type: "video", src: "/concrete-stove/process-02.mp4" },
 ] as const;
 
 export default function ConcreteStovePage() {
