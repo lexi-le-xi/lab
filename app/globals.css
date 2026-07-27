@@ -2166,3 +2166,70 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   .tofu-reflection blockquote { margin-top:35px; font-size:11vw; }
   .tofu-reflection > div { grid-column:1; margin-top:55px; grid-template-columns:1fr; gap:15px; }
 }
+
+/* KNOW YOURSELF */
+.know-page { background:#fff; color:#111; }
+.know-hero { min-height:calc(100svh - 78px); padding:5vw 4vw 4vw; display:grid; grid-template-columns:1fr 1fr; grid-template-rows:auto auto 1fr; gap:2vw; background:#fff; }
+.know-hero > p { margin:0; font-size:10px; letter-spacing:.18em; text-transform:uppercase; }
+.know-hero > span { justify-self:end; color:#3576ef; font-size:10px; letter-spacing:.18em; text-transform:uppercase; }
+.know-hero h1 { grid-column:1/3; align-self:center; margin:0; font-size:clamp(105px,18vw,340px); line-height:.68; letter-spacing:-.09em; font-weight:600; }
+.know-hero blockquote { grid-column:2; align-self:end; margin:0; max-width:720px; font:clamp(30px,3.5vw,66px)/1 Georgia,serif; letter-spacing:-.04em; }
+.know-status { padding:10vw 6vw; display:grid; grid-template-columns:1fr 3fr; gap:2vw; background:#e9f0ff; }
+.know-status > p,.know-discovery header > p,.know-directions header > p,.know-question > p { margin:0; font-size:10px; letter-spacing:.18em; text-transform:uppercase; }
+.know-status h2 { grid-column:2; margin:0; max-width:1450px; font-size:clamp(50px,7.5vw,136px); line-height:.91; letter-spacing:-.06em; font-weight:500; }
+.know-status > div { grid-column:2; width:68%; margin:5vw 0 0 auto; display:grid; grid-template-columns:1fr 1fr; gap:3vw; }
+.know-status > div p { margin:0; font:18px/1.55 Georgia,serif; }
+.know-discovery,.know-directions { padding:10vw 4vw; }
+.know-discovery { background:#fff; }
+.know-discovery header,.know-directions header { display:grid; grid-template-columns:4vw 2fr 5fr; gap:1.5vw; margin-bottom:7vw; }
+.know-discovery header > span,.know-directions header > span,.know-question > span { color:#3576ef; font-size:10px; }
+.know-discovery header h2,.know-directions header h2 { margin:0; font-size:clamp(47px,6.4vw,116px); line-height:.94; letter-spacing:-.055em; font-weight:500; }
+.know-discovery ol,.know-directions ol { list-style:none; margin:0 0 0 24%; padding:0; }
+.know-discovery li,.know-directions li { min-height:190px; padding:3vw 0; border-top:1px solid #bbb; display:grid; grid-template-columns:5vw 1.5fr 1fr; gap:2vw; align-items:start; }
+.know-discovery li > span,.know-directions li > span { color:#3576ef; font-size:10px; }
+.know-discovery h3,.know-directions h3 { margin:0; max-width:690px; font-size:clamp(32px,4vw,70px); line-height:.98; letter-spacing:-.045em; font-weight:500; }
+.know-discovery li p,.know-directions li p { margin:0; font:17px/1.5 Georgia,serif; }
+.know-thought { padding:10vw 7vw; background:#102b23; color:#f7f1df; }
+.know-thought > p,.know-stanford > p,.know-next > p { margin:0 0 5vw; font-size:10px; letter-spacing:.18em; text-transform:uppercase; }
+.know-thought blockquote { margin:0; max-width:1550px; font:clamp(55px,8vw,145px)/.92 Georgia,serif; letter-spacing:-.055em; }
+.know-thought > div { width:54%; margin:7vw 0 0 auto; display:grid; grid-template-columns:1fr 1fr; gap:3vw; }
+.know-thought > div p { margin:0; font:18px/1.55 Georgia,serif; }
+.know-question { padding:12vw 6vw; display:grid; grid-template-columns:4vw 1fr; background:#f0b64e; }
+.know-question h2 { grid-column:2; margin:6vw 0 0; max-width:1550px; font-size:clamp(58px,9vw,164px); line-height:.88; letter-spacing:-.065em; font-weight:500; }
+.know-directions { background:#f7f7f3; }
+.know-stanford { padding:11vw 6vw; background:#dce9df; }
+.know-stanford h2,.know-next h2 { max-width:1500px; margin:0; font-size:clamp(52px,7.8vw,140px); line-height:.9; letter-spacing:-.06em; font-weight:500; }
+.know-stanford > div,.know-next > div { width:55%; margin:7vw 0 0 auto; display:grid; grid-template-columns:1fr 1fr; gap:3vw; }
+.know-stanford > div p,.know-next > div p { margin:0; font:18px/1.55 Georgia,serif; }
+.know-next { padding:11vw 6vw; background:#fff; }
+
+@media (max-width:720px) {
+  .know-hero { min-height:calc(100svh - 60px); padding:75px 22px 55px; display:block; }
+  .know-hero > p { max-width:220px; }
+  .know-hero > span { display:block; margin-top:20px; }
+  .know-hero h1 { margin-top:26vw; font-size:26vw; }
+  .know-hero blockquote { margin:32vw 0 0 24%; font-size:9vw; }
+  .know-status { padding:90px 22px; grid-template-columns:1fr; }
+  .know-status h2,.know-status > div { grid-column:1; }
+  .know-status h2 { margin-top:40px; font-size:12vw; }
+  .know-status > div { width:100%; margin-top:50px; display:block; }
+  .know-status > div p + p { margin-top:24px; }
+  .know-discovery,.know-directions { padding:90px 22px; }
+  .know-discovery header,.know-directions header { grid-template-columns:32px 1fr; gap:0; margin-bottom:60px; }
+  .know-discovery header > p,.know-directions header > p { grid-column:2; }
+  .know-discovery header h2,.know-directions header h2 { grid-column:1/3; margin-top:35px; font-size:12vw; }
+  .know-discovery ol,.know-directions ol { margin:0; }
+  .know-discovery li,.know-directions li { min-height:0; padding:35px 0; grid-template-columns:32px 1fr; }
+  .know-discovery h3,.know-directions h3 { font-size:9vw; }
+  .know-discovery li p,.know-directions li p { grid-column:2; margin-top:18px; }
+  .know-thought { padding:90px 22px; }
+  .know-thought blockquote { font-size:11vw; }
+  .know-thought > div { width:100%; margin-top:60px; display:block; }
+  .know-thought > div p + p { margin-top:24px; }
+  .know-question { padding:90px 22px; grid-template-columns:32px 1fr; }
+  .know-question h2 { grid-column:1/3; margin-top:45px; font-size:13vw; }
+  .know-stanford,.know-next { padding:90px 22px; }
+  .know-stanford h2,.know-next h2 { font-size:12vw; }
+  .know-stanford > div,.know-next > div { width:100%; margin-top:55px; display:block; }
+  .know-stanford > div p + p,.know-next > div p + p { margin-top:24px; }
+}
