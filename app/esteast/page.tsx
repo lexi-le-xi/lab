@@ -5,7 +5,6 @@ import xiMaking from "../../public/esteast/xi-making.png";
 import craftswomanDog from "../../public/esteast/craftswoman-dog.png";
 import traditionalMaking from "../../public/esteast/traditional-making.png";
 import materialAnatomy from "../../public/esteast/material-anatomy.jpg";
-import showroom from "../../public/esteast/showroom.png";
 import pressCollage from "../../public/esteast/press-collage.png";
 import eggStore from "../../public/esteast/egg-store.png";
 
@@ -91,7 +90,6 @@ export default function EsteastPage() {
           </div>
         </div>
         <Image src={processCollage.src} alt="The materials and hand processes behind ESTEAST shoes" className="esteast-process-image" />
-        <Image src={showroom.src} alt="Xi preparing an ESTEAST footwear showroom" className="esteast-wide-image" />
       </section>
 
       <section className="esteast-challenge">
