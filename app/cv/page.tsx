@@ -4,7 +4,7 @@ import { SiteNavigation } from "../site-chrome";
 
 export const metadata: Metadata = {
   title: "CV · Xi Liu",
-  description: "Selected experience, education, and capabilities of designer and product leader Xi Liu.",
+  description: "Selected experience, education, and capabilities of designer, strategist, and product innovator Xi Liu.",
 };
 
 const experience = [
@@ -49,7 +49,7 @@ export default function CvPage() {
 
       <article className="cv-document">
         <header className="cv-document-header">
-          <div><h1>Xi Liu</h1><p>Designer · Strategist · Product Leader</p></div>
+          <div><h1>Xi Liu</h1><p>Designer · Strategist · Product Innovator</p></div>
           <address>
             <a href="mailto:liuxi@stanford.edu">liuxi@stanford.edu</a>
             <span>Stanford, California</span>
