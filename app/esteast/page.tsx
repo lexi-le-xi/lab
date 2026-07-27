@@ -62,6 +62,14 @@ export default function EsteastPage() {
         <Image src="/esteast/traditional-making.png" alt="A traditional maker stitching a cloth sole outdoors" className="esteast-wide-image" />
       </section>
 
+      <section className="esteast-materials">
+        <div>
+          <p>Material anatomy</p>
+          <span>Wheat · cotton · wood · corn · palm fiber · hemp thread · lavender</span>
+        </div>
+        <Image src="/esteast/material-anatomy.jpg" alt="Natural materials arranged beside the stitched sole of an ESTEAST shoe" />
+      </section>
+
       <section className="esteast-objectives">
         <p>03 · Objectives</p>
         <ol>
