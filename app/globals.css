@@ -511,7 +511,7 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 /* HOVER */
 .hover-page { --hover-ink:#122c29; --hover-accent:#b7dc32; background:#f4f3ec; color:var(--hover-ink); }
 .hover-page figure { margin:0; overflow:hidden; background:#e7e7df; }
-.hover-page figure img { display:block; width:100%; height:100%; object-fit:cover; }
+.hover-page figure img { display:block; width:100%; height:auto; object-fit:contain; }
 .hover-hero { min-height:76vh; padding:18vh 4vw 8vh; display:grid; grid-template-columns:1fr 2.5fr; gap:5vw; align-content:end; border-bottom:1px solid rgba(18,44,41,.2); }
 .hover-hero > p { margin:0; align-self:start; color:#47705f; font-size:10px; letter-spacing:.16em; text-transform:uppercase; }
 .hover-hero h1 { grid-column:1/-1; margin:4vh 0 8vh; font-size:clamp(110px,22vw,360px); line-height:.68; letter-spacing:-.09em; font-weight:700; }
@@ -535,8 +535,8 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 .hover-copy h2 { grid-column:3; margin:0; max-width:1050px; font-size:clamp(42px,6vw,96px); line-height:.94; letter-spacing:-.055em; font-weight:600; }
 .hover-copy > div { grid-column:3; margin-top:5vh; display:grid; grid-template-columns:1fr 1fr; gap:5vw; font:18px/1.55 Georgia,serif; }
 .hover-copy > div p { margin:0; }
-.hover-wide-image { width:78%; height:min(670px,48vw); margin:11vh 0 0 auto !important; }
-.hover-portrait-image { width:48%; height:min(900px,70vw); margin:11vh auto 0 !important; }
+.hover-wide-image { width:min(58%,900px); height:auto; margin:11vh auto 0 !important; }
+.hover-portrait-image { width:min(42%,680px); height:auto; margin:11vh auto 0 !important; }
 .hover-objectives { padding:12vh 8vw; display:grid; grid-template-columns:1fr 4fr; gap:4vw; background:#fff; border-bottom:1px solid rgba(18,44,41,.2); }
 .hover-objectives ol { grid-column:2; list-style:none; margin:0; padding:0; }
 .hover-objectives li { min-height:155px; display:grid; grid-template-columns:55px 1fr; gap:2vw; align-items:center; border-bottom:1px solid rgba(18,44,41,.2); }
@@ -544,12 +544,12 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 .hover-objectives li span { color:#5d8a73; font-size:10px; }
 .hover-objectives li strong { max-width:1000px; font-size:clamp(25px,3vw,48px); line-height:1.05; letter-spacing:-.035em; font-weight:500; }
 .hover-process { background:#dfe8da; }
-.hover-process-grid { margin-top:11vh; display:grid; grid-template-columns:1fr 1fr; gap:12px; }
-.hover-process-grid figure { height:42vw; max-height:680px; }
+.hover-process-grid { width:min(82%,1200px); margin:11vh auto 0; display:grid; grid-template-columns:1fr 1fr; gap:12px; align-items:start; }
+.hover-process-grid figure { height:auto; }
 .hover-process-grid .is-sole { background:#f7f7f2; }
 .hover-process-grid .is-sole img { object-fit:contain; }
-.hover-process-hero { height:min(850px,58vw); margin-top:12px !important; }
-.hover-process-detail { width:72%; height:min(680px,45vw); margin:12px 0 0 auto !important; }
+.hover-process-hero { width:min(82%,1200px); height:auto; margin:12px auto 0 !important; }
+.hover-process-detail { width:min(64%,920px); height:auto; margin:12px auto 0 !important; }
 .hover-challenge { padding:14vh 8vw; background:var(--hover-ink); color:#eff1e8; display:grid; grid-template-columns:1fr 4fr; gap:4vw; }
 .hover-challenge h2 { grid-column:2; margin:0; max-width:1100px; font:400 clamp(46px,6vw,100px)/.98 Georgia,serif; letter-spacing:-.04em; }
 .hover-challenge > div { grid-column:2; margin-top:5vh; display:grid; grid-template-columns:1fr 1fr; gap:5vw; font:18px/1.55 Georgia,serif; }
@@ -561,11 +561,11 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 .hover-video-frame { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; background:var(--hover-ink); }
 .hover-video-frame iframe { position:absolute; inset:0; width:100%; height:100%; border:0; }
 .hover-video-feature > a { display:inline-block; margin-top:18px; padding-bottom:5px; border-bottom:1px solid currentColor; font-size:11px; letter-spacing:.12em; text-transform:uppercase; }
-.hover-results-image { width:78%; height:auto; margin:11vh 0 0 auto !important; }
+.hover-results-image { width:min(72%,1050px); height:auto; margin:11vh auto 0 !important; }
 .hover-results-image img { height:auto !important; object-fit:contain !important; }
-.hover-product-triptych { margin-top:12px; display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
-.hover-product-triptych figure { height:50vw; max-height:750px; }
-.hover-store-image { width:42%; height:min(760px,62vw); margin:12px auto 0 !important; }
+.hover-product-triptych { width:min(82%,1200px); margin:12px auto 0; display:grid; grid-template-columns:repeat(3,1fr); gap:12px; align-items:start; }
+.hover-product-triptych figure { height:auto; }
+.hover-store-image { width:min(36%,560px); height:auto; margin:12px auto 0 !important; }
 .hover-reflection { padding:14vh 8vw; display:grid; grid-template-columns:1fr 4fr; gap:4vw; background:var(--hover-accent); }
 .hover-reflection blockquote { grid-column:2; margin:0; max-width:1250px; font:400 clamp(40px,5vw,80px)/1.06 Georgia,serif; letter-spacing:-.03em; }
 .hover-reflection > div { grid-column:2; margin-top:7vh; display:grid; grid-template-columns:1fr 3fr; gap:4vw; font-size:11px; letter-spacing:.1em; text-transform:uppercase; }
@@ -588,16 +588,17 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   .hover-copy h2,.hover-copy > div { grid-column:2; }
   .hover-copy h2 { margin-top:30px; font-size:12vw; }
   .hover-copy > div,.hover-challenge > div { margin-top:45px; grid-template-columns:1fr; gap:24px; }
-  .hover-wide-image,.hover-portrait-image,.hover-process-detail,.hover-store-image { width:100%; height:76vw; margin-top:65px !important; }
-  .hover-portrait-image,.hover-store-image { height:120vw; }
+  .hover-wide-image,.hover-portrait-image,.hover-process-detail,.hover-store-image { width:88%; height:auto; margin:65px auto 0 !important; }
   .hover-objectives ol { grid-column:1; margin-top:45px; }
   .hover-objectives li { min-height:135px; grid-template-columns:32px 1fr; }
   .hover-process-grid { margin-top:65px; grid-template-columns:1fr; }
-  .hover-process-grid figure { height:92vw; }
-  .hover-process-hero { height:72vw; }
+  .hover-process-grid { width:88%; }
+  .hover-process-grid figure { height:auto; }
+  .hover-process-hero { width:88%; height:auto; }
   .hover-product-triptych { grid-template-columns:1fr; }
-  .hover-product-triptych figure { height:125vw; }
-  .hover-results-image { width:100%; margin-top:65px !important; }
+  .hover-product-triptych { width:88%; }
+  .hover-product-triptych figure { height:auto; }
+  .hover-results-image { width:88%; margin:65px auto 0 !important; }
   .hover-video-feature { width:100%; margin-top:65px; }
   .hover-video-feature > div:first-child { align-items:flex-start; flex-direction:column; gap:9px; }
   .hover-reflection blockquote { margin-top:45px; }

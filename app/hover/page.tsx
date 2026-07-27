@@ -70,7 +70,7 @@ export default function HoverPage() {
             <p>The opportunity was camping: a space between technical performance footwear and the comfort people wanted while resting outdoors or recovering after activity.</p>
           </div>
         </div>
-        <Image src={campaign.src} alt="HOVER campaign concept placing the shoe on Shanghai's waterfront" className="hover-wide-image" />
+        <Image src={campaign.src} alt="HOVER product family arranged with flowers and material notes" className="hover-wide-image" />
       </section>
 
       <section className="hover-section hover-observation">
