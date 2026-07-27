@@ -42,13 +42,24 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
       <section className="area-projects">
         <p>Projects & studies</p>
         <ol>
-          {area.projects.map((project, index) => (
-            <li key={project}>
-              <span>{String(index + 1).padStart(2, "0")}</span>
-              <strong>{projectHref(project) ? <Link href={projectHref(project)!}>{project}</Link> : project}</strong>
-              <em>{projectHref(project) ? "View project ↗" : "In development"}</em>
-            </li>
-          ))}
+          {area.projects.map((project, index) => {
+            const href = projectHref(project);
+
+            return (
+              <li key={project} className={href ? "is-complete" : "is-in-development"}>
+                <span className="area-project-number">{String(index + 1).padStart(2, "0")}</span>
+                <strong>
+                  {href ? (
+                    <Link href={href}>
+                      <span>{project}</span>
+                      <span className="area-project-arrow" aria-hidden="true">→</span>
+                    </Link>
+                  ) : project}
+                  {!href && <small>In development</small>}
+                </strong>
+              </li>
+            );
+          })}
         </ol>
       </section>
       <blockquote>

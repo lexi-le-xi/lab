@@ -1843,9 +1843,13 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 .area-statement h3 { margin:0; max-width:1000px; font:clamp(30px,4.2vw,64px)/1.15 Georgia,serif; font-weight:400; }
 .area-projects { padding: 11vh 8vw; }
 .area-projects ol { list-style:none; margin:0; padding:0; }
-.area-projects li { display:grid; grid-template-columns:55px 1fr auto; gap:20px; align-items:center; padding:28px 0; border-top:1px solid rgba(9,45,84,.2); }
-.area-projects li span, .area-projects li em { font-size:10px; color:rgba(9,45,84,.58); text-transform:uppercase; letter-spacing:.1em; }
+.area-projects li { display:grid; grid-template-columns:55px 1fr; gap:20px; align-items:center; padding:28px 0; border-top:1px solid rgba(9,45,84,.2); }
+.area-projects .area-project-number { font-size:10px; color:rgba(9,45,84,.58); text-transform:uppercase; letter-spacing:.1em; }
 .area-projects li strong { font-size:clamp(24px,3vw,46px); letter-spacing:-.04em; font-weight:500; }
+.area-projects li strong > a { display:inline-flex; align-items:baseline; gap:.34em; }
+.area-projects .area-project-arrow { font-size:.72em; line-height:1; font-weight:400; transition:transform .2s ease; }
+.area-projects li strong > a:hover .area-project-arrow { transform:translateX(.18em); }
+.area-projects li strong small { display:none; }
 .area-page blockquote { margin:0; padding:13vh 12vw; color:#fff; background:#052f63; }
 .area-page blockquote small { color:#ffd44a; font-size:10px; letter-spacing:.17em; text-transform:uppercase; }
 .area-page blockquote p { max-width:1050px; margin:45px 0 0; font:clamp(35px,5vw,74px)/1.1 Georgia,serif; }
@@ -1945,7 +1949,8 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   .area-statement { padding:80px 20px; grid-template-columns:1fr; }
   .area-projects { padding:75px 20px; }
   .area-projects li { grid-template-columns:32px 1fr; }
-  .area-projects li em { display:none; }
+  .area-projects li strong > a { gap:.3em; }
+  .area-projects li strong small { display:block; margin-top:7px; color:rgba(9,45,84,.5); font-size:9px; font-weight:400; line-height:1.2; letter-spacing:.12em; text-transform:uppercase; }
   .area-page blockquote { padding:85px 25px; }
   .about-nav { height:60px; padding:0 18px; grid-template-columns:1fr auto; }
   .about-nav p { display:none; }
