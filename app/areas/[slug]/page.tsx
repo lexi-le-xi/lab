@@ -20,6 +20,7 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
     if (project === "Mat Bag") return "/mat-bag";
     if (project === "Concrete Cooking Stove") return "/concrete-stove";
     if (project === "BBgo") return "/bbgo";
+    if (project === "A Spoon for My Grandfather") return "/spoon";
     if (project === "Tofu Sofa") return "/tofu-sofa";
     if (project === "Know Yourself") return "/know-yourself";
     return null;
