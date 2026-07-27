@@ -2469,3 +2469,31 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   .know-stanford > div,.know-next > div { width:100%; margin-top:55px; display:block; }
   .know-stanford > div p + p,.know-next > div p + p { margin-top:24px; }
 }
+
+/* Final mobile overflow pass: keep long titles and CV content inside the viewport. */
+@media (max-width:720px) {
+  .cv-document { width:calc(100% - 36px); padding:65px 0 40px; }
+  .cv-document-header { padding-bottom:30px; align-items:flex-start; flex-direction:column; gap:35px; }
+  .cv-document-header h1 { font-size:24vw; }
+  .cv-document-header > div p { font-size:10px; line-height:1.5; }
+  .cv-document-header address { max-width:100%; justify-items:start; font-size:9px; }
+  .cv-columns { grid-template-columns:minmax(0,1fr); gap:65px; padding-top:42px; }
+  .cv-sidebar { min-width:0; padding-right:0; border-right:0; }
+  .cv-sidebar section + section { margin-top:38px; }
+  .cv-main-column { min-width:0; border-top:2px solid #161616; padding-top:42px; }
+  .cv-job { grid-template-columns:minmax(0,1fr); gap:18px; padding:27px 0 38px; }
+  .cv-job > a { left:0; right:auto; }
+  .cv-ip { margin-top:60px; }
+  .cv-ip li { padding:22px 0; align-items:flex-start; flex-direction:column; gap:8px; }
+  .cv-ip span { text-align:left; }
+  .cv-document-footer { margin-top:55px; align-items:flex-start; flex-direction:column; line-height:1.5; }
+
+  .thought-footer a { max-width:100%; white-space:normal; overflow-wrap:anywhere; }
+  .thought-footer a:nth-of-type(2),
+  .thought-footer a:nth-of-type(3) { width:100%; }
+
+  .esteast-hero h1 { font-size:22vw; }
+  .concrete-hero h1 { font-size:18.5vw; }
+  .spoon-hero h1 { font-size:13.5vw; }
+  .know-hero h1 { font-size:18vw; }
+}
