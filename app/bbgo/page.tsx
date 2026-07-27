@@ -5,6 +5,7 @@ import careChallenges from "../../public/bbgo/care-challenges.png";
 import conceptSketch from "../../public/bbgo/concept-sketch.png";
 import followingReference from "../../public/bbgo/following-reference.png";
 import systemOverview from "../../public/bbgo/system-overview.png";
+import closingScene from "../../public/bbgo/closing-scene.png";
 
 export const metadata: Metadata = {
   title: "BBgo · Xi Liu",
@@ -91,6 +92,10 @@ export default function BbgoPage() {
         <blockquote>Technology is most meaningful in care when it does not replace the relationship—it removes the burden that keeps people from being present inside it.</blockquote>
         <div><p><strong>My role</strong></p><p>Research · Concept · Product design · AI-assisted visualization</p></div>
       </section>
+
+      <figure className="bbgo-closing">
+        <img src={closingScene.src} alt="BBgo accompanying a parent and infant through a park" />
+      </figure>
 
       <SiteFooter />
     </main>
