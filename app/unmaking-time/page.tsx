@@ -20,8 +20,6 @@ export default function UnmakingTimePage() {
     <main className="unmaking-page">
       <SiteNavigation label="Project · Unmaking Time" />
 
-      <figure className="unmaking-lead"><img src={hero.src} alt="Visitors pulling threads from suspended sweater panels in the Unmaking Time installation" /></figure>
-
       <header className="unmaking-hero project-title-system">
         <p>Participatory installation · Fast fashion · Environmental time debt</p>
         <h1>UNMAKING<br />TIME</h1>
@@ -30,6 +28,8 @@ export default function UnmakingTimePage() {
           <p><em>Threads of Time: The Unpaid Debt</em> turns the unraveling of a sweater into a physical measure of consumption, consequence, and generational responsibility.</p>
         </div>
       </header>
+
+      <figure className="unmaking-lead"><img src={hero.src} alt="Visitors encountering the suspended sweaters and accumulated yarn in the Unmaking Time installation" /></figure>
 
       <section className="unmaking-instruction">
         <p>Before you keep reading</p>
