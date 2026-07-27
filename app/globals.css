@@ -563,7 +563,7 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 .hover-process-grid .is-sole img { object-fit:contain; }
 .hover-process-grid .is-last img { object-position:center 57%; }
 .hover-process-hero { width:min(82%,1200px); height:auto; margin:12px auto 0 !important; }
-.hover-process-detail { width:min(64%,920px); height:auto; margin:12px auto 0 !important; }
+.hover-process-detail { width:min(82%,1200px); height:auto; margin:12px auto 0 !important; }
 .hover-challenge { padding:14vh 8vw; background:var(--hover-ink); color:#eff1e8; display:grid; grid-template-columns:1fr 4fr; gap:4vw; }
 .hover-challenge h2 { grid-column:2; margin:0; max-width:1100px; font:400 clamp(46px,6vw,100px)/.98 Georgia,serif; letter-spacing:-.04em; }
 .hover-challenge > div { grid-column:2; margin-top:5vh; display:grid; grid-template-columns:1fr 1fr; gap:5vw; font:18px/1.55 Georgia,serif; }
