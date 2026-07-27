@@ -22,6 +22,7 @@ const experience = [
     role: "Creative Director",
     organization: "ALL WE ARE",
     text: "Invented a patented detachable modular footwear structure and built a four-person team spanning product development, production, supply chain, and visual direction.",
+    href: "/all-we-are",
   },
   {
     role: "Director of Footwear",
