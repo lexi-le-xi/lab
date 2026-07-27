@@ -7,7 +7,7 @@ export const areas = [
     question: "What changes when design begins with care?",
     description: "Designing with older adults, changing bodies, independence, dignity, family, and community in mind.",
     insight: "Care reveals what ordinary design overlooks. Needs are found by getting close enough to someone's life.",
-    projects: ["A Spoon for My Grandfather", "Aging, Body & Independence Studies"],
+    projects: ["A Spoon for My Grandfather", "BBgo", "Aging, Body & Independence Studies"],
     color: "#f0b13e",
   },
   {
@@ -51,7 +51,7 @@ export const areas = [
     question: "Can technology invite agency instead of demanding attention?",
     description: "Using play, artificial intelligence, and participatory experiences to create curiosity, reflection, and shared language.",
     insight: "Technology should not only capture our attention; it can help us return it to ourselves.",
-    projects: ["Design for Play", "AI Companion", "BBgo", "Participatory Experiments"],
+    projects: ["Design for Play", "AI Companion", "Participatory Experiments"],
     color: "#267ec5",
   },
 ] as const;

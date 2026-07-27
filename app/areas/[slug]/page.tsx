@@ -19,6 +19,7 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
     if (project === "3D Printed Shoes") return "/3d-print";
     if (project === "Mat Bag") return "/mat-bag";
     if (project === "Concrete Cooking Stove") return "/concrete-stove";
+    if (project === "BBgo") return "/bbgo";
     return null;
   };
 
