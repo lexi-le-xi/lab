@@ -20,6 +20,8 @@ export default function UnmakingTimePage() {
     <main className="unmaking-page">
       <SiteNavigation label="Project · Unmaking Time" />
 
+      <figure className="unmaking-lead"><img src={hero.src} alt="Visitors pulling threads from suspended sweater panels in the Unmaking Time installation" /></figure>
+
       <header className="unmaking-hero project-title-system">
         <p>Participatory installation · Fast fashion · Environmental time debt</p>
         <h1>UNMAKING<br />TIME</h1>
@@ -28,8 +30,6 @@ export default function UnmakingTimePage() {
           <p><em>Threads of Time: The Unpaid Debt</em> turns the unraveling of a sweater into a physical measure of consumption, consequence, and generational responsibility.</p>
         </div>
       </header>
-
-      <figure className="unmaking-lead"><img src={hero.src} alt="Visitors pulling threads from suspended sweater panels in the Unmaking Time installation" /></figure>
 
       <section className="unmaking-instruction">
         <p>Before you keep reading</p>
@@ -40,7 +40,8 @@ export default function UnmakingTimePage() {
       <section className="unmaking-question">
         <p>01 · The question</p>
         <blockquote>Can one small action make the hidden timescale of consumption impossible to ignore?</blockquote>
-        <div><p>A garment can be produced, purchased, and discarded with extraordinary speed. Its synthetic fibers may persist in the Earth for hundreds of years.</p><p>The installation makes that imbalance visible: present desire creates a debt that the future is asked to carry.</p></div>
+        <div className="unmaking-question-copy"><p>A garment can be produced, purchased, and discarded with extraordinary speed. Its synthetic fibers may persist in the Earth for hundreds of years.</p><p>The installation makes that imbalance visible: present desire creates a debt that the future is asked to carry.</p></div>
+        <div className="unmaking-question-images"><img src={videoStillOne.src} alt="A visitor standing beside the suspended sweater installation" /><img src={videoStillTwo.src} alt="A visitor reaching toward a suspended sweater panel" /></div>
       </section>
 
       <section className="unmaking-action">
@@ -56,7 +57,6 @@ export default function UnmakingTimePage() {
       <section className="unmaking-film">
         <p>03 · The installation in motion</p>
         <figure><AutoVideo src={publicPath("/unmaking-time/installation.mov")} label="Visitors interacting with the suspended sweaters and pulling their threads" /></figure>
-        <div><img src={videoStillOne.src} alt="A visitor standing beside the suspended sweater installation" /><img src={videoStillTwo.src} alt="A visitor reaching toward a suspended sweater panel" /></div>
       </section>
 
       <section className="unmaking-debt">

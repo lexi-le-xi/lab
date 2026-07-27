@@ -2638,8 +2638,10 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 .unmaking-question { padding:10vw 6vw; background:#f7f2ea; }
 .unmaking-question > p { margin:0 0 5vw; font-size:10px; letter-spacing:.18em; text-transform:uppercase; }
 .unmaking-question blockquote { max-width:1500px; margin:0; font:clamp(52px,7.2vw,132px)/.95 Georgia,serif; letter-spacing:-.045em; }
-.unmaking-question > div { width:54%; margin:6vw 0 0 auto; display:grid; grid-template-columns:1fr 1fr; gap:3vw; }
-.unmaking-question > div p { margin:0; font:18px/1.55 Georgia,serif; }
+.unmaking-question-copy { width:54%; margin:6vw 0 0 auto; display:grid; grid-template-columns:1fr 1fr; gap:3vw; }
+.unmaking-question-copy p { margin:0; font:18px/1.55 Georgia,serif; }
+.unmaking-question-images { width:min(82%,1180px); margin:7vw auto 0; display:grid; grid-template-columns:1fr 1fr; gap:1.5vw; }
+.unmaking-question-images img { aspect-ratio:3/4; object-position:center; }
 .unmaking-action { padding:10vw 5vw; background:#d5ae47; }
 .unmaking-action > header { display:grid; grid-template-columns:4vw 2fr 5fr; gap:1.5vw; margin-bottom:7vw; }
 .unmaking-action header span { color:#8d251f; font-size:10px; }
@@ -2654,8 +2656,6 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 .unmaking-film > p { margin:0 0 4vw; font-size:10px; letter-spacing:.18em; text-transform:uppercase; }
 .unmaking-film > figure { width:min(72%,1000px); margin:auto; aspect-ratio:9/16; background:#000; }
 .unmaking-film video { object-fit:contain; }
-.unmaking-film > div { width:min(72%,1000px); margin:1.5vw auto 0; display:grid; grid-template-columns:1fr 1fr; gap:1.5vw; }
-.unmaking-film > div img { aspect-ratio:450/736; object-fit:cover; }
 .unmaking-debt { display:grid; grid-template-columns:1.15fr .85fr; background:#5c1719; color:#fff0dc; }
 .unmaking-debt figure { min-height:90svh; }
 .unmaking-debt figure img { object-position:center; }
@@ -2703,7 +2703,8 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   .unmaking-instruction > p:last-child { grid-column:1; margin:0; font-size:17px; }
   .unmaking-question,.unmaking-action,.unmaking-film { padding:90px 22px; }
   .unmaking-question blockquote { font-size:12vw; }
-  .unmaking-question > div { width:100%; margin-top:55px; grid-template-columns:1fr; gap:25px; }
+  .unmaking-question-copy { width:100%; margin-top:55px; grid-template-columns:1fr; gap:25px; }
+  .unmaking-question-images { width:100%; margin-top:55px; gap:10px; }
   .unmaking-action > header { grid-template-columns:32px 1fr; margin-bottom:55px; }
   .unmaking-action header p { grid-column:2; }
   .unmaking-action header h2 { grid-column:1/3; margin-top:35px; font-size:12vw; }
@@ -2713,8 +2714,7 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   .unmaking-action-grid figure:nth-of-type(2) { order:3; }
   .unmaking-action-grid article:nth-of-type(2) { order:4; }
   .unmaking-action-grid h3 { margin-bottom:28px; font-size:11vw; }
-  .unmaking-film > figure,.unmaking-film > div { width:100%; }
-  .unmaking-film > div { margin-top:10px; gap:10px; }
+  .unmaking-film > figure { width:100%; }
   .unmaking-debt { grid-template-columns:1fr; }
   .unmaking-debt figure { min-height:0; aspect-ratio:3/4; }
   .unmaking-debt > div { padding:75px 22px 90px; }
