@@ -29,16 +29,17 @@ export default function SpoonPage() {
 
       <header className="spoon-hero">
         <p>Inclusive design · Metal casting · Care</p>
-        <aside className="spoon-ip-notice">
-          <strong>Intellectual property notice · Patent application in progress</strong>
-          <span>This product is currently under continued development and iteration. Certain technical details are intentionally withheld.</span>
-        </aside>
         <h1>SPOON<br />FOR MY<br />GRANDFATHER</h1>
         <div>
           <h2>A utensil shaped by attention to one person&apos;s changing body.</h2>
           <p>I designed and cast this one-piece spoon for my grandfather, whose diabetes has left his fingers numb and made ordinary utensils difficult to hold securely.</p>
         </div>
       </header>
+
+      <aside className="spoon-ip-notice">
+        <strong>Intellectual property notice<br />Patent application in progress</strong>
+        <span>This product is currently under continued development and iteration. Certain technical details are intentionally withheld.</span>
+      </aside>
 
       <Image src={hero.src} alt="The finished cast-metal spoon with an open hand-support loop" className="spoon-lead" />
 
