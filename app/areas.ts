@@ -7,7 +7,7 @@ export const areas = [
     question: "What changes when design begins with care?",
     description: "Designing with older adults, changing bodies, independence, dignity, family, and community in mind.",
     insight: "Care reveals what ordinary design overlooks. Needs are found by getting close enough to someone's life.",
-    projects: ["A Spoon for My Grandfather", "ESTEAST", "Community Furniture"],
+    projects: ["A Spoon for My Grandfather", "Aging, Body & Independence Studies"],
     color: "#f0b13e",
   },
   {
@@ -18,7 +18,7 @@ export const areas = [
     question: "How might we make things with fewer processes and more possibilities?",
     description: "Reorganizing structure, manufacturing, assembly, and use so that people can participate in how objects come to life.",
     insight: "When people help complete an object, ownership becomes a relationship rather than a transaction.",
-    projects: ["ALL WE ARE / Modular Shoes", "The Last Step", "HOVER", "3D Printed Shoes", "Mat Bag"],
+    projects: ["ESTEAST", "Modular Kitchen Organizer", "ALL WE ARE / Modular Shoes", "The Last Step", "HOVER", "3D Printed Shoes", "Mat Bag"],
     color: "#dd714d",
   },
   {
