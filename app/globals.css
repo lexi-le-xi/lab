@@ -1084,8 +1084,8 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 }
 .about-cover a {
   position:absolute;
-  left:clamp(540px,36vw,700px);
-  top:190px;
+  left:clamp(650px,42vw,760px);
+  top:198px;
   width:88px;
   height:88px;
   transition:transform .25s ease;
