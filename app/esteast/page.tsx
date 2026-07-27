@@ -1,5 +1,13 @@
 import type { Metadata } from "next";
 import { SiteFooter, SiteNavigation } from "../site-chrome";
+import processCollage from "../../public/esteast/process-collage.png";
+import xiMaking from "../../public/esteast/xi-making.png";
+import craftswomanDog from "../../public/esteast/craftswoman-dog.png";
+import traditionalMaking from "../../public/esteast/traditional-making.png";
+import materialAnatomy from "../../public/esteast/material-anatomy.jpg";
+import showroom from "../../public/esteast/showroom.png";
+import pressCollage from "../../public/esteast/press-collage.png";
+import eggStore from "../../public/esteast/egg-store.png";
 
 export const metadata: Metadata = {
   title: "ESTEAST · Xi Liu",
@@ -26,7 +34,7 @@ export default function EsteastPage() {
         </div>
       </header>
 
-      <Image src="/esteast/process-collage.png" alt="The materials and hand processes behind ESTEAST shoes" className="esteast-lead-image" />
+      <Image src={processCollage.src} alt="The materials and hand processes behind ESTEAST shoes" className="esteast-lead-image" />
 
       <section className="esteast-statement">
         <p>Connection through craft</p>
@@ -44,8 +52,8 @@ export default function EsteastPage() {
           </div>
         </div>
         <div className="esteast-duo">
-          <Image src="/esteast/xi-making.png" alt="Xi learning to make multi-layer cloth shoes" />
-          <Image src="/esteast/craftswoman-dog.png" alt="An ESTEAST craftswoman working in a domestic setting" />
+          <Image src={xiMaking.src} alt="Xi learning to make multi-layer cloth shoes" />
+          <Image src={craftswomanDog.src} alt="An ESTEAST craftswoman working in a domestic setting" />
         </div>
       </section>
 
@@ -59,7 +67,7 @@ export default function EsteastPage() {
             <p>Yet the shoes had almost no recognition among younger people. Their traditional shape felt outdated, while cloth soles lacked the waterproofing and durability required by modern concrete cities.</p>
           </div>
         </div>
-        <Image src="/esteast/traditional-making.png" alt="A traditional maker stitching a cloth sole outdoors" className="esteast-wide-image" />
+        <Image src={traditionalMaking.src} alt="A traditional maker stitching a cloth sole outdoors" className="esteast-wide-image" />
       </section>
 
       <section className="esteast-materials">
@@ -67,7 +75,7 @@ export default function EsteastPage() {
           <p>Material anatomy</p>
           <span>Wheat · cotton · wood · corn · palm fiber · hemp thread · lavender</span>
         </div>
-        <Image src="/esteast/material-anatomy.jpg" alt="Natural materials arranged beside the stitched sole of an ESTEAST shoe" />
+        <Image src={materialAnatomy.src} alt="Natural materials arranged beside the stitched sole of an ESTEAST shoe" />
       </section>
 
       <section className="esteast-objectives">
@@ -90,7 +98,7 @@ export default function EsteastPage() {
             <p><strong>Production system.</strong> After securing initial boutique orders, I spent two months assembling and training an artisan team around shared quality standards.</p>
           </div>
         </div>
-        <Image src="/esteast/showroom.png" alt="Xi preparing an ESTEAST footwear showroom" className="esteast-wide-image" />
+        <Image src={showroom.src} alt="Xi preparing an ESTEAST footwear showroom" className="esteast-wide-image" />
       </section>
 
       <section className="esteast-challenge">
@@ -110,8 +118,8 @@ export default function EsteastPage() {
           </div>
         </div>
         <div className="esteast-duo is-results">
-          <Image src="/esteast/press-collage.png" alt="ESTEAST products featured by international boutiques and customers" />
-          <Image src="/esteast/egg-store.png" alt="ESTEAST materials and a meeting with buyers from Egg store in London" />
+          <Image src={pressCollage.src} alt="ESTEAST products featured by international boutiques and customers" />
+          <Image src={eggStore.src} alt="ESTEAST materials and a meeting with buyers from Egg store in London" />
         </div>
       </section>
 
