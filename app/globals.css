@@ -396,6 +396,8 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 .print-results { background:#111; color:#f6f2e6; }
 .print-results-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5vw; }
 .print-results-grid figure { height:58vw; max-height:850px; }
+.print-results-grid figure:first-child img,
+.print-results-grid figure:last-child img { object-fit:contain; object-position:center; }
 .print-reflection { padding:12vw 7vw; background:#e7e1cf; display:grid; grid-template-columns:repeat(12,1fr); gap:1.5vw; }
 .print-reflection > p { grid-column:1/4; margin:0; font-size:11px; letter-spacing:.17em; text-transform:uppercase; }
 .print-reflection blockquote { grid-column:4/13; margin:0; font:clamp(40px,5.4vw,94px)/1 Georgia,serif; letter-spacing:-.035em; }
