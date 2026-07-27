@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { AutoVideo } from "../mat-bag/auto-video";
 import { SiteFooter, SiteNavigation } from "../site-chrome";
-import hero from "../../public/kitchen-organizer/hero.png";
 import heroMain from "../../public/kitchen-organizer/hero-main.jpg";
 import flatPattern from "../../public/kitchen-organizer/flat-pattern.png";
 import bending from "../../public/kitchen-organizer/bending.jpg";
@@ -79,7 +78,12 @@ export default function KitchenOrganizerPage() {
           <div><span>03</span><h3>Fold into strength</h3><p>Using a brake, I formed the flat pieces into a stable base and upright support. Each bend replaces added components with geometry.</p></div>
         </article>
         <article>
-          <figure><img src={hero.src} alt="Finished organizer in use on a kitchen counter" /></figure>
+          <figure>
+            <AutoVideo
+              src={publicPath("/kitchen-organizer/complete-assembly.mp4")}
+              label="Assembling the Modular Kitchen Organizer into its completed form"
+            />
+          </figure>
           <div><span>04</span><h3>Complete through assembly</h3><p>The parts lock into a finished organizer for eggs, fruit, or utensils. The structure can remain detachable, letting assembly become part of the experience of ownership.</p></div>
         </article>
       </section>
