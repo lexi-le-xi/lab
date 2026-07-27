@@ -195,6 +195,86 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   * { scroll-behavior:auto !important; animation:none !important; transition:none !important; }
 }
 
+/* 3D PRINTED SHOES */
+.print-page { background:#f7f7f4; color:#0b2633; }
+.print-page figure { margin:0; overflow:hidden; }
+.print-page img { display:block; width:100%; height:100%; object-fit:cover; }
+.print-hero { min-height:90vh; padding:13vw 4vw 6vw; display:grid; grid-template-columns:repeat(12,1fr); gap:1.5vw; align-content:end; }
+.print-hero > p { grid-column:1/6; align-self:start; font-size:11px; letter-spacing:.16em; text-transform:uppercase; }
+.print-hero h1 { grid-column:1/13; margin:7vw 0 5vw; font-size:clamp(80px,13vw,230px); line-height:.75; letter-spacing:-.075em; font-weight:700; }
+.print-hero > div { grid-column:7/13; display:grid; grid-template-columns:2fr 1fr; gap:3vw; align-items:start; }
+.print-hero h2 { margin:0; font-size:clamp(27px,3vw,56px); line-height:1.02; letter-spacing:-.035em; }
+.print-hero > div p { margin:0; font:18px/1.5 Georgia,serif; }
+.print-lead-image { width:100%; height:min(72vw,880px); background:#111; }
+.print-lead-image img { object-position:center 49%; }
+.print-statement { padding:12vw 7vw; background:#0e6758; color:#fff4d5; display:grid; grid-template-columns:repeat(12,1fr); gap:1.5vw; }
+.print-statement > p { grid-column:1/4; margin:0; font-size:11px; letter-spacing:.17em; text-transform:uppercase; }
+.print-statement blockquote { grid-column:4/13; margin:0; font:clamp(42px,6vw,100px)/.98 Georgia,serif; letter-spacing:-.035em; }
+.print-section,.print-results { padding:11vw 4vw; border-bottom:1px solid #b9c2c4; }
+.print-copy { display:grid; grid-template-columns:4vw 2fr 5fr; gap:1.5vw; margin-bottom:7vw; }
+.print-copy > span { color:#2568ef; font-size:10px; }
+.print-copy > p { margin:0; font-size:11px; letter-spacing:.16em; text-transform:uppercase; }
+.print-copy h2 { grid-column:3; margin:0; max-width:1000px; font-size:clamp(45px,6.1vw,112px); line-height:.94; letter-spacing:-.055em; }
+.print-copy > div { grid-column:3; margin-top:2.5vw; display:grid; grid-template-columns:1fr 1fr; gap:3vw; }
+.print-copy > div p { margin:0; font:18px/1.55 Georgia,serif; }
+.print-duo { display:grid; grid-template-columns:1fr 1fr; gap:1.5vw; }
+.print-duo figure { aspect-ratio:1.3; background:#fff; }
+.print-duo img { object-fit:contain; }
+.print-wide-image { height:min(62vw,850px); background:#fff; }
+.print-wide-image img { object-fit:contain; padding:3vw; }
+.print-objectives { padding:10vw 4vw; background:#2f68e6; color:white; }
+.print-objectives > p { margin:0 0 5vw; font-size:11px; letter-spacing:.17em; text-transform:uppercase; }
+.print-objectives ol { list-style:none; margin:0; padding:0; }
+.print-objectives li { min-height:150px; padding:2.2vw 0; border-top:1px solid rgba(255,255,255,.45); display:grid; grid-template-columns:5vw 1fr; align-items:center; }
+.print-objectives li span { font-size:10px; }
+.print-objectives strong { font-size:clamp(35px,5vw,88px); line-height:.95; letter-spacing:-.045em; font-weight:500; }
+.print-process-grid { display:grid; grid-template-columns:1.15fr 1.15fr .7fr; gap:1.5vw; align-items:stretch; }
+.print-process-grid figure { min-height:43vw; background:white; }
+.print-process-grid img { object-fit:contain; padding:2vw; }
+.print-digital-pair { margin-top:1.5vw; display:grid; grid-template-columns:1fr .45fr; gap:1.5vw; }
+.print-digital-pair figure { height:50vw; max-height:760px; background:#bfdcfa; }
+.print-digital-pair img { object-fit:contain; }
+.print-results { background:#111; color:#f6f2e6; }
+.print-results-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5vw; }
+.print-results-grid figure { height:58vw; max-height:850px; }
+.print-reflection { padding:12vw 7vw; background:#e7e1cf; display:grid; grid-template-columns:repeat(12,1fr); gap:1.5vw; }
+.print-reflection > p { grid-column:1/4; margin:0; font-size:11px; letter-spacing:.17em; text-transform:uppercase; }
+.print-reflection blockquote { grid-column:4/13; margin:0; font:clamp(40px,5.4vw,94px)/1 Georgia,serif; letter-spacing:-.035em; }
+.print-reflection > div { grid-column:8/13; margin-top:6vw; font:18px/1.5 Georgia,serif; }
+
+@media (max-width:760px) {
+  .print-hero { min-height:calc(100svh - 60px); padding:100px 22px 50px; display:block; }
+  .print-hero > p { margin-bottom:25vw; }
+  .print-hero h1 { margin:0 0 18vw; font-size:20vw; line-height:.78; }
+  .print-hero > div { display:block; }
+  .print-hero h2 { font-size:10vw; margin-bottom:28px; }
+  .print-hero > div p { font-size:17px; }
+  .print-lead-image { height:110vw; }
+  .print-statement { padding:100px 22px; display:block; }
+  .print-statement > p { margin-bottom:55px; }
+  .print-statement blockquote { font-size:11.5vw; }
+  .print-section,.print-results { padding:100px 22px; }
+  .print-copy { display:grid; grid-template-columns:32px 1fr; gap:0; }
+  .print-copy > p { grid-column:2; }
+  .print-copy h2,.print-copy > div { grid-column:1/3; }
+  .print-copy h2 { margin-top:35px; font-size:12vw; }
+  .print-copy > div { margin-top:35px; display:block; }
+  .print-copy > div p + p { margin-top:24px; }
+  .print-duo,.print-process-grid,.print-digital-pair,.print-results-grid { grid-template-columns:1fr; }
+  .print-duo figure,.print-process-grid figure { min-height:0; aspect-ratio:1.1; }
+  .print-wide-image { height:92vw; }
+  .print-objectives { padding:90px 22px; }
+  .print-objectives > p { margin-bottom:50px; }
+  .print-objectives li { min-height:130px; grid-template-columns:38px 1fr; }
+  .print-objectives strong { font-size:9vw; }
+  .print-digital-pair figure { height:100vw; }
+  .print-results-grid figure { height:120vw; }
+  .print-reflection { padding:100px 22px; display:block; }
+  .print-reflection > p { margin-bottom:55px; }
+  .print-reflection blockquote { font-size:10vw; }
+  .print-reflection > div { margin-top:60px; }
+}
+
 /* HOVER */
 .hover-page { --hover-ink:#122c29; --hover-accent:#b7dc32; background:#f4f3ec; color:var(--hover-ink); }
 .hover-page figure { margin:0; overflow:hidden; background:#e7e7df; }

@@ -15,6 +15,7 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
   const projectHref = (project: string) => {
     if (project === "ESTEAST") return "/esteast";
     if (project === "HOVER") return "/hover";
+    if (project === "3D Printed Shoes") return "/3d-print";
     return null;
   };
 
