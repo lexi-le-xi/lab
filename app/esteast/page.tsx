@@ -34,7 +34,7 @@ export default function EsteastPage() {
         </div>
       </header>
 
-      <Image src={processCollage.src} alt="The materials and hand processes behind ESTEAST shoes" className="esteast-lead-image" />
+      <Image src={materialAnatomy.src} alt="The craft, natural origins, and hand-stitched sole at the heart of ESTEAST" className="esteast-lead-image" />
 
       <section className="esteast-statement">
         <p>Connection through craft</p>
@@ -70,14 +70,6 @@ export default function EsteastPage() {
         <Image src={traditionalMaking.src} alt="A traditional maker stitching a cloth sole outdoors" className="esteast-wide-image" />
       </section>
 
-      <section className="esteast-materials">
-        <div>
-          <p>Material anatomy</p>
-          <span>Wheat · cotton · wood · corn · palm fiber · hemp thread · lavender</span>
-        </div>
-        <Image src={materialAnatomy.src} alt="Natural materials arranged beside the stitched sole of an ESTEAST shoe" />
-      </section>
-
       <section className="esteast-objectives">
         <p>03 · Objectives</p>
         <ol>
@@ -98,6 +90,7 @@ export default function EsteastPage() {
             <p><strong>Production system.</strong> After securing initial boutique orders, I spent two months assembling and training an artisan team around shared quality standards.</p>
           </div>
         </div>
+        <Image src={processCollage.src} alt="The materials and hand processes behind ESTEAST shoes" className="esteast-process-image" />
         <Image src={showroom.src} alt="Xi preparing an ESTEAST footwear showroom" className="esteast-wide-image" />
       </section>
 
