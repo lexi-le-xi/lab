@@ -2344,6 +2344,8 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 .spoon-process > article h3 { margin:0; font-size:clamp(34px,4.5vw,78px); line-height:.95; letter-spacing:-.05em; font-weight:500; }
 .spoon-process > article p { grid-column:2; max-width:470px; margin:24px 0 0; font:18px/1.5 Georgia,serif; }
 .spoon-process-videos { width:min(100%,1280px); margin:2vw auto 4vw; display:grid; grid-template-columns:1fr 1fr; gap:1.5vw; }
+.spoon-process-videos.is-single { width:min(100%,640px); grid-template-columns:1fr; }
+.spoon-process-videos.is-final { margin-top:4vw; margin-bottom:0; }
 .spoon-process-videos figure { aspect-ratio:4/3; background:#2a2927; }
 .spoon-process-videos video { object-fit:contain; }
 .spoon-result { padding:10vw 4vw; background:#fffdf8; }

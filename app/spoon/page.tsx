@@ -80,9 +80,8 @@ export default function SpoonPage() {
           <div><span>02</span><h3>Integrate the follow block</h3><p>The first attempt separated the pattern from a rough follow block and created extensive post-processing. A tighter, integral follow block produced a cleaner and more successful pour.</p></div>
         </article>
 
-        <div className="spoon-process-videos">
+        <div className="spoon-process-videos is-single">
           <figure><AutoVideo src={publicPath("/spoon/process-01.mp4")} label="Spoon foundry process, first view" /></figure>
-          <figure><AutoVideo src={publicPath("/spoon/process-02.mp4")} label="Spoon foundry process, second view" /></figure>
         </div>
 
         <article>
@@ -94,6 +93,10 @@ export default function SpoonPage() {
           <Image src={finishing.src} alt="Hand finishing the cast spoon surface" />
           <div><span>04</span><h3>Finish by hand</h3><p>Grinding, sanding, and polishing softened the casting marks and made the object comfortable to hold and use.</p></div>
         </article>
+
+        <div className="spoon-process-videos is-single is-final">
+          <figure><AutoVideo src={publicPath("/spoon/process-02.mp4")} label="The finished spoon supported by an open hand" /></figure>
+        </div>
       </section>
 
       <section className="spoon-result">
