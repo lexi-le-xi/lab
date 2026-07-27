@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { AutoVideo } from "../mat-bag/auto-video";
 import { SiteFooter, SiteNavigation } from "../site-chrome";
 import hero from "../../public/hover/hero.jpg";
 import campaign from "../../public/hover/campaign.jpg";
@@ -24,6 +25,8 @@ const Image = ({ src, alt, className = "" }: { src: string; alt: string; classNa
   <figure className={className}><img src={src} alt={alt} /></figure>
 );
 
+const publicPath = (path: string) => `${process.env.GITHUB_ACTIONS === "true" ? "/lab" : ""}${path}`;
+
 export default function HoverPage() {
   return (
     <main className="hover-page">
@@ -39,6 +42,19 @@ export default function HoverPage() {
       </header>
 
       <Image src={hero.src} alt="HOVER camping shoe photographed from above" className="hover-lead-image" />
+
+      <section className="hover-motion-feature" aria-label="HOVER product film">
+        <div>
+          <p>HOVER in motion</p>
+          <span>Product film</span>
+        </div>
+        <figure>
+          <AutoVideo
+            src={publicPath("/hover/hover-film.mp4")}
+            label="HOVER product film showing the footwear in motion"
+          />
+        </figure>
+      </section>
 
       <section className="hover-impact">
         <p>Connection through systems</p>
