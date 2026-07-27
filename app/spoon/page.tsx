@@ -13,7 +13,7 @@ import result from "../../public/spoon/result.jpg";
 
 export const metadata: Metadata = {
   title: "A Spoon for My Grandfather · Xi Liu",
-  description: "A one-piece spoon designed for Xi Liu's grandfather, whose diabetes-related finger numbness makes standard utensils difficult to grip.",
+  description: "A patent-pending, one-piece spoon under continued product development, designed for Xi Liu's grandfather and people who find standard utensils difficult to grip.",
 };
 
 const publicPath = (path: string) => `${process.env.GITHUB_ACTIONS === "true" ? "/lab" : ""}${path}`;
@@ -29,6 +29,10 @@ export default function SpoonPage() {
 
       <header className="spoon-hero">
         <p>Inclusive design · Metal casting · Care</p>
+        <aside className="spoon-ip-notice">
+          <strong>Intellectual property notice · Patent application in progress</strong>
+          <span>This product is currently under continued development and iteration. Certain technical details are intentionally withheld.</span>
+        </aside>
         <h1>SPOON<br />FOR MY<br />GRANDFATHER</h1>
         <div>
           <h2>A utensil shaped by attention to one person&apos;s changing body.</h2>
