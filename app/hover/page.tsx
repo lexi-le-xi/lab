@@ -10,6 +10,7 @@ import prototype from "../../public/hover/prototype.jpg";
 import processHero from "../../public/hover/process-hero.jpg";
 import processDetail from "../../public/hover/process-detail.jpg";
 import concepts from "../../public/hover/concepts.jpg";
+import lastDevelopment from "../../public/hover/last-development.png";
 import results from "../../public/hover/results.jpg";
 import product01 from "../../public/hover/product-01.jpg";
 import product02 from "../../public/hover/product-02.jpg";
@@ -109,6 +110,7 @@ export default function HoverPage() {
           <Image src={sole.src} alt="Transparent rendering of the signature HOVER sole" className="is-sole" />
           <Image src={concepts.src} alt="HOVER concept development and visual directions" />
           <Image src={prototype.src} alt="HOVER prototype and development materials" />
+          <Image src={lastDevelopment.src} alt="Physical last used to refine the HOVER volume and fit" className="is-last" />
         </div>
         <Image src={processHero.src} alt="HOVER prototype on a working table of sketches and material studies" className="hover-process-hero" />
         <Image src={processDetail.src} alt="Detailed HOVER development process on the studio table" className="hover-process-detail" />
