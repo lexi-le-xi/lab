@@ -283,6 +283,24 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   .hover-reflection > div { grid-template-columns:1fr; gap:15px; }
 }
 
+@media (max-width: 700px) {
+  .cv-document { width:calc(100% - 36px); padding:65px 0 40px; }
+  .cv-document-header { padding-bottom:30px; align-items:flex-start; flex-direction:column; gap:35px; }
+  .cv-document-header h1 { font-size:24vw; }
+  .cv-document-header > div p { font-size:10px; line-height:1.5; }
+  .cv-document-header address { justify-items:start; font-size:9px; }
+  .cv-columns { grid-template-columns:1fr; gap:65px; padding-top:42px; }
+  .cv-sidebar { padding-right:0; border-right:0; }
+  .cv-sidebar section + section { margin-top:38px; }
+  .cv-main-column { border-top:2px solid #161616; padding-top:42px; }
+  .cv-job { grid-template-columns:1fr; gap:18px; padding:27px 0 38px; }
+  .cv-job > a { left:0; right:auto; }
+  .cv-ip { margin-top:60px; }
+  .cv-ip li { padding:22px 0; align-items:flex-start; flex-direction:column; gap:8px; }
+  .cv-ip span { text-align:left; }
+  .cv-document-footer { margin-top:55px; align-items:flex-start; flex-direction:column; line-height:1.5; }
+}
+
 /* Three.js shoreline prototype */
 .three-prototype { min-height:100vh; color:#102f3d; background:#f7f0d2; }
 .prototype-nav {
@@ -1400,6 +1418,41 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 .cv-interests { grid-column:2; margin-top:6vh; display:flex; justify-content:space-between; gap:30px; padding-top:20px; border-top:1px solid rgba(0,0,0,.2); font-size:10px; letter-spacing:.12em; text-transform:uppercase; }
 .cv-interests p { margin:0; color:#3476dd; }
 .cv-contact a { grid-column:2; width:max-content; margin-top:7vh; }
+
+/* Traditional public CV */
+.cv-document { width:min(1280px,calc(100% - 8vw)); margin:0 auto; padding:9vh 0 6vh; color:#161616; }
+.cv-document-header { padding-bottom:42px; display:flex; justify-content:space-between; align-items:flex-end; gap:60px; border-bottom:2px solid #161616; }
+.cv-document-header h1 { margin:0; font-size:clamp(64px,8vw,118px); line-height:.82; letter-spacing:-.065em; }
+.cv-document-header > div p { margin:20px 0 0; color:#3f3f3f; font-size:13px; letter-spacing:.12em; text-transform:uppercase; }
+.cv-document-header address { display:grid; justify-items:end; gap:9px; font-style:normal; font-size:11px; letter-spacing:.08em; text-transform:uppercase; }
+.cv-document-header address a:last-child { margin-top:9px; padding-bottom:4px; border-bottom:1px solid; }
+.cv-columns { display:grid; grid-template-columns:minmax(235px,.82fr) minmax(0,2.45fr); gap:clamp(55px,7vw,105px); padding-top:58px; }
+.cv-sidebar { padding-right:clamp(30px,4vw,58px); border-right:1px solid rgba(0,0,0,.22); }
+.cv-sidebar section + section { margin-top:45px; }
+.cv-sidebar h2,.cv-resume-section > h2 { margin:0 0 22px; font-size:12px; letter-spacing:.15em; text-transform:uppercase; }
+.cv-sidebar h2 { padding-bottom:9px; border-bottom:1px solid rgba(0,0,0,.3); }
+.cv-sidebar p { margin:0; color:#363636; font:14px/1.65 Arial,Helvetica,sans-serif; }
+.cv-sidebar p span { float:right; color:#777; font-size:10px; letter-spacing:.08em; text-transform:uppercase; }
+.cv-profile-copy { font-family:Georgia,serif !important; font-size:16px !important; line-height:1.6 !important; }
+.cv-small-entry + .cv-small-entry { margin-top:23px; }
+.cv-small-entry strong,.cv-small-entry span { display:block; }
+.cv-small-entry strong { font-size:15px; line-height:1.35; }
+.cv-small-entry span { margin-top:5px; color:#666; font:13px/1.45 Georgia,serif; }
+.cv-main-column { min-width:0; }
+.cv-resume-section > h2 { padding-bottom:12px; border-bottom:2px solid #161616; }
+.cv-job { position:relative; padding:29px 0; display:grid; grid-template-columns:minmax(180px,.8fr) minmax(0,1.65fr); gap:clamp(25px,4vw,60px); border-bottom:1px solid rgba(0,0,0,.2); }
+.cv-job h3 { margin:0; font-size:clamp(20px,2vw,30px); letter-spacing:-.035em; }
+.cv-job div p { margin:8px 0 0; color:#3476dd; font-size:11px; letter-spacing:.08em; text-transform:uppercase; }
+.cv-job > p { margin:0; color:#3d3d3d; font:15px/1.6 Georgia,serif; }
+.cv-job > a { position:absolute; right:0; bottom:10px; padding-bottom:3px; border-bottom:1px solid; font-size:8px; letter-spacing:.1em; text-transform:uppercase; }
+.cv-ip { margin-top:70px; }
+.cv-ip ul { list-style:none; margin:0; padding:0; }
+.cv-ip li { min-height:78px; display:flex; justify-content:space-between; align-items:center; gap:30px; border-bottom:1px solid rgba(0,0,0,.2); }
+.cv-ip strong { font-size:15px; }
+.cv-ip span { color:#666; font-size:9px; letter-spacing:.1em; text-align:right; text-transform:uppercase; }
+.cv-document-footer { margin-top:75px; padding-top:22px; display:flex; justify-content:space-between; gap:30px; border-top:2px solid #161616; font-size:9px; letter-spacing:.1em; text-transform:uppercase; }
+.cv-document-footer p { margin:0; color:#666; }
+.cv-document-footer a { padding-bottom:3px; border-bottom:1px solid; }
 
 /* Inspirations, principles, and philosophy */
 .thought-page { min-height:100vh; color:#102f3d; background:#f7f0d2; }
