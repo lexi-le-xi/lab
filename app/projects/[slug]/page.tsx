@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { projects } from "../../projects";
+import { SiteFooter, SiteNavigation } from "../../site-chrome";
 
 export const dynamicParams = false;
 
@@ -17,10 +18,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
   return (
     <main className="project-page" style={{ "--accent": project.accent } as React.CSSProperties}>
-      <nav className="project-nav">
-        <Link href="/">← Back to the studio</Link>
-        <span>{project.index} / {String(projects.length).padStart(2, "0")}</span>
-      </nav>
+      <SiteNavigation label={`${project.index} / ${String(projects.length).padStart(2, "0")} · ${project.title}`} />
       <header className="project-hero">
         <p className="eyebrow">{project.label}</p>
         <h1>{project.title}</h1>
@@ -52,6 +50,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
         <strong>{next.title}</strong>
         <b>↗</b>
       </Link>
+      <SiteFooter />
     </main>
   );
 }

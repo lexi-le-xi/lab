@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { SiteNavigation } from "../site-chrome";
 
 export const metadata: Metadata = {
   title: "CV · Xi Liu",
@@ -9,11 +9,7 @@ export const metadata: Metadata = {
 export default function CvPage() {
   return (
     <main className="cv-page">
-      <nav className="cv-nav">
-        <Link href="/">XI LIU <span>/</span> LAB</Link>
-        <p>Curriculum vitae</p>
-        <Link href="/about">Back to about me</Link>
-      </nav>
+      <SiteNavigation label="Curriculum vitae" />
       <section className="cv-placeholder">
         <p>Curriculum vitae</p>
         <h1>CV</h1>

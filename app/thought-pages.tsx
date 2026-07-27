@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SiteNavigation } from "./site-chrome";
 
 export type ThoughtPageData = {
   index: string;
@@ -15,11 +16,7 @@ export type ThoughtPageData = {
 export function ThoughtPage({ data }: { data: ThoughtPageData }) {
   return (
     <main className="thought-page" style={{ "--thought-color": data.color } as React.CSSProperties}>
-      <nav className="thought-nav">
-        <Link href="/">XI LIU <span>/</span> LAB</Link>
-        <p>{data.index} · Inner practice</p>
-        <Link href="/about">About Xi →</Link>
-      </nav>
+      <SiteNavigation label={`${data.index} · ${data.title.replace("\n", " ")}`} />
 
       <header className="thought-hero">
         <p>{data.eyebrow}</p>
@@ -59,6 +56,7 @@ export function ThoughtPage({ data }: { data: ThoughtPageData }) {
         <p>Continue flying</p>
         <Link href={data.next.href}>Next: {data.next.label} <span>→</span></Link>
         <Link href="/">Return to the shoreline</Link>
+        <a href="mailto:liuxi@stanford.edu">Say hello · liuxi@stanford.edu ↗</a>
       </footer>
     </main>
   );

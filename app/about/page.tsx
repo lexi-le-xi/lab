@@ -32,6 +32,7 @@ export default function AboutPage() {
             <Link href="/areas/materials-time"><span>04</span><strong>Materials &amp; Time</strong></Link>
             <Link href="/areas/mind-body-behavior"><span>05</span><strong>Mind, Body &amp; Behavior</strong></Link>
             <Link href="/areas/play-ai-interaction"><span>06</span><strong>Play, AI &amp; Interaction</strong></Link>
+            <Link href="/cv"><span>07</span><strong>CV</strong></Link>
           </div>
         </details>
       </nav>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { areas } from "../../areas";
+import { SiteFooter, SiteNavigation } from "../../site-chrome";
 
 export function generateStaticParams() {
   return areas.map((area) => ({ slug: area.slug }));
@@ -13,10 +14,7 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
 
   return (
     <main className="area-page" style={{ "--area-color": area.color } as React.CSSProperties}>
-      <header className="area-nav">
-        <Link href="/">← Return to the lake</Link>
-        <span>{area.index} / 05</span>
-      </header>
+      <SiteNavigation label={`${area.index} / 05 · ${area.title}`} />
       <section className="area-hero">
         <p>{area.connection}</p>
         <h1>{area.title}</h1>
@@ -41,6 +39,7 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
       <nav className="area-next">
         {areas.map((item) => <Link key={item.slug} href={`/areas/${item.slug}`}>{item.index}</Link>)}
       </nav>
+      <SiteFooter />
     </main>
   );
 }
