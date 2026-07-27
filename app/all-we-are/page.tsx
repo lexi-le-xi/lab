@@ -16,7 +16,7 @@ import { AutoVideo } from "./auto-video";
 
 export const metadata: Metadata = {
   title: "ALL WE ARE · Xi Liu",
-  description: "A modular footwear system that removes glue, simplifies production, and invites the wearer into assembly.",
+  description: "A patented modular footwear system that removes glue, simplifies production, and invites the wearer into assembly.",
 };
 
 const Image = ({ src, alt, className = "" }: { src: string; alt: string; className?: string }) => (
@@ -38,6 +38,10 @@ export default function AllWeArePage() {
 
       <header className="awa-hero">
         <p>Brand · Product design · Industrial innovation</p>
+        <aside className="awa-ip-notice">
+          <strong>Intellectual property notice · Patent granted</strong>
+          <span>The detachable modular footwear structure shown in this project is protected by a granted patent. Certain technical details are intentionally withheld.</span>
+        </aside>
         <h1>ALL WE ARE</h1>
         <div>
           <h2>A modular shoe that questions why footwear must be glued together at all.</h2>
