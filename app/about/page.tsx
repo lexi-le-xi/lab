@@ -74,9 +74,9 @@ export default function AboutPage() {
         <p>Beyond the work</p>
         <div>
           <nav aria-label="Explore Xi's inner practice">
-            <Link href="/inspirations"><span>01</span><strong>Inspirations</strong><em>Sports, music, meditation, and lived experience</em></Link>
-            <Link href="/principles"><span>02</span><strong>Principles</strong><em>Notes that help me return to the core</em></Link>
-            <Link href="/philosophy"><span>03</span><strong>Philosophy</strong><em>Make less, create more</em></Link>
+            <Link href="/inspirations"><span>01</span><strong>Inspirations</strong><em>Sports, music, meditation, and lived experience</em><b>→</b></Link>
+            <Link href="/principles"><span>02</span><strong>Principles</strong><em>Notes that help me return to the core</em><b>→</b></Link>
+            <Link href="/philosophy"><span>03</span><strong>Philosophy</strong><em>Make less, create more</em><b>→</b></Link>
           </nav>
         </div>
       </section>
