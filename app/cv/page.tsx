@@ -9,6 +9,11 @@ export const metadata: Metadata = {
 
 const experience = [
   {
+    role: "Research Assistant",
+    organization: "Stanford University",
+    text: "Researching how environmental organizations can automate their workflows, reduce repetitive operational work, and devote more capacity to their core missions.",
+  },
+  {
     role: "Strategist",
     organization: "Shanghai Wetland & Woodland Ecological Project",
     text: "Contributed to a 35-acre wetland and woodland ecosystem guided by a zero-human-interference strategy. Designed nature-education programs and interactive family experiences.",
