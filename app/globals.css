@@ -2216,8 +2216,8 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 .tofu-hero > div { align-self:end; max-width:650px; }
 .tofu-hero h2 { margin:0 0 2.5vw; font-size:clamp(38px,4.4vw,80px); line-height:.94; letter-spacing:-.05em; font-weight:500; }
 .tofu-hero > div p { max-width:560px; margin:0; font:18px/1.5 Georgia,serif; }
-.tofu-lead { height:min(46.5vw,900px); background:#ddd9cf; }
-.tofu-lead img { object-position:center 72%; }
+.tofu-lead { width:100%; height:auto; aspect-ratio:2348/1654; background:#ddd9cf; }
+.tofu-lead img { object-fit:contain; object-position:center; }
 .tofu-statement { min-height:86svh; padding:10vw 7vw; display:grid; grid-template-columns:1fr 3fr; align-items:start; background:#555b48; color:#fff7e8; }
 .tofu-statement > p { margin:0; font-size:10px; letter-spacing:.18em; text-transform:uppercase; }
 .tofu-statement blockquote { margin:0; font:clamp(48px,7vw,124px)/.98 Georgia,serif; letter-spacing:-.045em; }
