@@ -35,6 +35,30 @@ export default function EsteastPage() {
 
       <Image src={materialAnatomy.src} alt="The craft, natural origins, and hand-stitched sole at the heart of ESTEAST" className="esteast-lead-image" />
 
+      <section className="esteast-site-embed">
+        <div className="esteast-site-embed__heading">
+          <div>
+            <p>Explore the original studio</p>
+            <h2>Step inside ESTEAST.</h2>
+          </div>
+          <p>Browse the original brand website directly here.</p>
+        </div>
+        <div className="esteast-site-embed__browser">
+          <div className="esteast-site-embed__bar" aria-hidden="true">
+            <span />
+            <span />
+            <span />
+            <p>liuxi0802.wixsite.com/esteast-studio</p>
+          </div>
+          <iframe
+            src="https://liuxi0802.wixsite.com/esteast-studio"
+            title="ESTEAST Studio original website"
+            loading="lazy"
+            allow="fullscreen"
+          />
+        </div>
+      </section>
+
       <section className="esteast-statement">
         <p>Connection through craft</p>
         <blockquote>What if preserving a tradition also created dignity, income, and a new relationship between maker and wearer?</blockquote>
