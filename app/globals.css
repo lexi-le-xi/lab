@@ -1639,6 +1639,10 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 .subpage-footer > p { margin:0; color:#3476dd; font-size:10px; letter-spacing:.17em; text-transform:uppercase; }
 .subpage-footer > a { grid-column:2; width:max-content; max-width:100%; }
 .subpage-footer > a:first-of-type { font-size:clamp(42px,5.5vw,82px); line-height:.95; font-weight:700; letter-spacing:-.045em; }
+.subpage-footer-work { display:flex; align-items:center; gap:clamp(34px,6vw,100px); }
+.subpage-footer-arrow { width:clamp(58px,6vw,88px); height:clamp(58px,6vw,88px); flex:none; overflow:visible; transition:transform .25s ease; }
+.subpage-footer-arrow path { fill:none; stroke:currentColor; stroke-width:11; stroke-linecap:butt; stroke-linejoin:miter; }
+.subpage-footer-work:hover .subpage-footer-arrow,.subpage-footer-work:focus-visible .subpage-footer-arrow { transform:translate(8px,8px); }
 .subpage-footer > a:last-child { width:min(100%,620px); margin-top:3vh; padding:22px 0 10px; display:flex; justify-content:space-between; align-items:baseline; border-bottom:1px solid; }
 .subpage-footer > a:last-child strong { font-size:clamp(25px,2.5vw,40px); letter-spacing:-.04em; }
 .subpage-footer > a:last-child span { color:#3476dd; font-size:10px; letter-spacing:.13em; text-transform:uppercase; }
@@ -1880,6 +1884,8 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   .subpage-footer { min-height:0; padding:85px 22px; grid-template-columns:1fr; }
   .subpage-footer > a { grid-column:1; }
   .subpage-footer > a:first-of-type { width:100%; margin-top:35px; font-size:12vw; }
+  .subpage-footer-work { justify-content:space-between; gap:20px; }
+  .subpage-footer-arrow { width:54px; height:54px; }
   .subpage-footer > a:last-child { margin-top:25px; align-items:flex-start; flex-direction:column; gap:12px; }
   .esteast-hero { min-height:auto; padding:75px 22px 55px; grid-template-columns:1fr; }
   .esteast-hero h1,.esteast-hero > p:first-child,.esteast-hero > div { grid-column:1; }

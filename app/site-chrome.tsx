@@ -38,7 +38,12 @@ export function SiteFooter() {
   return (
     <footer className="subpage-footer">
       <p>Continue exploring</p>
-      <Link href="/">Explore my work<br />along the shoreline.</Link>
+      <Link className="subpage-footer-work" href="/">
+        <span>Explore my work<br />along the shoreline.</span>
+        <svg className="subpage-footer-arrow" viewBox="0 0 100 100" focusable="false" aria-hidden="true">
+          <path d="M20 20L75 75M75 18V75H18" />
+        </svg>
+      </Link>
       <a href="mailto:liuxi@stanford.edu"><strong>Say hello</strong><span>liuxi@stanford.edu ↗</span></a>
     </footer>
   );
