@@ -150,7 +150,7 @@ export function StudioDesk() {
           <div className="rowing-opening">
             <p>Welcome to my living design practice</p>
             <h1>I design to<br /><em>build connection.</em></h1>
-            <span>Scroll to row through the shoreline ↓</span>
+            <span>Scroll to row through the shoreline ↓<small>Explore the glowing white dots.</small></span>
           </div>
 
           <nav className="shore-places" aria-label="Design areas along the shoreline">

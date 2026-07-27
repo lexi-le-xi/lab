@@ -874,6 +874,7 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 .rowing-opening h1 { width:min(650px,47vw); margin: 0; font-size: clamp(52px, 7vw, 112px); line-height: .84; letter-spacing: -.065em; font-weight: 500; }
 .rowing-opening h1 em { color: #0e5f51; font-family: Georgia, serif; font-weight: 400; }
 .rowing-opening > span { position:absolute; right:0; bottom:0; display:block; color:#fff; text-shadow:0 2px 12px rgba(8,47,92,.55); font-size:11px; letter-spacing:.14em; text-transform:uppercase; }
+.rowing-opening > span small { display:block; margin-top:9px; font-size:9px; letter-spacing:.16em; opacity:.82; }
 
 .shore-places {
   position: absolute;
