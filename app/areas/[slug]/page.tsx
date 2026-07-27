@@ -12,6 +12,12 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
   const area = areas.find((item) => item.slug === slug);
   if (!area) notFound();
 
+  const projectHref = (project: string) => {
+    if (project === "ESTEAST") return "/esteast";
+    if (project === "HOVER") return "/hover";
+    return null;
+  };
+
   return (
     <main className="area-page" style={{ "--area-color": area.color } as React.CSSProperties}>
       <SiteNavigation label={`${area.index} / 05 · ${area.title}`} />
@@ -30,8 +36,8 @@ export default async function AreaPage({ params }: { params: Promise<{ slug: str
           {area.projects.map((project, index) => (
             <li key={project}>
               <span>{String(index + 1).padStart(2, "0")}</span>
-              <strong>{project === "ESTEAST" ? <Link href="/esteast">{project}</Link> : project}</strong>
-              <em>{project === "ESTEAST" ? "View project ↗" : "In development"}</em>
+              <strong>{projectHref(project) ? <Link href={projectHref(project)!}>{project}</Link> : project}</strong>
+              <em>{projectHref(project) ? "View project ↗" : "In development"}</em>
             </li>
           ))}
         </ol>
