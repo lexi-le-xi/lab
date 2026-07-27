@@ -36,6 +36,13 @@ export default function KitchenOrganizerPage() {
         </div>
       </section>
 
+      <figure className="organizer-question-video">
+        <AutoVideo
+          src={publicPath("/kitchen-organizer/assembly-demo.mp4")}
+          label="Modular Kitchen Organizer being assembled and demonstrated"
+        />
+      </figure>
+
       <section className="organizer-geometry">
         <header>
           <span>02</span>
