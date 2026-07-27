@@ -1939,6 +1939,7 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   .lake-gulls a > span { display:none; }
   .journey-progress { right:12px; }
   .current-place { display:block; opacity:clamp(0,calc(var(--journey-progress) * 12),1); }
+  .current-place small { color:#fff; text-shadow:0 1px 8px rgba(4,42,86,.72); }
   .rowing-afterword { padding:11vh 22px; grid-template-columns:1fr; }
   .rowing-afterword h2, .rowing-afterword a { grid-column:1; }
   .rowing-afterword a { margin-top:25px; }
