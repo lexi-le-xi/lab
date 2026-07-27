@@ -69,7 +69,6 @@ export default function CvPage() {
             </section>
 
             <section><h2>Strategy</h2><p>Product innovation<br />Systems thinking<br />User research<br />Sustainable design<br />Brand direction<br />Supply-chain strategy</p></section>
-            <section><h2>Tools</h2><p>Figma · Sketch<br />CAD &amp; 3D modeling<br />Cursor (AI)</p></section>
             <section><h2>Languages</h2><p>Chinese <span>Native</span><br />English <span>Fluent</span></p></section>
             <section><h2>Interests</h2><p>Rowing · Tennis<br />Badminton · Handpan</p></section>
           </aside>
