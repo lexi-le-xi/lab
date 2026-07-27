@@ -24,11 +24,13 @@ export default function KnowYourselfPage() {
     <main className="know-page">
       <SiteNavigation label="Ongoing inquiry · Know Yourself" />
 
-      <header className="know-hero">
+      <header className="know-hero project-title-system">
         <p>Self-knowledge · Personal growth · Reflective technology</p>
-        <span>Research in progress</span>
         <h1>KNOW<br />YOURSELF</h1>
-        <blockquote>How can we help people find a path that feels like their own?</blockquote>
+        <div>
+          <h2>How can we help people find a path that feels like their own?</h2>
+          <p>Research in progress · An ongoing inquiry into self-knowledge, meditation, personal growth, and reflective technology.</p>
+        </div>
       </header>
 
       <section className="know-status">

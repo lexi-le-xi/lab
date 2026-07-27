@@ -24,7 +24,7 @@ export default function EsteastPage() {
     <main className="esteast-page">
       <SiteNavigation label="Project · ESTEAST" />
 
-      <header className="esteast-hero">
+      <header className="esteast-hero project-title-system">
         <p>Brand · Product design · Culture · Social enterprise</p>
         <h1>ESTEAST</h1>
         <div>

@@ -36,18 +36,19 @@ export default function AllWeArePage() {
     <main className="awa-page">
       <SiteNavigation label="Project · ALL WE ARE" />
 
-      <header className="awa-hero">
+      <header className="awa-hero project-title-system">
         <p>Brand · Product design · Industrial innovation</p>
-        <aside className="awa-ip-notice">
-          <strong>Intellectual property notice · Patent granted</strong>
-          <span>The detachable modular footwear structure shown in this project is protected by a granted patent. Certain technical details are intentionally withheld.</span>
-        </aside>
         <h1>ALL WE ARE</h1>
         <div>
           <h2>A modular shoe that questions why footwear must be glued together at all.</h2>
           <p>I founded ALL WE ARE to explore how structural innovation could simplify production, lower waste, and give wearers a more active relationship with what they own.</p>
         </div>
       </header>
+
+      <aside className="awa-ip-notice">
+        <strong>Intellectual property notice · Patent granted</strong>
+        <span>The detachable modular footwear structure shown in this project is protected by a granted patent. Certain technical details are intentionally withheld.</span>
+      </aside>
 
       <Image src={hero.src} alt="ALL WE ARE modular shoes shown across take-off and put-on states" className="awa-lead-image" />
 

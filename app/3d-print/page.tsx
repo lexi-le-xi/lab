@@ -27,7 +27,7 @@ export default function ThreeDPrintPage() {
     <main className="print-page">
       <SiteNavigation label="Project · 3D Printed Shoes" />
 
-      <header className="print-hero">
+      <header className="print-hero project-title-system">
         <p>Product design · Additive manufacturing · Material experiment</p>
         <h1>3D PRINTED<br />SHOES</h1>
         <div>

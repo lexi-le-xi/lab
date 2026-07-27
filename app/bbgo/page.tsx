@@ -23,7 +23,7 @@ export default function BbgoPage() {
     <main className="bbgo-page">
       <SiteNavigation label="Project · BBgo" />
 
-      <header className="bbgo-hero">
+      <header className="bbgo-hero project-title-system">
         <p>Care · Product concept · AI-assisted design</p>
         <h1>BBgo</h1>
         <div>

@@ -19,15 +19,18 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
   return (
     <main className="project-page" style={{ "--accent": project.accent } as React.CSSProperties}>
       <SiteNavigation label={`${project.index} / ${String(projects.length).padStart(2, "0")} · ${project.title}`} />
-      <header className="project-hero">
-        <p className="eyebrow">{project.label}</p>
+      <header className="project-hero project-title-system">
+        <p>{project.label}</p>
         <h1>{project.title}</h1>
-        <p className="project-question">{project.question}</p>
-        <div className={`project-art art-${project.object}`} aria-hidden="true">
-          <div className="art-shape"><i /><b /><em /></div>
-          <span>{project.status}</span>
+        <div>
+          <h2>{project.question}</h2>
+          <p>{project.intro}</p>
         </div>
       </header>
+      <div className={`project-art art-${project.object}`} aria-hidden="true">
+        <div className="art-shape"><i /><b /><em /></div>
+        <span>{project.status}</span>
+      </div>
       <section className="project-intro">
         <p>Project note</p>
         <h2>{project.intro}</h2>

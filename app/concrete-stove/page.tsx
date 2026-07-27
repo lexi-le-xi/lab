@@ -27,7 +27,7 @@ export default function ConcreteStovePage() {
     <main className="concrete-page">
       <SiteNavigation label="Project · Concrete Cooking Stove" />
 
-      <header className="concrete-hero">
+      <header className="concrete-hero project-title-system">
         <p>Community making · Concrete · Built in place</p>
         <h1>CONCRETE<br />COOKING<br />STOVE</h1>
         <div>

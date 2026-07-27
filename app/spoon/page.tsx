@@ -27,7 +27,7 @@ export default function SpoonPage() {
     <main className="spoon-page">
       <SiteNavigation label="Project · A Spoon for My Grandfather" />
 
-      <header className="spoon-hero">
+      <header className="spoon-hero project-title-system">
         <p>Inclusive design · Metal casting · Care</p>
         <h1>SPOON<br />FOR MY<br />GRANDFATHER</h1>
         <div>

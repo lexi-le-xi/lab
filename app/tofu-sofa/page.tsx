@@ -24,7 +24,7 @@ export default function TofuSofaPage() {
     <main className="tofu-page">
       <SiteNavigation label="Project · Tofu Sofa" />
 
-      <header className="tofu-hero">
+      <header className="tofu-hero project-title-system">
         <p>Material reuse · Community making · Furniture</p>
         <h1>TOFU<br />SOFA</h1>
         <div><h2>Discarded pallets, returned to use as a place to gather.</h2><p>A set of sofas made by hand for the ESTEAST community, using materials already available and a deliberately economical construction process.</p></div>

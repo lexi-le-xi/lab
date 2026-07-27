@@ -17,13 +17,15 @@ export default function KitchenOrganizerPage() {
     <main className="organizer-page">
       <SiteNavigation label="Project · Modular Kitchen Organizer" />
 
-      <header className="organizer-hero">
+      <header className="organizer-hero project-title-system">
+        <p>Connection through making · Sheet metal · Detachable structure</p>
+        <h1>MODULAR<br />KITCHEN<br />ORGANIZER</h1>
         <div>
-          <p>Connection through making · Sheet metal · Detachable structure</p>
-          <h1>MODULAR<br />KITCHEN<br />ORGANIZER</h1>
+          <h2>An organizer completed by the person who uses it.</h2>
+          <p>A precise sheet-metal structure that reduces factory assembly and turns putting an object together into the beginning of ownership.</p>
         </div>
-        <figure><img src={hero.src} alt="The assembled modular kitchen organizer holding eggs and grapes" /></figure>
       </header>
+      <figure className="organizer-lead"><img src={hero.src} alt="The assembled modular kitchen organizer holding eggs and grapes" /></figure>
 
       <section className="organizer-question">
         <span>01 · Design question</span>

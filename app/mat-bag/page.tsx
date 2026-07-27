@@ -23,7 +23,7 @@ export default function MatBagPage() {
   return (
     <main className="mat-page">
       <SiteNavigation label="Project · Mat Bag" />
-      <header className="mat-hero">
+      <header className="mat-hero project-title-system">
         <p>Product design · Soft goods · Everyday life</p>
         <h1>MAT<br />BAG</h1>
         <div><h2>Carry the possibility of stopping wherever you are.</h2><p>A daily bag that opens into a lawn mat—designed so an unplanned pause in the park needs no extra preparation.</p></div>

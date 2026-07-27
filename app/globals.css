@@ -2548,3 +2548,93 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   .spoon-hero h1 { font-size:13.5vw; }
   .know-hero h1 { font-size:18vw; }
 }
+
+/* Unified project title system */
+.project-title-system {
+  min-height:calc(100svh - 72px);
+  padding:5vw 4vw 4vw;
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  grid-template-rows:auto 1fr;
+  gap:3vw;
+  align-content:normal;
+  font-family:Arial,Helvetica,sans-serif;
+}
+.project-title-system > p {
+  grid-column:1 / 3;
+  align-self:start;
+  margin:0;
+  font-size:10px;
+  line-height:1.4;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+.project-title-system > h1 {
+  grid-column:1;
+  align-self:end;
+  margin:0;
+  max-width:none;
+  color:inherit;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:clamp(70px,10.8vw,202px);
+  font-weight:600;
+  line-height:.78;
+  letter-spacing:-.075em;
+  white-space:normal;
+}
+.project-title-system > div {
+  grid-column:2;
+  align-self:end;
+  max-width:680px;
+  margin:0;
+  padding:0;
+  display:block;
+}
+.project-title-system > div h2 {
+  margin:0 0 2.5vw;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:clamp(36px,4.2vw,76px);
+  font-weight:500;
+  line-height:.94;
+  letter-spacing:-.05em;
+}
+.project-title-system > div p {
+  max-width:580px;
+  margin:0;
+  font:18px/1.5 Georgia,serif;
+  letter-spacing:0;
+  text-transform:none;
+}
+.awa-ip-notice {
+  padding:28px 4vw;
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:3vw;
+  align-items:center;
+  background:#e7e0d4;
+}
+.awa-ip-notice strong { font-size:clamp(15px,1.35vw,22px); line-height:1.2; }
+.awa-ip-notice span { font:clamp(14px,1.1vw,18px)/1.45 Georgia,serif; letter-spacing:0; text-transform:none; }
+.organizer-lead { width:100%; margin:0; overflow:hidden; background:#101416; aspect-ratio:16/10; }
+.organizer-lead img { display:block; width:100%; height:100%; object-fit:cover; object-position:center; }
+
+@media (max-width:720px) {
+  .project-title-system {
+    min-height:auto;
+    padding:80px 22px 70px;
+    display:block;
+  }
+  .project-title-system > p { margin-bottom:72px; }
+  .project-title-system > h1 {
+    font-size:13.5vw;
+    line-height:.8;
+    overflow-wrap:normal;
+  }
+  .project-title-system > div { margin-top:72px; }
+  .project-title-system > div h2 { margin-bottom:28px; font-size:11vw; }
+  .project-title-system > div p { font-size:16px; }
+  .awa-ip-notice { padding:24px 22px; grid-template-columns:1fr; gap:14px; }
+  .awa-ip-notice strong { font-size:14px; }
+  .awa-ip-notice span { font-size:13px; }
+  .organizer-lead { aspect-ratio:1; }
+}

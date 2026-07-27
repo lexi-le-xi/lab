@@ -33,7 +33,7 @@ export default function HoverPage() {
     <main className="hover-page">
       <SiteNavigation label="Project · HOVER" />
 
-      <header className="hover-hero">
+      <header className="hover-hero project-title-system">
         <p>Brand strategy · Product design · Project leadership</p>
         <h1>HOVER</h1>
         <div>
