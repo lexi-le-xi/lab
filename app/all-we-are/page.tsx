@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { SiteFooter, SiteNavigation } from "../site-chrome";
-import hero from "../../public/all-we-are/hero.jpg";
+import hero from "../../public/all-we-are/hero-new.jpg";
 import productForm from "../../public/all-we-are/product-form.jpg";
 import prototype from "../../public/all-we-are/prototype.jpg";
 import technicalDrawing from "../../public/all-we-are/technical-drawing.jpg";
@@ -45,7 +45,7 @@ export default function AllWeArePage() {
         </div>
       </header>
 
-      <Image src={hero.src} alt="ALL WE ARE modular shoes in motion" className="awa-lead-image" />
+      <Image src={hero.src} alt="ALL WE ARE modular shoes shown across take-off and put-on states" className="awa-lead-image" />
 
       <section className="awa-statement">
         <p>Connection through making</p>

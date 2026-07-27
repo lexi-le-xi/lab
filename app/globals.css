@@ -277,7 +277,7 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
 .awa-hero > div { grid-column:7/13; display:grid; grid-template-columns:2fr 1fr; gap:3vw; }
 .awa-hero h2 { margin:0; font-size:clamp(27px,3vw,56px); line-height:1.02; letter-spacing:-.035em; }
 .awa-hero > div p { margin:0; font:18px/1.5 Georgia,serif; }
-.awa-lead-image { width:100%; height:min(69vw,900px); background:#ddd; }
+.awa-lead-image { width:100%; height:auto; aspect-ratio:2400/1633; background:#e8e4de; }
 .awa-statement { padding:12vw 7vw; background:#101010; color:#f4b6a9; display:grid; grid-template-columns:repeat(12,1fr); gap:1.5vw; }
 .awa-statement > p { grid-column:1/4; margin:0; font-size:11px; letter-spacing:.17em; text-transform:uppercase; }
 .awa-statement blockquote { grid-column:4/13; margin:0; font:clamp(42px,6vw,100px)/.98 Georgia,serif; letter-spacing:-.035em; }
@@ -324,7 +324,7 @@ footer { border-top: 1px solid var(--line); border-bottom: 0; color: var(--muted
   .awa-hero > div { display:block; }
   .awa-hero h2 { margin-bottom:28px; font-size:10vw; }
   .awa-hero > div p { font-size:17px; }
-  .awa-lead-image { height:115vw; }
+  .awa-lead-image { height:auto; aspect-ratio:2400/1633; }
   .awa-statement { padding:100px 22px; display:block; }
   .awa-statement > p { margin-bottom:55px; }
   .awa-statement blockquote { font-size:11.5vw; }
