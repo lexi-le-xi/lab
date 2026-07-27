@@ -7,6 +7,8 @@ import pattern from "../../public/spoon/pattern.jpg";
 import casting from "../../public/spoon/casting.jpg";
 import cutting from "../../public/spoon/cutting.jpg";
 import finishing from "../../public/spoon/finishing.jpg";
+import supportClosed from "../../public/spoon/support-closed.jpg";
+import supportOpen from "../../public/spoon/support-open.jpg";
 
 export const metadata: Metadata = {
   title: "A Spoon for My Grandfather · Xi Liu",
@@ -54,11 +56,19 @@ export default function SpoonPage() {
           <span>02</span><p>Structural idea</p><h2>Replace gripping with support.</h2>
           <div><p>The enlarged loop allows the hand to enter the utensil rather than pinch it from the outside. Load is distributed across a broader part of the hand, while the spoon bowl remains aligned for eating.</p><p>The handle, bridge, loop, and bowl become one continuous form—simple to understand, difficult to drop, and free from added straps or mechanisms.</p></div>
         </div>
-        <Image src={followBlock.src} alt="Diagram of the spoon pattern and integrated follow block" />
+        <div className="spoon-concept-media">
+          <Image src={supportClosed.src} alt="The hand-support loop stabilizing the spoon with relaxed fingers" />
+          <Image src={supportOpen.src} alt="The spoon remaining supported while the fingers open" />
+        </div>
       </section>
 
       <section className="spoon-process">
         <header><span>03</span><p>Foundry process</p><h2>The form had to work for the hand—and for the pour.</h2></header>
+
+        <figure className="spoon-follow-block">
+          <img src={followBlock.src} alt="Diagram of the spoon pattern and integrated follow block" />
+          <figcaption>The integral pattern and follow block helped the ergonomic form translate into a successful casting.</figcaption>
+        </figure>
 
         <article>
           <Image src={pattern.src} alt="One-piece spoon pattern prepared for sand casting" />
