@@ -55,7 +55,10 @@ export default function AboutPage() {
           </p>
           <span>Designer · Maker · Researcher</span>
         </div>
-        <a className="about-flow-arrow" href="#about-belief" aria-label="Continue to why I design"><CornerArrow /></a>
+        <Link className="about-cv-corner" href="/cv" aria-label="View Xi Liu's CV">
+          <span>CV</span>
+          <CornerArrow />
+        </Link>
       </section>
 
       <section className="about-belief" id="about-belief">
@@ -85,13 +88,6 @@ export default function AboutPage() {
             <CornerArrow />
           </span>
         </Link>
-        <a
-          className="about-cv-link"
-          href="mailto:liuxi@stanford.edu?subject=CV%20request"
-        >
-          <strong>CV</strong>
-          <span>Request a copy ↗</span>
-        </a>
         <a className="about-say-hello" href="mailto:liuxi@stanford.edu">
           <strong>Say hello</strong>
           <span>liuxi@stanford.edu ↗</span>
