@@ -4,7 +4,6 @@ import { SiteFooter, SiteNavigation } from "../site-chrome";
 import hero from "../../public/unmaking-time/hero.jpg";
 import participationOne from "../../public/unmaking-time/participation-01.jpg";
 import participationTwo from "../../public/unmaking-time/participation-02.jpg";
-import timeDebtPile from "../../public/unmaking-time/time-debt-pile.jpg";
 import videoStillOne from "../../public/unmaking-time/video-still-01.png";
 import videoStillTwo from "../../public/unmaking-time/video-still-02.png";
 
@@ -54,14 +53,9 @@ export default function UnmakingTimePage() {
         </div>
       </section>
 
-      <section className="unmaking-film">
-        <p>03 · The installation in motion</p>
-        <figure><AutoVideo src={publicPath("/unmaking-time/installation.mov")} label="Visitors interacting with the suspended sweaters and pulling their threads" /></figure>
-      </section>
-
       <section className="unmaking-debt">
-        <figure><img src={timeDebtPile.src} alt="A large pile of extracted red and yellow yarn beneath the hanging sweaters" /></figure>
-        <div><span>04 · The time debt pile</span><h2>The consequence grows beneath our feet.</h2><p>Every extracted fiber becomes a unit of material and time borrowed from the future. As individual actions accumulate, an abstract environmental problem becomes a visible, collective record.</p></div>
+        <figure><AutoVideo src={publicPath("/unmaking-time/installation.mov")} label="Visitors interacting with the suspended sweaters and pulling their threads" /></figure>
+        <div><span>03 · The installation in motion · The time debt pile</span><h2>The consequence grows beneath our feet.</h2><p>Every extracted fiber becomes a unit of material and time borrowed from the future. As individual actions accumulate, an abstract environmental problem becomes a visible, collective record.</p></div>
       </section>
 
       <section className="unmaking-contrasts">
@@ -73,7 +67,7 @@ export default function UnmakingTimePage() {
       </section>
 
       <section className="unmaking-reflection">
-        <p>05 · Reflection</p>
+        <p>04 · Reflection</p>
         <blockquote>What will you leave behind?</blockquote>
         <div><p>The thread is an irreversible chain of events. The participant eventually turns back to face the permanent mark of a temporary action—the same relationship our consumption choices have with the future.</p><p><strong>My role</strong><br />Concept · Installation design · Interaction design · Material construction · Artist statement</p></div>
       </section>
